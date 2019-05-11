@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
-  <title>Tag: os | Luke的个人博客</title>
+  <title>.gitignore不生效的解决方案 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="python,django,drf,jwt,fastdfs,开发者,程序员,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luke的个人博客">
-<meta property="og:url" content="https://agvszwk.github.io/tags/os/index.html">
+  <meta name="description" content="解决.gitignore不生效的问题。">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".gitignore不生效的解决方案">
+<meta property="og:url" content="https://agvszwk.github.io/2019/05/11/gitignore不生效的解决方案/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="人生苦短，我用python">
+<meta property="og:description" content="解决.gitignore不生效的问题。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-11T15:15:03.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luke的个人博客">
-<meta name="twitter:description" content="人生苦短，我用python">
+<meta name="twitter:title" content=".gitignore不生效的解决方案">
+<meta name="twitter:description" content="解决.gitignore不生效的问题。">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -160,60 +161,147 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gitignore不生效的解决方案" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/29/os模块操作/" class="archive-article-date">
-  	<time datetime="2019-04-29T13:59:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-29</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/29/os模块操作/">os模块操作</a>
+    <h1 class="article-title" itemprop="name">
+      .gitignore不生效的解决方案
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/11/gitignore不生效的解决方案/" class="archive-article-date">
+  	<time datetime="2019-05-11T15:12:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>解决.gitignore不生效的问题。<br><a id="more"></a><br>当我们将 .gitignore 文件配置好后，却往往不能失效。这是因为 .gitignore 只能忽略那些没有被追踪(track)的文件，因为 git 存在本地缓存，如果文件已经纳入了版本管理，那么修改 .gitignore 是不能失效的。那么解决方案就是要将 git 的本地缓存删除，然后重新提交。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;update .gitignore&quot;</span><br></pre></td></tr></table></figure></p>
+<p>附上我pycharm中常用文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"># Byte-compiled / optimized / DLL files</span><br><span class="line">__pycache__/</span><br><span class="line">*.py[cod]</span><br><span class="line">*$py.class</span><br><span class="line"></span><br><span class="line"># C extensions</span><br><span class="line">*.so</span><br><span class="line"></span><br><span class="line"># Distribution / packaging</span><br><span class="line">.Python</span><br><span class="line">build/</span><br><span class="line">develop-eggs/</span><br><span class="line">dist/</span><br><span class="line">downloads/</span><br><span class="line">eggs/</span><br><span class="line">.eggs/</span><br><span class="line">lib/</span><br><span class="line">lib64/</span><br><span class="line">parts/</span><br><span class="line">sdist/</span><br><span class="line">var/</span><br><span class="line">wheels/</span><br><span class="line">*.egg-info/</span><br><span class="line">.installed.cfg</span><br><span class="line">*.egg</span><br><span class="line">MANIFEST</span><br><span class="line"></span><br><span class="line"># PyInstaller</span><br><span class="line">#  Usually these files are written by a python script from a template</span><br><span class="line">#  before PyInstaller builds the exe, so as to inject date/other infos into it.</span><br><span class="line">*.manifest</span><br><span class="line">*.spec</span><br><span class="line"></span><br><span class="line"># Installer logs</span><br><span class="line">pip-log.txt</span><br><span class="line">pip-delete-this-directory.txt</span><br><span class="line"></span><br><span class="line"># Unit test / coverage reports</span><br><span class="line">htmlcov/</span><br><span class="line">.tox/</span><br><span class="line">.coverage</span><br><span class="line">.coverage.*</span><br><span class="line">.cache</span><br><span class="line">nosetests.xml</span><br><span class="line">coverage.xml</span><br><span class="line">*.cover</span><br><span class="line">.hypothesis/</span><br><span class="line">.pytest_cache/</span><br><span class="line"></span><br><span class="line"># Translations</span><br><span class="line">*.mo</span><br><span class="line">*.pot</span><br><span class="line"></span><br><span class="line"># Django stuff:</span><br><span class="line">*.log</span><br><span class="line">local_settings.py</span><br><span class="line">db.sqlite3</span><br><span class="line"></span><br><span class="line"># Flask stuff:</span><br><span class="line">instance/</span><br><span class="line">.webassets-cache</span><br><span class="line"></span><br><span class="line"># Scrapy stuff:</span><br><span class="line">.scrapy</span><br><span class="line"></span><br><span class="line"># Sphinx documentation</span><br><span class="line">docs/_build/</span><br><span class="line"></span><br><span class="line"># PyBuilder</span><br><span class="line">target/</span><br><span class="line"></span><br><span class="line"># Jupyter Notebook</span><br><span class="line">.ipynb_checkpoints</span><br><span class="line"></span><br><span class="line"># IPython</span><br><span class="line">profile_default/</span><br><span class="line">ipython_config.py</span><br><span class="line"></span><br><span class="line"># pyenv</span><br><span class="line">.python-version</span><br><span class="line"></span><br><span class="line"># celery beat schedule file</span><br><span class="line">celerybeat-schedule</span><br><span class="line"></span><br><span class="line"># SageMath parsed files</span><br><span class="line">*.sage.py</span><br><span class="line"></span><br><span class="line"># Environments</span><br><span class="line">.env</span><br><span class="line">.venv</span><br><span class="line">env/</span><br><span class="line">venv/</span><br><span class="line">ENV/</span><br><span class="line">env.bak/</span><br><span class="line">venv.bak/</span><br><span class="line"></span><br><span class="line"># Spyder project settings</span><br><span class="line">.spyderproject</span><br><span class="line">.spyproject</span><br><span class="line"></span><br><span class="line"># Rope project settings</span><br><span class="line">.ropeproject</span><br><span class="line"></span><br><span class="line"># mkdocs documentation</span><br><span class="line">/site</span><br><span class="line"></span><br><span class="line"># mypy</span><br><span class="line">.mypy_cache/</span><br><span class="line">.dmypy.json</span><br><span class="line">dmypy.json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Pycharm</span><br><span class="line">.idea/</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">os</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2019/05/11/gitignore不生效的解决方案/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/11/django的model-auto-now-add和auto-now/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">django的model中的auto_now_add和auto_now</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +325,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,

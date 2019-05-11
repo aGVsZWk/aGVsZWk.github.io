@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
-  <title>Tag: 问题记录 | Luke的个人博客</title>
+  <title>django的model中的auto_now_add和auto_now | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="python,django,drf,jwt,fastdfs,开发者,程序员,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luke的个人博客">
-<meta property="og:url" content="https://agvszwk.github.io/tags/问题记录/index.html">
+  <meta name="description" content="创建django的model时，有DateTimeField、DateField和TimeField三种类型可以用来创建日期字段，其值分别对应着datetime()、date()、time()三中对象。这三个field有着相同的参数auto_now和auto_now_add，并且在实际使用中很容易出错，下面是一些注意点。">
+<meta name="keywords" content="django">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django的model中的auto_now_add和auto_now">
+<meta property="og:url" content="https://agvszwk.github.io/2019/05/11/django的model-auto-now-add和auto-now/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="人生苦短，我用python">
+<meta property="og:description" content="创建django的model时，有DateTimeField、DateField和TimeField三种类型可以用来创建日期字段，其值分别对应着datetime()、date()、time()三中对象。这三个field有着相同的参数auto_now和auto_now_add，并且在实际使用中很容易出错，下面是一些注意点。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-11T14:45:08.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luke的个人博客">
-<meta name="twitter:description" content="人生苦短，我用python">
+<meta name="twitter:title" content="django的model中的auto_now_add和auto_now">
+<meta name="twitter:description" content="创建django的model时，有DateTimeField、DateField和TimeField三种类型可以用来创建日期字段，其值分别对应着datetime()、date()、time()三中对象。这三个field有着相同的参数auto_now和auto_now_add，并且在实际使用中很容易出错，下面是一些注意点。">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -160,60 +161,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-django的model-auto-now-add和auto-now" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/13/解决mac下安装python扩展包mysqlclient报错的问题/" class="archive-article-date">
-  	<time datetime="2019-03-13T10:30:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/解决mac下安装python扩展包mysqlclient报错的问题/">解决mac下安装python扩展包mysqlclient报错的问题</a>
+    <h1 class="article-title" itemprop="name">
+      django的model中的auto_now_add和auto_now
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/05/11/django的model-auto-now-add和auto-now/" class="archive-article-date">
+  	<time datetime="2019-05-11T14:35:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建django的model时，有DateTimeField、DateField和TimeField三种类型可以用来创建日期字段，其值分别对应着datetime()、date()、time()三中对象。这三个field有着相同的参数auto_now和auto_now_add，并且在实际使用中很容易出错，下面是一些注意点。</p>
+<a id="more"></a>
+<h2 id="DateTimeField-auto-now"><a href="#DateTimeField-auto-now" class="headerlink" title="DateTimeField.auto_now"></a>DateTimeField.auto_now</h2><p>auto_now = True<br>这个参数的默认值为false，设置为true时，能够在保存该字段时，将其值设置为当前时间，并且每次修改model，都会自动更新。因此这个参数在需要存储“最后修改时间”的场景下，十分方便。需要注意的是，设置该参数为true时，并不简单地意味着字段的默认值为当前时间，而是指字段会被“强制”更新到当前时间，你无法程序中手动为字段赋值；如果使用django再带的admin管理器，那么该字段在admin中是只读的</p>
+<h2 id="DateTimeField-auto-now-add"><a href="#DateTimeField-auto-now-add" class="headerlink" title="DateTimeField.auto_now_add"></a>DateTimeField.auto_now_add</h2><p>auto_now_add = True<br>这个参数的默认值也为False，设置为True时，会在model对象第一次被创建时，将字段的值设置为创建时的时间，以后修改对象时，字段的值不会再更新。该属性通常被用在存储“创建时间”的场景下。与auto_now类似，auto_now_add也具有强制性，一旦被设置为True，就无法在程序中手动为字段赋值，在admin中字段也会成为只读的。</p>
+<h2 id="admin中的日期时间字段"><a href="#admin中的日期时间字段" class="headerlink" title="admin中的日期时间字段"></a>admin中的日期时间字段</h2><p>auto_now和auto_now_add被设置为True后，这样做会导致字段成为editable=False和blank=True的状态。editable=False将导致字段不会被呈现在admin中，blank=Ture表示允许在表单中不输入值。此时，如果在admin的fields或fieldset中强行加入该日期时间字段，那么程序会报错，admin无法打开；如果在admin中修改对象时，想要看到日期和时间，可以将日期时间字段添加到admin类的readonly_fields中：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">YourAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    readonly_fields = (<span class="string">'save_date'</span>, <span class="string">'mod_date'</span>,)</span><br><span class="line">admin.site.register(Tag, YourAdmin)</span><br></pre></td></tr></table></figure></p>
+<h2 id="如何将创建时间设置为“默认当前”并且可修改"><a href="#如何将创建时间设置为“默认当前”并且可修改" class="headerlink" title="如何将创建时间设置为“默认当前”并且可修改"></a>如何将创建时间设置为“默认当前”并且可修改</h2><p>那么问题来了。实际场景中，往往既希望在对象的创建时间默认被设置为当前值，又希望能在日后修改它。怎么实现这种需求呢？</p>
+<p>django中所有的model字段都拥有一个default参数，用来给字段设置默认值。可以用default=timezone.now来替换auto_now=True或auto_now_add=True。timezone.now对应着django.utils.timezone.now()，因此需要写成类似下面的形式：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">import</span> django.utils.timezone <span class="keyword">as</span> timezone</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Doc</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    add_date = models.DateTimeField(<span class="string">'保存日期'</span>,default = timezone.now)</span><br><span class="line">    mod_date = models.DateTimeField(<span class="string">'最后修改日期'</span>, auto_now = <span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p>
+<p>html页面从数据库中读出DateTimeField字段时，显示的时间格式和数据库中存放的格式不一致，比如数据库字段内容为2016-06-03 13:00:00，但是页面显示的却是Apr. 03, 2016, 1 p.m.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">问题记录</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">django</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2019/05/11/django的model-auto-now-add和auto-now/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/06/django学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">django学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DateTimeField-auto-now"><span class="toc-number">1.</span> <span class="toc-text">DateTimeField.auto_now</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DateTimeField-auto-now-add"><span class="toc-number">2.</span> <span class="toc-text">DateTimeField.auto_now_add</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#admin中的日期时间字段"><span class="toc-number">3.</span> <span class="toc-text">admin中的日期时间字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何将创建时间设置为“默认当前”并且可修改"><span class="toc-number">4.</span> <span class="toc-text">如何将创建时间设置为“默认当前”并且可修改</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +344,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luke的个人博客">
 <meta property="og:description" content="vim的一些刻意练习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T14:44:31.356Z">
+<meta property="og:updated_time" content="2019-05-29T00:43:35.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim的刻意练习">
 <meta name="twitter:description" content="vim的一些刻意练习。">
@@ -192,7 +192,7 @@
 <h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>u<br>U<br>ctrl + r</p>
 <h2 id="字母翻转"><a href="#字母翻转" class="headerlink" title="字母翻转"></a>字母翻转</h2><p>~</p>
 <h2 id="缩进与回退"><a href="#缩进与回退" class="headerlink" title="缩进与回退"></a>缩进与回退</h2><p>>><br>&lt;&lt;</p>
-<h2 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h2><p>v</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>v</p>
 <h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="设置缩进字符数"><a href="#设置缩进字符数" class="headerlink" title="设置缩进字符数"></a>设置缩进字符数</h2><p>set shiftwidth=10</p>
 <h2 id="调整行内容位置"><a href="#调整行内容位置" class="headerlink" title="调整行内容位置"></a>调整行内容位置</h2><p>居中<br>ce<br>靠右<br>ri<br>靠左<br>le</p>
 <h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br>set hls<br>结束搜索<br>noh</p>
@@ -201,10 +201,18 @@
 <h1 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h1><h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
 <h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p>命令模式下<br>n<br>N<br>n!<br>N!<br>注意:n!和N!不会保存文件</p>
 <h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p>e 文件名</p>
+<h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p>vim -x file1</p>
 <h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p>e#</p>
 <h2 id="列出以前编辑过的文档"><a href="#列出以前编辑过的文档" class="headerlink" title="列出以前编辑过的文档"></a>列出以前编辑过的文档</h2><p>ls</p>
 <h2 id="显示及更改文件名"><a href="#显示及更改文件名" class="headerlink" title="显示及更改文件名"></a>显示及更改文件名</h2><p>f<br>f 文件名</p>
 <h2 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h2><p>vim -r 文件名<br>ewcover 1.txt</p>
+<h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><p>行选择<br>shift + v<br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
+<p>列选择<br>ctrl + v<br>用hl控制前后，按x可删除</p>
+<p>在命令模式下<br><code>sp 文件名</code> 可打开水平分屏视窗来编辑文件<br><code>vsp 文件名</code> 可垂直分屏来操作文件</p>
+<p>ctrl + w 待验证</p>
+<h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p>!ls  显示当前目录的内容<br>!rm 文件名 删除文件<br>!w 文件名  另存为</p>
+<h1 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h1><p>F1<br>:h 文件名<br>:ver</p>
+<p>.</p>
 
       
 
@@ -287,6 +295,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/05/29/解决celery版本问题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          解决celery版本问题
+        
+      </div>
+    </a>
   
   
     <a href="/2019/05/25/youtube上David-Beazley的python教程/" id="article-nav-older" class="article-nav-link-wrap">
@@ -442,7 +459,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,11 +479,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,19 +487,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +499,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +511,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,15 +523,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,7 +531,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +567,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,7 +767,7 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

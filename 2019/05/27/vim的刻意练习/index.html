@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luke的个人博客">
 <meta property="og:description" content="vim的一些刻意练习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-29T00:43:35.062Z">
+<meta property="og:updated_time" content="2019-05-29T15:26:32.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim的刻意练习">
 <meta name="twitter:description" content="vim的一些刻意练习。">
@@ -183,13 +183,15 @@
       
         <p>vim的一些刻意练习。<br><a id="more"></a></p>
 <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="删除字符"><a href="#删除字符" class="headerlink" title="删除字符"></a>删除字符</h2><p>x<br>10x</p>
-<h2 id="删除单词"><a href="#删除单词" class="headerlink" title="删除单词"></a>删除单词</h2><p>dw<br>d10w<br>dg<br>dgg</p>
-<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>w<br>e<br>b<br>ge<br>f + 字母<br>F + 字母<br>0 ^<br>$</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>dw<br>d10w<br>dg<br>dgg<br>dt + 字母   # 删除所有的内容，知道遇到字母</p>
+<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>w<br>e<br>b<br>ge<br>g_  到本行最后一个不是blank字符的文职<br>f + 字母<br>F + 字母<br>t + 字母<br>T + 字母<br>0 ^<br>$ g_</p>
 <h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>y^<br>y$<br>yG<br>y1G</p>
 <h2 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h2><p>p<br>P</p>
 <h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>r<br>R</p>
 <h2 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h2><p>cc<br>cw<br>C<br>~</p>
 <h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>u<br>U<br>ctrl + r</p>
+<h2 id="变大写"><a href="#变大写" class="headerlink" title="变大写"></a>变大写</h2><p>gU</p>
+<h2 id="变小写"><a href="#变小写" class="headerlink" title="变小写"></a>变小写</h2><p>gu</p>
 <h2 id="字母翻转"><a href="#字母翻转" class="headerlink" title="字母翻转"></a>字母翻转</h2><p>~</p>
 <h2 id="缩进与回退"><a href="#缩进与回退" class="headerlink" title="缩进与回退"></a>缩进与回退</h2><p>>><br>&lt;&lt;</p>
 <h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>v</p>
@@ -198,17 +200,27 @@
 <h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br>set hls<br>结束搜索<br>noh</p>
 <p>查找游标所在处单词<br>\*<br>\#</p>
 <p>部分匹配<br>g\*<br>g\#</p>
-<h1 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h1><h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
+<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
 <h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p>命令模式下<br>n<br>N<br>n!<br>N!<br>注意:n!和N!不会保存文件</p>
-<h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p>e 文件名</p>
-<h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p>vim -x file1</p>
 <h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p>e#</p>
+<h2 id="切换到下一个文件"><a href="#切换到下一个文件" class="headerlink" title="切换到下一个文件"></a>切换到下一个文件</h2><p>:n<br>:bn</p>
+<h2 id="切换到上一个文件"><a href="#切换到上一个文件" class="headerlink" title="切换到上一个文件"></a>切换到上一个文件</h2><p>:N<br>:bp</p>
+<h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p>e 文件名</p>
+<h2 id="保存并退出"><a href="#保存并退出" class="headerlink" title="保存并退出"></a>保存并退出</h2><p>:x<br>:wq<br>ZZ</p>
+<h2 id="另存为"><a href="#另存为" class="headerlink" title="另存为"></a>另存为</h2><p>:save as 文件名</p>
+<h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p>vim -x file1</p>
 <h2 id="列出以前编辑过的文档"><a href="#列出以前编辑过的文档" class="headerlink" title="列出以前编辑过的文档"></a>列出以前编辑过的文档</h2><p>ls</p>
 <h2 id="显示及更改文件名"><a href="#显示及更改文件名" class="headerlink" title="显示及更改文件名"></a>显示及更改文件名</h2><p>f<br>f 文件名</p>
 <h2 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h2><p>vim -r 文件名<br>ewcover 1.txt</p>
-<h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><p>行选择<br>shift + v<br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
-<p>列选择<br>ctrl + v<br>用hl控制前后，按x可删除</p>
-<p>在命令模式下<br><code>sp 文件名</code> 可打开水平分屏视窗来编辑文件<br><code>vsp 文件名</code> 可垂直分屏来操作文件</p>
+<h1 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h1><h2 id="插入100个desu"><a href="#插入100个desu" class="headerlink" title="插入100个desu"></a>插入100个desu</h2><p>100idesu[ESC]</p>
+<h2 id="重复上一个命令"><a href="#重复上一个命令" class="headerlink" title="重复上一个命令"></a>重复上一个命令</h2><p>.</p>
+<h2 id="重复上一个命令3次"><a href="#重复上一个命令3次" class="headerlink" title="重复上一个命令3次"></a>重复上一个命令3次</h2><ol>
+<li>重复上一个命令3次</li>
+</ol>
+<h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><h2 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h2><p>shift + v<br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
+<h2 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h2><p>ctrl + v<br>用hl控制前后，按x可删除</p>
+<h2 id="选择-1"><a href="#选择-1" class="headerlink" title="选择"></a>选择</h2><p>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br>vi + “   选择foo<br>va + “   选择”foo”<br>vi + )   选择”foo”<br>va + )   选择(“foo”)<br>v2i + )  选择map (+) (“foo”)<br>v2a + )  选择(map (+) (“foo”))</p>
+<h2 id="拆分窗口"><a href="#拆分窗口" class="headerlink" title="拆分窗口"></a>拆分窗口</h2><p>在命令模式下<br><code>sp 文件名</code> 可打开水平分屏视窗来编辑文件<br><code>vsp 文件名</code> 可垂直分屏来操作文件</p>
 <p>ctrl + w 待验证</p>
 <h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p>!ls  显示当前目录的内容<br>!rm 文件名 删除文件<br>!w 文件名  另存为</p>
 <h1 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h1><p>F1<br>:h 文件名<br>:ver</p>
@@ -459,7 +471,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
+                <a href="javascript:void(0)" class="js-tag color5">atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,15 +487,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,7 +531,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,7 +539,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -527,19 +551,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -547,11 +559,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +583,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>

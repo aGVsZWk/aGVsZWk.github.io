@@ -17,7 +17,7 @@
 <meta property="og:description" content="我是在manjaro-deepin搭建vim环境。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/03/vim环境搭建/7U2B2O3%7D~PW8%7$45NCS[FM.png">
-<meta property="og:updated_time" content="2019-06-04T14:18:13.446Z">
+<meta property="og:updated_time" content="2019-06-16T14:48:17.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim环境搭建">
 <meta name="twitter:description" content="我是在manjaro-deepin搭建vim环境。">
@@ -209,7 +209,7 @@
 </blockquote>
 <p>vim的插件一般都放置在bundle文件夹里</p>
 <h2 id="安装Vundle来管理Vim插件"><a href="#安装Vundle来管理Vim插件" class="headerlink" title="安装Vundle来管理Vim插件"></a>安装Vundle来管理Vim插件</h2><p>直接克隆到vim插件目录下: <code>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></p>
-<p>编辑vimrc:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line">&quot; All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just</span><br><span class="line">&quot; /usrimimfiles/archlinux.vim) and sourced by the call to :runtime</span><br><span class="line">&quot; you can find below.  If you wish to change any of those settings, you should</span><br><span class="line">&quot; do it in this file (/etcimrc), since archlinux.vim will be overwritten</span><br><span class="line">&quot; everytime an upgrade of the vim packages is performed.  It is recommended to</span><br><span class="line">&quot; make changes after sourcing archlinux.vim since it alters the value of the</span><br><span class="line">&quot; &apos;compatible&apos; option.</span><br><span class="line"></span><br><span class="line">&quot; This line should not be removed as it ensures that various options are</span><br><span class="line">&quot; properly set to work with the Vim-related packages.</span><br><span class="line">runtime! archlinux.vim</span><br><span class="line"></span><br><span class="line">&quot; If you prefer the old-style vim functionalty, add &apos;runtime! vimrc_example.vim&apos;</span><br><span class="line">&quot; Or better yet, read /usrimim80imrc_example.vim or the vim manual</span><br><span class="line">&quot; and configure vim to your own liking!</span><br><span class="line"></span><br><span class="line">&quot; do not load defaults if ~/.vimrc is missing</span><br><span class="line">&quot;let skip_defaults_vim=1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set nocompatible              &quot; 这是必需的</span><br><span class="line">filetype off                  &quot; 这是必需的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; 在此设置运行时路径</span><br><span class="line">set rtp+=~/.vimndle/Vundle.vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; vundle初始化</span><br><span class="line">call vundle#begin()</span><br><span class="line"></span><br><span class="line">&quot; 或者传递一个 Vundle 安装插件的路径</span><br><span class="line">&quot;call vundle#begin(&apos;~/some/path/here&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; 让 Vundle 管理 Vundle, 必须</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">&quot; 下面是不同支持幅度的例子</span><br><span class="line">&quot; 保持 Plugin 命令 在 vundle#begin 和 end 之间</span><br><span class="line"></span><br><span class="line">&quot;文件树</span><br><span class="line">Plugin &apos;scrooloose/nerdtree&apos;</span><br><span class="line">Plugin &apos;Xuyuanp/nerdtree-git-plugin&apos;</span><br><span class="line"></span><br><span class="line">&quot; 文件树设置 &#123;&#123;&#123;</span><br><span class="line">&quot; 关闭NERDTree快捷键</span><br><span class="line">map &lt;leader&gt;t :NERDTreeToggle&lt;CR&gt;</span><br><span class="line">&quot;&quot;当NERDTree为剩下的唯一窗口时自动关闭</span><br><span class="line">autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTree&quot;) &amp;&amp; b:NERDTree.isTabTree()) | q | endif</span><br><span class="line">&quot;&quot;修改树的显示图标</span><br><span class="line">let g:NERDTreeDirArrowExpandable = &apos;►&apos;</span><br><span class="line">let g:NERDTreeDirArrowCollapsible = &apos;▼&apos;</span><br><span class="line">let NERDTreeAutoCenter=1</span><br><span class="line">&quot; 显示行号</span><br><span class="line">let NERDTreeShowLineNumbers=1</span><br><span class="line">&quot; 是否显示隐藏文件</span><br><span class="line">let NERDTreeShowHidden=1</span><br><span class="line">&quot; 设置宽度</span><br><span class="line">let NERDTreeWinSize=25</span><br><span class="line">&quot; 在终端启动vim时，共享NERDTree</span><br><span class="line">let g:nerdtree_tabs_open_on_console_startup=1</span><br><span class="line">&quot; 忽略一下文件的显示</span><br><span class="line">let NERDTreeIgnore=[&apos;\.pyc&apos;,&apos;\~$&apos;,&apos;\.swp&apos;]</span><br><span class="line">let g:NERDTreeIndicatorMapCustom = &#123;</span><br><span class="line">    \ &quot;Modified&quot;  : &quot;✹&quot;,</span><br><span class="line">    \ &quot;Staged&quot;    : &quot;✚&quot;,</span><br><span class="line">    \ &quot;Untracked&quot; : &quot;✭&quot;,</span><br><span class="line">    \ &quot;Renamed&quot;   : &quot;➜&quot;,</span><br><span class="line">    \ &quot;Unmerged&quot;  : &quot;═&quot;,</span><br><span class="line">    \ &quot;Deleted&quot;   : &quot;&quot;,</span><br><span class="line">    \ &quot;Dirty&quot;     : &quot;✗&quot;,</span><br><span class="line">    \ &quot;Clean&quot;     : &quot;︎&quot;,</span><br><span class="line">    \ &apos;Ignored&apos;   : &apos;☒&apos;,</span><br><span class="line">    \ &quot;Unknown&quot;   : &quot;?&quot;</span><br><span class="line">    \ &#125;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;每个插件都应该在这一行之前</span><br><span class="line">call vundle#end()            &quot; 这是必需的</span><br><span class="line">filetype plugin indent on    &quot; 这是必需的</span><br><span class="line">&quot; To ignore plugin indent changes, instead use:</span><br><span class="line">&quot;filetype plugin on</span><br><span class="line">&quot;</span><br><span class="line">&quot; Brief help</span><br><span class="line">&quot; :PluginList       - lists configured plugins</span><br><span class="line">&quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate</span><br><span class="line">&quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache</span><br><span class="line">&quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal</span><br><span class="line">&quot;</span><br><span class="line">&quot; see :h vundle for more details or wiki for FAQ</span><br><span class="line">&quot; Put your non-Plugin stuff after this line</span><br></pre></td></tr></table></figure></p>
+<p>编辑vimrc:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">&quot; All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just</span><br><span class="line">&quot; /usrimimfiles/archlinux.vim) and sourced by the call to :runtime</span><br><span class="line">&quot; you can find below.  If you wish to change any of those settings, you should</span><br><span class="line">&quot; do it in this file (/etcimrc), since archlinux.vim will be overwritten</span><br><span class="line">&quot; everytime an upgrade of the vim packages is performed.  It is recommended to</span><br><span class="line">&quot; make changes after sourcing archlinux.vim since it alters the value of the</span><br><span class="line">&quot; &apos;compatible&apos; option.</span><br><span class="line"></span><br><span class="line">&quot; This line should not be removed as it ensures that various options are</span><br><span class="line">&quot; properly set to work with the Vim-related packages.</span><br><span class="line">runtime! archlinux.vim</span><br><span class="line"></span><br><span class="line">&quot; If you prefer the old-style vim functionalty, add &apos;runtime! vimrc_example.vim&apos;</span><br><span class="line">&quot; Or better yet, read /usrimim80imrc_example.vim or the vim manual</span><br><span class="line">&quot; and configure vim to your own liking!</span><br><span class="line"></span><br><span class="line">&quot; do not load defaults if ~/.vimrc is missing</span><br><span class="line">&quot;let skip_defaults_vim=1</span><br><span class="line"></span><br><span class="line">set nocompatible              &quot; 这是必需的</span><br><span class="line">filetype off                  &quot; 这是必需的</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; 在此设置运行时路径</span><br><span class="line">set rtp+=~/.vimndle/Vundle.vim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; vundle初始化</span><br><span class="line">call vundle#begin()</span><br><span class="line"></span><br><span class="line">&quot; 或者传递一个 Vundle 安装插件的路径</span><br><span class="line">&quot;call vundle#begin(&apos;~/some/path/here&apos;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot; 让 Vundle 管理 Vundle, 必须</span><br><span class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</span><br><span class="line">&quot; 下面是不同支持幅度的例子</span><br><span class="line">&quot; 保持 Plugin 命令 在 vundle#begin 和 end 之间</span><br><span class="line"></span><br><span class="line">&quot;文件树</span><br><span class="line">Plugin &apos;scrooloose/nerdtree&apos;</span><br><span class="line">Plugin &apos;Xuyuanp/nerdtree-git-plugin&apos;</span><br><span class="line"></span><br><span class="line">&quot; 文件树设置 &#123;&#123;&#123;</span><br><span class="line">&quot; 关闭NERDTree快捷键</span><br><span class="line">map &lt;leader&gt;t :NERDTreeToggle&lt;CR&gt;</span><br><span class="line">&quot;&quot;当NERDTree为剩下的唯一窗口时自动关闭</span><br><span class="line">autocmd bufenter * if (winnr(&quot;$&quot;) == 1 &amp;&amp; exists(&quot;b:NERDTree&quot;) &amp;&amp; b:NERDTree.isTabTree()) | q | endif</span><br><span class="line">&quot;&quot;修改树的显示图标</span><br><span class="line">let g:NERDTreeDirArrowExpandable = &apos;►&apos;</span><br><span class="line">let g:NERDTreeDirArrowCollapsible = &apos;▼&apos;</span><br><span class="line">let NERDTreeAutoCenter=1</span><br><span class="line">&quot; 显示行号</span><br><span class="line">let NERDTreeShowLineNumbers=1</span><br><span class="line">&quot; 是否显示隐藏文件</span><br><span class="line">let NERDTreeShowHidden=1</span><br><span class="line">&quot; 设置宽度</span><br><span class="line">let NERDTreeWinSize=25</span><br><span class="line">&quot; 在终端启动vim时，共享NERDTree</span><br><span class="line">let g:nerdtree_tabs_open_on_console_startup=1</span><br><span class="line">&quot; 忽略一下文件的显示</span><br><span class="line">let NERDTreeIgnore=[&apos;\.pyc&apos;,&apos;\~$&apos;,&apos;\.swp&apos;]</span><br><span class="line">let g:NERDTreeIndicatorMapCustom = &#123;</span><br><span class="line">    \ &quot;Modified&quot;  : &quot;✹&quot;,</span><br><span class="line">    \ &quot;Staged&quot;    : &quot;✚&quot;,</span><br><span class="line">    \ &quot;Untracked&quot; : &quot;✭&quot;,</span><br><span class="line">    \ &quot;Renamed&quot;   : &quot;➜&quot;,</span><br><span class="line">    \ &quot;Unmerged&quot;  : &quot;═&quot;,</span><br><span class="line">    \ &quot;Deleted&quot;   : &quot;&quot;,</span><br><span class="line">    \ &quot;Dirty&quot;     : &quot;✗&quot;,</span><br><span class="line">    \ &quot;Clean&quot;     : &quot;︎&quot;,</span><br><span class="line">    \ &apos;Ignored&apos;   : &apos;☒&apos;,</span><br><span class="line">    \ &quot;Unknown&quot;   : &quot;?&quot;</span><br><span class="line">    \ &#125;</span><br><span class="line">&quot; &#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&quot;每个插件都应该在这一行之前</span><br><span class="line">call vundle#end()            &quot; 这是必需的</span><br><span class="line">filetype plugin indent on    &quot; 这是必需的</span><br><span class="line">&quot; To ignore plugin indent changes, instead use:</span><br><span class="line">&quot;filetype plugin on</span><br><span class="line">&quot;</span><br><span class="line">&quot; Brief help</span><br><span class="line">&quot; :PluginList       - lists configured plugins</span><br><span class="line">&quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate</span><br><span class="line">&quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache</span><br><span class="line">&quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal</span><br><span class="line">&quot;</span><br><span class="line">&quot; see :h vundle for more details or wiki for FAQ</span><br><span class="line">&quot; Put your non-Plugin stuff after this line</span><br></pre></td></tr></table></figure></p>
 <p>里面配置了github的nerdtree.<br>进入vim，输入<code>:PluginInstall</code>进行安装<br>此时会把插件下载到bundle文件夹里</p>
 <h2 id="安装neovim"><a href="#安装neovim" class="headerlink" title="安装neovim"></a>安装neovim</h2><p>安装参考:</p>
 <blockquote>
@@ -465,6 +465,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -473,11 +481,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,19 +489,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,15 +529,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">python高级</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +549,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,11 +585,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">celery</a>
+                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+                <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,7 +789,7 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
 </html>

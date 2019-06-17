@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luke的个人博客">
 <meta property="og:description" content="vim的一些刻意练习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-16T15:15:10.270Z">
+<meta property="og:updated_time" content="2019-06-17T14:29:30.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim的刻意练习">
 <meta name="twitter:description" content="vim的一些刻意练习。">
@@ -184,50 +184,86 @@
         <p>vim的一些刻意练习。<br><a id="more"></a></p>
 <h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>i<br>o<br>a<br>I<br>O<br>A</p>
 <h2 id="删除字符"><a href="#删除字符" class="headerlink" title="删除字符"></a>删除字符</h2><p>x<br>10x</p>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>dd<br>dw<br>d10w<br>d0<br>d$<br>dG<br>dgg<br>dt + 字母   # 删除所有的内容，知道遇到字母<br>di(    # 删除()内的内容<br>di{    # 删除{}内的内容<br>d(    # 删除到句末的内容<br>d)    # 删除到句首的内容<br>d{    # 删除到段末的内容<br>d}    # 删除到段首的内容</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>dd<br>dw<br>d10w<br>d0<br>d$<br>dG<br>dgg<br>dt + 字母   # 删除所有的内容，知道遇到字母<br>di(    # 删除()内的内容<br>di{    # 删除{}内的内容<br>d(    # 删除到句末的内容<br>d)    # 删除到句首的内容<br>d{    # 删除到段末的内容<br>d}    # 删除到段首的内容<br>dap   # 删除一个段落</p>
 <blockquote>
 <p>补充:<br>1.大小写区别是以空白字符分割的字符串<br>2.句子是以.区别，段落是以空行区别</p>
 </blockquote>
-<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>w<br>e<br>b<br>ge<br>g_  到本行最后一个不是blank字符的文职<br>f + 字母<br>F + 字母<br>t + 字母<br>T + 字母<br>0 ^<br>$ g_</p>
-<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>y^<br>y$<br>yG<br>y1G</p>
-<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h2><p>p<br>P</p>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>r<br>R</p>
-<h2 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h2><p>cc<br>cw<br>C<br>~</p>
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>u<br>U<br>ctrl + r</p>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p>w<br>e<br>b<br>G   gg<br>ge   # 和e相反的操作<br>f + 字母   # 向后查找，直接跳到字母<br>F + 字母   # 向前查找，直接跳到字母<br>t + 字母   # 向后查找，直接跳到字母前一位<br>T + 字母<br>0 ^<br>\$ g_<br>:数字   # 命令模式下移动到指定行，也可以:0和:$<br>*:   # 移动光标到当前所在单词的下一匹配单词<br>#:   # 移动光标到当前单词的上一匹配单词<br>%:    # 移动光标到括号左半部分<br>{:    # 移动到段落开头<br>}:    # 移动到段落结尾<br>H:    # 移动到屏幕的第一行<br>M:   # 移动到屏幕的中间行<br>L:   # 移动到屏幕的最后一行<br>ctrl+f:    # 向前滚动一页  forward<br>ctrl+b:    # 向后滚动一页  backward<br>ctrl+u:    # 向前滚动半页  up<br>ctrl+d:    # 向后滚动半页  down</p>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>yy    # yank<br>y^<br>y$<br>yG<br>y1G</p>
+<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h2><p>p</p>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>r<br>R<br>cc<br>cw<br>C<br>~</p>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>u<br>U<br>ctrl+r:    # 反撤销</p>
+<h2 id="保存与另存为"><a href="#保存与另存为" class="headerlink" title="保存与另存为"></a>保存与另存为</h2><p>:w<br>:w!<br>:wq<br>:w a.txt<br>:save as 文件名</p>
+<h2 id="显示当前文件信息"><a href="#显示当前文件信息" class="headerlink" title="显示当前文件信息"></a>显示当前文件信息</h2><p>ctrl+g</p>
 <h2 id="变大写"><a href="#变大写" class="headerlink" title="变大写"></a>变大写</h2><p>gU</p>
 <h2 id="变小写"><a href="#变小写" class="headerlink" title="变小写"></a>变小写</h2><p>gu</p>
 <h2 id="字母翻转"><a href="#字母翻转" class="headerlink" title="字母翻转"></a>字母翻转</h2><p>~</p>
 <h2 id="缩进与回退"><a href="#缩进与回退" class="headerlink" title="缩进与回退"></a>缩进与回退</h2><p>>><br>&lt;&lt;</p>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>v</p>
-<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="设置缩进字符数"><a href="#设置缩进字符数" class="headerlink" title="设置缩进字符数"></a>设置缩进字符数</h2><p>set shiftwidth=10</p>
+<h2 id="屏幕暂停与恢复"><a href="#屏幕暂停与恢复" class="headerlink" title="屏幕暂停与恢复"></a>屏幕暂停与恢复</h2><p>ctrl+s<br>ctrl+g<br>补充: 和终端中一样</p>
+<h2 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h2><p>v</p>
+<h2 id="块选择模式"><a href="#块选择模式" class="headerlink" title="块选择模式"></a>块选择模式</h2><p>ctrl+v    # 进入之后，可进行批量插入，删除操作</p>
 <h2 id="调整行内容位置"><a href="#调整行内容位置" class="headerlink" title="调整行内容位置"></a>调整行内容位置</h2><p>居中<br>ce<br>靠右<br>ri<br>靠左<br>le</p>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br>set hls<br>结束搜索<br>noh</p>
-<p>查找游标所在处单词<br>\*<br>\#</p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br>set hls</p>
+<p>结束搜索<br>noh</p>
+<p>取消大小写敏感<br>:set ignorecase</p>
+<p>智能模式<br>:set smartcase  # 包含大写，则搜索区分大小写; 不包含大小写，则不区分大小写，常和上面那条搭配使用</p>
+<p>/内容\\c: 强制大小写不敏感<br>/内容\\C: 强制大小写敏感</p>
+<p>/内容   ?内容<br>:s/内容     # 全局搜索<br>n    N    # 上下移动</p>
+<p>查找游标所在处单词<br>\*<br>\#<br>可简写<br>*<br>#</p>
 <p>部分匹配<br>g\*<br>g\#</p>
-<h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
-<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p>命令模式下<br>n<br>N<br>n!<br>N!<br>注意:n!和N!不会保存文件</p>
+<p>补充：</p>
+<ol>
+<li>搜索一些特殊的字符，例如：*, [, ], \^, \%, \/, \?, ~, \$等，需要在它们的前面加上转义符号\\</li>
+</ol>
+<h2 id="高级搜索"><a href="#高级搜索" class="headerlink" title="高级搜索"></a>高级搜索</h2><p>/然后按ctrl+r然后按ctrl+w   # 复制当前光标下的单词并将其加入命令行中<br>/然后按ctrl+r然后按ctrl+a   # 复制当前光标下那行并将其加入到命令行中</p>
+<p>补充:</p>
+<ol>
+<li>进行过VIM搜索之后，当/、？、:s、:g 命令使用空的搜索模式时会沿用最近一次的搜索模式。所以，在搜索完某个单词后，使用vim替换命令 <code>%s//new/g</code> 会将之前搜索的单词全部替换为new</li>
+<li>在搜索前还可以输入整数n，知道跳到n次结果之后</li>
+</ol>
+<h2 id="正则搜索"><a href="#正则搜索" class="headerlink" title="正则搜索"></a>正则搜索</h2><p>^    # 表示一行的开头<br>$    # 表示一行的结尾<br>.    # 表示任意一个字符<br>*    # 匹配0次或n次<br>补充: 用.*?测试非贪婪失败，也可能是我写的有问题</p>
+<h2 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h2><p>:s    # substitute<br>补充:</p>
+<ol>
+<li>基本语法:<code>[range]s/源字符串/目标字符串/[option]</code>，其中range和option字段都可以缺省不填。</li>
+<li>range表示搜索范围。默认表示当前行，range字段<code>1,10</code>表示从1到10行，%表示整个文件(相当于1,$)，而 .，$代表从当前行到文件末尾</li>
+<li>option表示操作类型，默认只对第一个匹配的字符进行替换. g(global)表示全局替换，c(confirm)表示操作时需要确认，i(ignorecase)表示不区分大小写</li>
+</ol>
+<p>举例:</p>
+<ol>
+<li><code>:1,$s/Vim/vim/gc</code>会出现提示”replace with foo(y/n/a/q/l/^E/^Y)”，询问是否执行。 y:yes  n:no  a:all  q:quit  l:last，替换完成当前匹配后退出。ctrl+E: 向上翻滚一行；ctrl+Y:向下翻滚一行</li>
+<li>注释，在全文的行首加入//字符进行批量注释  <code>:%s/^/\/\</code></li>
+<li>将所有行尾多余的空格删除   <code>%s= *$==</code>  (等号表示删除)</li>
+</ol>
+<h2 id="自动补齐"><a href="#自动补齐" class="headerlink" title="自动补齐"></a>自动补齐</h2><p>ctrl+n<br>ctrl+p<br>ctrl+x    # 进入行补全模式<br>ctrl+l    # 列出所有</p>
+<h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>:ls     # 列出所有缓冲区<br>:buffers    # 列出所有缓冲区<br>补充: 可使用buffer+数字形式跳到指定缓冲区</p>
+<h2 id="遍历列表"><a href="#遍历列表" class="headerlink" title="遍历列表"></a>遍历列表</h2><p>bnext<br>nprev</p>
+<h2 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h2><p>ctrl+w然后按w(也可以ctrl+w按两下)</p>
+<h2 id="跳到缓冲区列表的开头和结尾"><a href="#跳到缓冲区列表的开头和结尾" class="headerlink" title="跳到缓冲区列表的开头和结尾"></a>跳到缓冲区列表的开头和结尾</h2><p>:bfirst<br>:blast</p>
+<h2 id="删除缓冲区列表"><a href="#删除缓冲区列表" class="headerlink" title="删除缓冲区列表"></a>删除缓冲区列表</h2><p>:bdelete<br>:n,m bdelete</p>
+<h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
+<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p>ctrl+^<br>:n<br>:N<br>:n!<br>:N!<br>注意:n!和N!不会保存文件</p>
 <h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p>e#</p>
 <h2 id="切换到下一个文件"><a href="#切换到下一个文件" class="headerlink" title="切换到下一个文件"></a>切换到下一个文件</h2><p>:n<br>:bn</p>
 <h2 id="切换到上一个文件"><a href="#切换到上一个文件" class="headerlink" title="切换到上一个文件"></a>切换到上一个文件</h2><p>:N<br>:bp</p>
 <h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p>e 文件名</p>
 <h2 id="保存并退出"><a href="#保存并退出" class="headerlink" title="保存并退出"></a>保存并退出</h2><p>:x<br>:wq<br>ZZ</p>
-<h2 id="另存为"><a href="#另存为" class="headerlink" title="另存为"></a>另存为</h2><p>:save as 文件名</p>
 <h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p>vim -x file1</p>
 <h2 id="列出以前编辑过的文档"><a href="#列出以前编辑过的文档" class="headerlink" title="列出以前编辑过的文档"></a>列出以前编辑过的文档</h2><p>ls</p>
 <h2 id="显示及更改文件名"><a href="#显示及更改文件名" class="headerlink" title="显示及更改文件名"></a>显示及更改文件名</h2><p>f<br>f 文件名</p>
 <h2 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h2><p>vim -r 文件名<br>ewcover 1.txt</p>
-<h1 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h1><h2 id="插入100个desu"><a href="#插入100个desu" class="headerlink" title="插入100个desu"></a>插入100个desu</h2><p>100idesu[ESC]</p>
-<h2 id="重复上一个命令"><a href="#重复上一个命令" class="headerlink" title="重复上一个命令"></a>重复上一个命令</h2><p>.</p>
+<h2 id="插入100个desu"><a href="#插入100个desu" class="headerlink" title="插入100个desu"></a>插入100个desu</h2><p>100idesu[ESC]</p>
+<h2 id="重复上一个命令"><a href="#重复上一个命令" class="headerlink" title="重复上一个命令"></a>重复上一个命令</h2><p>.   # 普通模式下一条命令+插入模式输入+普通模式。 重复这个过程</p>
 <h2 id="重复上一个命令3次"><a href="#重复上一个命令3次" class="headerlink" title="重复上一个命令3次"></a>重复上一个命令3次</h2><ol>
 <li>重复上一个命令3次</li>
 </ol>
 <h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><h2 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h2><p>shift + v<br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
 <h2 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h2><p>ctrl + v<br>用hl控制前后，按x可删除</p>
-<h2 id="选择-1"><a href="#选择-1" class="headerlink" title="选择"></a>选择</h2><p>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br>vi + “   选择foo<br>va + “   选择”foo”<br>vi + )   选择”foo”<br>va + )   选择(“foo”)<br>v2i + )  选择map (+) (“foo”)<br>v2a + )  选择(map (+) (“foo”))</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br>vi + “   选择foo<br>va + “   选择”foo”<br>vi + )   选择”foo”<br>va + )   选择(“foo”)<br>v2i + )  选择map (+) (“foo”)<br>v2a + )  选择(map (+) (“foo”))</p>
 <h2 id="拆分窗口"><a href="#拆分窗口" class="headerlink" title="拆分窗口"></a>拆分窗口</h2><p>在命令模式下<br><code>sp 文件名</code> 可打开水平分屏视窗来编辑文件<br><code>vsp 文件名</code> 可垂直分屏来操作文件</p>
 <p>ctrl + w 待验证</p>
 <h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p>!ls  显示当前目录的内容<br>!rm 文件名 删除文件<br>!w 文件名  另存为</p>
 <h1 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h1><p>F1<br>:h 文件名<br>:ver</p>
+<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="设置缩进字符数"><a href="#设置缩进字符数" class="headerlink" title="设置缩进字符数"></a>设置缩进字符数</h2><p>set shiftwidth=10</p>
 <p>.</p>
 
       
@@ -350,7 +386,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#插入"><span class="toc-number">1.1.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除字符"><span class="toc-number">1.2.</span> <span class="toc-text">删除字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除"><span class="toc-number">1.3.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳转"><span class="toc-number">1.4.</span> <span class="toc-text">跳转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制"><span class="toc-number">1.5.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#粘贴"><span class="toc-number">1.6.</span> <span class="toc-text">粘贴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换"><span class="toc-number">1.7.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换-1"><span class="toc-number">1.8.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撤销"><span class="toc-number">1.9.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变大写"><span class="toc-number">1.10.</span> <span class="toc-text">变大写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变小写"><span class="toc-number">1.11.</span> <span class="toc-text">变小写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字母翻转"><span class="toc-number">1.12.</span> <span class="toc-text">字母翻转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩进与回退"><span class="toc-number">1.13.</span> <span class="toc-text">缩进与回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择"><span class="toc-number">1.14.</span> <span class="toc-text">选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置"><span class="toc-number">2.</span> <span class="toc-text">设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置缩进字符数"><span class="toc-number">2.1.</span> <span class="toc-text">设置缩进字符数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调整行内容位置"><span class="toc-number">2.2.</span> <span class="toc-text">调整行内容位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索"><span class="toc-number">2.3.</span> <span class="toc-text">搜索</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件操作"><span class="toc-number">3.</span> <span class="toc-text">文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#打开多个文件"><span class="toc-number">3.1.</span> <span class="toc-text">打开多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换文件"><span class="toc-number">3.2.</span> <span class="toc-text">切换文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到前一个文件"><span class="toc-number">3.3.</span> <span class="toc-text">回到前一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到下一个文件"><span class="toc-number">3.4.</span> <span class="toc-text">切换到下一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到上一个文件"><span class="toc-number">3.5.</span> <span class="toc-text">切换到上一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开新文件"><span class="toc-number">3.6.</span> <span class="toc-text">打开新文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存并退出"><span class="toc-number">3.7.</span> <span class="toc-text">保存并退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另存为"><span class="toc-number">3.8.</span> <span class="toc-text">另存为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建加密文档"><span class="toc-number">3.9.</span> <span class="toc-text">创建加密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出以前编辑过的文档"><span class="toc-number">3.10.</span> <span class="toc-text">列出以前编辑过的文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示及更改文件名"><span class="toc-number">3.11.</span> <span class="toc-text">显示及更改文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复文件"><span class="toc-number">3.12.</span> <span class="toc-text">恢复文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重复"><span class="toc-number">4.</span> <span class="toc-text">重复</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#插入100个desu"><span class="toc-number">4.1.</span> <span class="toc-text">插入100个desu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令"><span class="toc-number">4.2.</span> <span class="toc-text">重复上一个命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令3次"><span class="toc-number">4.3.</span> <span class="toc-text">重复上一个命令3次</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#视窗操作"><span class="toc-number">5.</span> <span class="toc-text">视窗操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#行选择"><span class="toc-number">5.1.</span> <span class="toc-text">行选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列选择"><span class="toc-number">5.2.</span> <span class="toc-text">列选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择-1"><span class="toc-number">5.3.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拆分窗口"><span class="toc-number">5.4.</span> <span class="toc-text">拆分窗口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#执行外部命令"><span class="toc-number">6.</span> <span class="toc-text">执行外部命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#帮助"><span class="toc-number">7.</span> <span class="toc-text">帮助</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命令"><span class="toc-number">1.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#插入"><span class="toc-number">1.1.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除字符"><span class="toc-number">1.2.</span> <span class="toc-text">删除字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除"><span class="toc-number">1.3.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动"><span class="toc-number">1.4.</span> <span class="toc-text">移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制"><span class="toc-number">1.5.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#粘贴"><span class="toc-number">1.6.</span> <span class="toc-text">粘贴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换"><span class="toc-number">1.7.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#撤销"><span class="toc-number">1.8.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存与另存为"><span class="toc-number">1.9.</span> <span class="toc-text">保存与另存为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示当前文件信息"><span class="toc-number">1.10.</span> <span class="toc-text">显示当前文件信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变大写"><span class="toc-number">1.11.</span> <span class="toc-text">变大写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变小写"><span class="toc-number">1.12.</span> <span class="toc-text">变小写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字母翻转"><span class="toc-number">1.13.</span> <span class="toc-text">字母翻转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩进与回退"><span class="toc-number">1.14.</span> <span class="toc-text">缩进与回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#屏幕暂停与恢复"><span class="toc-number">1.15.</span> <span class="toc-text">屏幕暂停与恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视模式"><span class="toc-number">1.16.</span> <span class="toc-text">可视模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#块选择模式"><span class="toc-number">1.17.</span> <span class="toc-text">块选择模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调整行内容位置"><span class="toc-number">1.18.</span> <span class="toc-text">调整行内容位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索"><span class="toc-number">1.19.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级搜索"><span class="toc-number">1.20.</span> <span class="toc-text">高级搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则搜索"><span class="toc-number">1.21.</span> <span class="toc-text">正则搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换-1"><span class="toc-number">1.22.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动补齐"><span class="toc-number">1.23.</span> <span class="toc-text">自动补齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区"><span class="toc-number">1.24.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历列表"><span class="toc-number">1.25.</span> <span class="toc-text">遍历列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换窗口"><span class="toc-number">1.26.</span> <span class="toc-text">切换窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳到缓冲区列表的开头和结尾"><span class="toc-number">1.27.</span> <span class="toc-text">跳到缓冲区列表的开头和结尾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除缓冲区列表"><span class="toc-number">1.28.</span> <span class="toc-text">删除缓冲区列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开多个文件"><span class="toc-number">1.29.</span> <span class="toc-text">打开多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换文件"><span class="toc-number">1.30.</span> <span class="toc-text">切换文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到前一个文件"><span class="toc-number">1.31.</span> <span class="toc-text">回到前一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到下一个文件"><span class="toc-number">1.32.</span> <span class="toc-text">切换到下一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到上一个文件"><span class="toc-number">1.33.</span> <span class="toc-text">切换到上一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开新文件"><span class="toc-number">1.34.</span> <span class="toc-text">打开新文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存并退出"><span class="toc-number">1.35.</span> <span class="toc-text">保存并退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建加密文档"><span class="toc-number">1.36.</span> <span class="toc-text">创建加密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出以前编辑过的文档"><span class="toc-number">1.37.</span> <span class="toc-text">列出以前编辑过的文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示及更改文件名"><span class="toc-number">1.38.</span> <span class="toc-text">显示及更改文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复文件"><span class="toc-number">1.39.</span> <span class="toc-text">恢复文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入100个desu"><span class="toc-number">1.40.</span> <span class="toc-text">插入100个desu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令"><span class="toc-number">1.41.</span> <span class="toc-text">重复上一个命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令3次"><span class="toc-number">1.42.</span> <span class="toc-text">重复上一个命令3次</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#视窗操作"><span class="toc-number">2.</span> <span class="toc-text">视窗操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#行选择"><span class="toc-number">2.1.</span> <span class="toc-text">行选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列选择"><span class="toc-number">2.2.</span> <span class="toc-text">列选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择"><span class="toc-number">2.3.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拆分窗口"><span class="toc-number">2.4.</span> <span class="toc-text">拆分窗口</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#执行外部命令"><span class="toc-number">3.</span> <span class="toc-text">执行外部命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#帮助"><span class="toc-number">4.</span> <span class="toc-text">帮助</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置"><span class="toc-number">5.</span> <span class="toc-text">设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设置缩进字符数"><span class="toc-number">5.1.</span> <span class="toc-text">设置缩进字符数</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -488,14 +524,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -504,7 +532,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,7 +540,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,7 +560,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,10 +569,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +588,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,19 +600,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,7 +612,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,15 +644,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,7 +848,7 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

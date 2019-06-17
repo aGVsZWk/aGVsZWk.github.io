@@ -6,31 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
-  <title>数据提取的常用方法 | Luke的个人博客</title>
+  <title>manjaro日记 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文介绍数据提取常用的方法，主要包括正则表达式、jsonpath、xpath的简单使用。">
-<meta name="keywords" content="爬虫,json,jsonpath,xpath,正则">
+  <meta name="description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
+<meta name="keywords" content="true">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据提取的常用方法">
-<meta property="og:url" content="https://agvszwk.github.io/2018/11/30/数据提取/index.html">
+<meta property="og:title" content="manjaro日记">
+<meta property="og:url" content="https://agvszwk.github.io/2019/06/17/manjaro日记/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="本文介绍数据提取常用的方法，主要包括正则表达式、jsonpath、xpath的简单使用。">
+<meta property="og:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130104642225.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130115704865.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130124055477.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130192916594.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130225317324.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130230408920.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-2018120108454163.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181201084944831.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181201085132890.png">
-<meta property="og:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181201085326757.png">
-<meta property="og:updated_time" content="2019-04-14T16:11:43.982Z">
+<meta property="og:updated_time" content="2019-06-17T15:28:08.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据提取的常用方法">
-<meta name="twitter:description" content="本文介绍数据提取常用的方法，主要包括正则表达式、jsonpath、xpath的简单使用。">
-<meta name="twitter:image" content="https://agvszwk.github.io/2018/11/30/数据提取/markdown-img-paste-20181130104642225.png">
+<meta name="twitter:title" content="manjaro日记">
+<meta name="twitter:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -172,260 +161,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据提取" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-manjaro日记" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据提取的常用方法
+      manjaro日记
     </h1>
   
 
         
-        <a href="/2018/11/30/数据提取/" class="archive-article-date">
-  	<time datetime="2018-11-30T02:33:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+        <a href="/2019/06/17/manjaro日记/" class="archive-article-date">
+  	<time datetime="2019-06-17T14:44:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文介绍数据提取常用的方法，主要包括正则表达式、jsonpath、xpath的简单使用。<br><a id="more"></a></p>
-<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>数据提取: 从响应中抽取目标数据的过程<br>数据清洗: 入库前清洗，入库后清洗<br>有本书叫干净的数据，可以扩展阅读</p>
-<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>json与XML: 都是数据格式</p>
-<p>json: 轻量级的数据交换形式，方便阅读，方便机器解析和生成，<strong>适用于进行数据交换的尝试</strong>。</p>
-<p>json的本质: 字符串</p>
-<p>json的数据结构:</p>
-<ul>
-<li>键值对</li>
-<li>对象</li>
-<li>数组</li>
-</ul>
-<p>json需要包裹在{}内</p>
-<p>js中用parse和stringfy可以进行json与js值或对象之间的转化</p>
-<blockquote>
-<p>js参考: <a href="https://juejin.im/post/5a4f3bd76fb9a01ca7134189" target="_blank" rel="noopener">https://juejin.im/post/5a4f3bd76fb9a01ca7134189</a></p>
-</blockquote>
-<p>python中用json模块可以进行json与字典之间的转化</p>
-<blockquote>
-<p>python参考: <a href="https://www.jianshu.com/p/f29d3467a873" target="_blank" rel="noopener">https://www.jianshu.com/p/f29d3467a873</a></p>
-</blockquote>
-<p>json的键名要用双引号引起来，不管是在前端还是python中</p>
-<blockquote>
-<p>json与jsonp: <a href="http://www.cnblogs.com/iovec/p/5312464.html" target="_blank" rel="noopener">http://www.cnblogs.com/iovec/p/5312464.html</a></p>
-</blockquote>
-<h2 id="json与dict的转化"><a href="#json与dict的转化" class="headerlink" title="json与dict的转化"></a>json与dict的转化</h2><p><img src="/2018/11/30/数据提取/markdown-img-paste-20181130104642225.png" alt=""><br>loads、dumps和load和dump的区别:<br>带s的负责在<strong>内存</strong>中进行相互转化<br>不带s的适用于<strong>内存和磁盘</strong>之间的交互</p>
-<p>说通俗点，就是需要往本地的文件里面写入的就用不带s的，不需要的就用带s的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="comment"># 非json数据</span></span><br><span class="line">data = <span class="string">"&#123;'class':'python16期'&#125;"</span></span><br><span class="line"><span class="comment"># json数据</span></span><br><span class="line">json_data = <span class="string">'&#123;"class":"python16期"&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># json转字典,默认编码格式是ASCII</span></span><br><span class="line">dict_data = json.loads(json_data,)</span><br><span class="line">print(dict_data)</span><br><span class="line">print(type(dict_data))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典转json</span></span><br><span class="line"><span class="comment"># 如果想不使用ACII码，保持原有的编码设置，设置ensure_ascii=False</span></span><br><span class="line">my_json_data = json.dumps(dict_data,ensure_ascii=<span class="keyword">False</span>)</span><br><span class="line">print(my_json_data)</span><br><span class="line">print(type(my_json_data))</span><br><span class="line"></span><br><span class="line"><span class="comment"># dump与load</span></span><br><span class="line"><span class="comment"># 将字典转成json直接写入文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"temp.json"</span>,<span class="string">"w"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(dict_data,f,ensure_ascii=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典读出来作为json</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"temp.json"</span>,<span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    my_json_data = json.load(f)</span><br><span class="line">    print(my_json_data)</span><br><span class="line">    print(type(my_json_data))</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/11/30/数据提取/markdown-img-paste-20181130115704865.png" alt=""></p>
-<h2 id="json中的数据提取"><a href="#json中的数据提取" class="headerlink" title="json中的数据提取"></a>json中的数据提取</h2><blockquote>
-<p>再发一遍上面的js参考: <a href="https://juejin.im/post/5a4f3bd76fb9a01ca7134189" target="_blank" rel="noopener">https://juejin.im/post/5a4f3bd76fb9a01ca7134189</a></p>
-</blockquote>
-<p>使用jsonpath模块可以提取结构层次复杂的json数据，层数越多，越能体现优势</p>
-<p><code>$</code>:  根节点<br><code>.</code>:  本级<br><code>..</code>: 下一级</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">text = <span class="string">"""</span></span><br><span class="line"><span class="string">&#123; "store": &#123;</span></span><br><span class="line"><span class="string">    "book": [</span></span><br><span class="line"><span class="string">      &#123; "category": "reference",</span></span><br><span class="line"><span class="string">        "author": "Nigel Rees",</span></span><br><span class="line"><span class="string">        "title": "Sayings of the Century",</span></span><br><span class="line"><span class="string">        "price": 8.95</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      &#123; "category": "fiction",</span></span><br><span class="line"><span class="string">        "author": "Evelyn Waugh",</span></span><br><span class="line"><span class="string">        "title": "Sword of Honour",</span></span><br><span class="line"><span class="string">        "price": 12.99</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      &#123; "category": "fiction",</span></span><br><span class="line"><span class="string">        "author": "Herman Melville",</span></span><br><span class="line"><span class="string">        "title": "Moby Dick",</span></span><br><span class="line"><span class="string">        "isbn": "0-553-21311-3",</span></span><br><span class="line"><span class="string">        "price": 8.99</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      &#123; "category": "fiction",</span></span><br><span class="line"><span class="string">        "author": "J. R. R. Tolkien",</span></span><br><span class="line"><span class="string">        "title": "The Lord of the Rings",</span></span><br><span class="line"><span class="string">        "isbn": "0-395-19395-8",</span></span><br><span class="line"><span class="string">        "price": 22.99</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    ],</span></span><br><span class="line"><span class="string">    "bicycle": &#123;</span></span><br><span class="line"><span class="string">      "color": "red",</span></span><br><span class="line"><span class="string">      "price": 19.95</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">dict_data = json.loads(text)</span><br><span class="line"></span><br><span class="line">bicy_price = dict_data[<span class="string">"store"</span>][<span class="string">"bicycle"</span>][<span class="string">"price"</span>]</span><br><span class="line">print(bicy_price)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取根目录下一级的book</span></span><br><span class="line"><span class="comment"># print(jsonpath.jsonpath(dict_data, '$..book'))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取根目录下一级的bicycle</span></span><br><span class="line"><span class="comment"># print(jsonpath.jsonpath(dict_data, '$..bicycle'))</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取根目录同级的store</span></span><br><span class="line"><span class="comment"># print(jsonpath.jsonpath(dict_data, '$.store'))</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提取根目录下两级的title</span></span><br><span class="line"><span class="comment"># print(jsonpath.jsonpath(dict_data, '$...title'))</span></span><br></pre></td></tr></table></figure>
-<p>其它，不怎么重要<br><img src="/2018/11/30/数据提取/markdown-img-paste-20181130124055477.png" alt=""></p>
-<h1 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h1><p><img src="/2018/11/30/数据提取/markdown-img-paste-20181130192916594.png" alt=""></p>
-<p>re.S: 允许.匹配换行符<br>re.DOTALL: 和re.S一样</p>
-<p>贪婪模式和非贪婪模式:</p>
-<ul>
-<li>贪婪模式: * + ? {m,n}</li>
-<li>非贪婪模式: *? +? ??{m,n}?</li>
-</ul>
-<p>re模块常见的方法:</p>
-<ul>
-<li>pattern.match 从头找一个</li>
-<li>pattern.search  找一个</li>
-<li>pattern.findall   找所有<ul>
-<li>返回一个列表，没有就是空列表<ul>
-<li><code>re.findall(&quot;\d&quot;,&quot;chuan1zhi2&quot;)</code> &gt;&gt;  [“1”,”2”]]</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>pattern.sub  替换<ul>
-<li><code>re.sub(&quot;\d&quot;,&quot;_&quot;,&quot;chuan1zhi2&quot;)</code> &gt;&gt; [“chuan_zhi_”]</li>
-</ul>
-</li>
-<li>re.compile  编译<ul>
-<li>返回一个模型，基于和re一样的方法，但传递的参数不同</li>
-<li>匹配模式需要传递到compile中<br><code>p = re.compile(&quot;\d&quot;,re.S)</code><br><code>p.findall(&quot;abc1def2&quot;)</code> &gt;&gt; [“1”,”2”]</li>
-</ul>
-</li>
-</ul>
-<p><code>re.match(&quot;www&quot;,&quot;www.baidu.com&quot;)[0]</code> &gt;&gt; www<br><code>re.match(&quot;com&quot;,&quot;www.baidu.com&quot;)</code> &gt;&gt; None</p>
-<p><code>re.search(&quot;com&quot;,&quot;www.baidu.com&quot;)[0]</code> &gt;&gt; com</p>
-<p><code>re.findall(&quot;f.o&quot;,&quot;foo is not fao&quot;)</code> &gt;&gt; [“foo”,”fao”]</p>
-<blockquote>
-<p>Python 正则表达式模块详解 <a href="https://juejin.im/post/5bdc32f5e51d4504ec207c6c" target="_blank" rel="noopener">https://juejin.im/post/5bdc32f5e51d4504ec207c6c</a></p>
-</blockquote>
-<p>匹配中文:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">title = <span class="string">"你好, hello,世界"</span></span><br><span class="line">patter = re.compile(<span class="string">r'[u4e00-\u9fa5]+'</span>)</span><br><span class="line">result = pattern(title)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure></p>
-<p>实战: 通过正则匹配果壳问答上面的精彩回答的地址和标题<br>思路:<br>1.把要匹配内容copy过来<br>2.挖坑，进行替换<br>3.进行匹配<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.把要匹配内容copy过来</span></span><br><span class="line"><span class="comment"># &lt;h2&gt;&lt;a target="_blank" href="https://www.guokr.com/question/678361/"&gt;什么是“清真食品”？&lt;/a&gt;&lt;/h2&gt;</span></span><br><span class="line"><span class="comment"># 2.挖坑，进行替换  先写.*，在判断用贪婪还是非贪婪</span></span><br><span class="line"><span class="comment"># &lt;h2&gt;&lt;a target="_blank" href="(.*?)"&gt;(.*?)&lt;/a&gt;&lt;/h2&gt;</span></span><br><span class="line"><span class="comment"># 3.进行匹配</span></span><br><span class="line">pattern = re.findall("&lt;h2&gt;&lt;a target="_blank" href="(.*?)"&gt;(.*?)&lt;/a&gt;&lt;/h2&gt;",response.content.decode())</span><br></pre></td></tr></table></figure></p>
-<h1 id="xml"><a href="#xml" class="headerlink" title="xml"></a>xml</h1><p>xml: 可扩展标记语言，主要用于传输数据<br>html:超文本标记语言，主要用于展示数据</p>
-<blockquote>
-<p>XML/HTML/JSON——数据抓取过程中不得不知的几个概念 <a href="https://zhuanlan.zhihu.com/p/31030458?group_id=913788964389924864" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31030458?group_id=913788964389924864</a></p>
-</blockquote>
-<h2 id="xml的数据提取"><a href="#xml的数据提取" class="headerlink" title="xml的数据提取"></a>xml的数据提取</h2><p>XPATH:可以使用XPATH语言来在XML文档中查找信息。XPath 用于在 XML 文档中通过元素和属性进行导航。</p>
-<p>例:<br>xml的树结构:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bookstore</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"COOKING"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Everyday Italian<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">author</span>&gt;</span>Giada De Laurentiis<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">year</span>&gt;</span>2005<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">price</span>&gt;</span>30.00<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"CHILDREN"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Harry Potter<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">author</span>&gt;</span>J K. Rowling<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">year</span>&gt;</span>2005<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">price</span>&gt;</span>29.99<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">book</span> <span class="attr">category</span>=<span class="string">"WEB"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>Learning XML<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">author</span>&gt;</span>Erik T. Ray<span class="tag">&lt;/<span class="name">author</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">year</span>&gt;</span>2003<span class="tag">&lt;/<span class="name">year</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">price</span>&gt;</span>39.95<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bookstore</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/11/30/数据提取/markdown-img-paste-20181130225317324.png" alt=""></p>
-<p>上面这种关系在xpath被进一步细化</p>
-<p>节点:就是元素，标签，一个东西。<br>根节点:最顶层的节点。</p>
-<p>XPATH中的节点关系:<br><img src="/2018/11/30/数据提取/markdown-img-paste-20181130230408920.png" alt=""></p>
-<p>chorme浏览器，安装XPath Helper插件，用来学习xpath语法，他是从elements中获取数据。elements中的数据和url地址对应的响应不相同，所以在代码中，不建议使用这些工具进行数据的提取。</p>
-<p>xpath选取节点: 使用chrome插件选择标签的时候，选中时，选中的标签会添加属性<code>class=&quot;xh-highlight&quot;</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bookstore</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"eng"</span>&gt;</span>Harry Potter<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">price</span>&gt;</span>29.99<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">book</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span> <span class="attr">lang</span>=<span class="string">"eng"</span>&gt;</span>Learning XML<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">price</span>&gt;</span>39.95<span class="tag">&lt;/<span class="name">price</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">book</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">bookstore</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>xpath语法:</p>
-<table>
-<thead>
-<tr>
-<th>表达式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nodename</td>
-<td>选中该元素。</td>
-</tr>
-<tr>
-<td>/</td>
-<td>从根节点选取、或者是元素和元素间的过渡。</td>
-</tr>
-<tr>
-<td>//</td>
-<td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。</td>
-</tr>
-<tr>
-<td>.</td>
-<td>选取当前节点。</td>
-</tr>
-<tr>
-<td>..</td>
-<td>选取当前节点的父节点。</td>
-</tr>
-<tr>
-<td>@</td>
-<td>选取属性。</td>
-</tr>
-<tr>
-<td>text()</td>
-<td>选取文本。</td>
-</tr>
-</tbody>
-</table>
-
-
-<h3 id="基础语法练习"><a href="#基础语法练习" class="headerlink" title="基础语法练习:"></a>基础语法练习:</h3><ul>
-<li>获取所有的h1下的文本:<ul>
-<li><code>//h1/text()</code></li>
-</ul>
-</li>
-<li>获取所有的a标签的href<ul>
-<li><code>//a/@href</code></li>
-</ul>
-</li>
-<li>获取html下的head下的title文本<ul>
-<li><code>/html/head/title/text()</code></li>
-</ul>
-</li>
-<li>获取html下的head下的link标签的href<ul>
-<li><code>/html/head/link/@href</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="查找特定的节点"><a href="#查找特定的节点" class="headerlink" title="查找特定的节点:"></a>查找特定的节点:</h3><ul>
-<li>选取lang属性值为eng的所有title元素<ul>
-<li><code>//title/@lang=&quot;eng&quot;</code></li>
-</ul>
-</li>
-<li>选取属于bookstore子元素的第一个book元素<ul>
-<li><code>/bookstore/book[1]</code></li>
-</ul>
-</li>
-<li>选取属于bookstore子元素的最后一个book元素<ul>
-<li><code>/bookstore/book[last()]</code></li>
-</ul>
-</li>
-<li>选取属于bookstore子元素的倒数第二个book元素<ul>
-<li><code>/bookstore/book[last()-1]</code></li>
-</ul>
-</li>
-<li>选取bookstore下面的book元素，从第二个开始选择<ul>
-<li><code>/bookstore/book[position()&gt;1]</code></li>
-</ul>
-</li>
-<li>选取所有book下的tile元素，仅仅选择文本为Harry Potter的title元素<ul>
-<li><code>//book/title[text()=&quot;Harry Potter&quot;]</code></li>
-</ul>
-</li>
-<li>选取bookstore元素中的book元素耳朵所有title元素，且其中的price元素值需大于35.00<ul>
-<li><code>/bookstore/book[price&gt;35.00]/title</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="选取未知节点"><a href="#选取未知节点" class="headerlink" title="选取未知节点"></a>选取未知节点</h3><p>匹配任何元素节点:<code>*</code><br>匹配任何属性节点:<code>@*</code><br>匹配任何类型的节点:<code>@node()</code></p>
-<p>例:</p>
-<ul>
-<li>选取bookstore元素所有的子元素:<ul>
-<li><code>/bookstore/*</code></li>
-</ul>
-</li>
-<li>选取文档中的所有元素:<ul>
-<li><code>//*</code></li>
-</ul>
-</li>
-<li>选取所有带有属性的tilte元素:<ul>
-<li><code>//title[@*]</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="选取若干路径"><a href="#选取若干路径" class="headerlink" title="选取若干路径"></a>选取若干路径</h3><p>使用<code>|</code></p>
-<ul>
-<li>选取book元素中所有的title和price元素(不在一个网页中)<ul>
-<li><code>//book/title | //book/price</code></li>
-</ul>
-</li>
-<li>选取文档中所有的title和book元素<ul>
-<li><code>//title | //price</code></li>
-</ul>
-</li>
-<li>选取属于bookstore元素的book元素的所有title元素，以及文档中所有的price元素<ul>
-<li><code>bookstore/book/title | //price</code></li>
-</ul>
-</li>
-</ul>
-<p>豆瓣实战:<br><img src="/2018/11/30/数据提取/markdown-img-paste-2018120108454163.png" alt=""></p>
-<p><code>//div[@class=&quot;hd&quot;]/a/span[1]</code></p>
-<p><img src="/2018/11/30/数据提取/markdown-img-paste-20181201084944831.png" alt=""></p>
-<p><code>//span[@class=&quot;next&quot;]/a/@href</code></p>
-<p><img src="/2018/11/30/数据提取/markdown-img-paste-20181201085132890.png" alt=""><br><code>//div[@class=&quot;hd&quot;]/a/@href</code></p>
-<p><img src="/2018/11/30/数据提取/markdown-img-paste-20181201085326757.png" alt=""><br><code>//div[@class=&quot;hd&quot;]/a/span[1]/text() | //div[@class=&quot;hd&quot;]/a/@href</code></p>
-<h3 id="选取不包含某属性的标签"><a href="#选取不包含某属性的标签" class="headerlink" title="选取不包含某属性的标签"></a>选取不包含某属性的标签</h3><p><code>//div[not@class=&quot;hd&quot;]</code></p>
-<h3 id="选取标签及标签内部嵌套的内容"><a href="#选取标签及标签内部嵌套的内容" class="headerlink" title="选取标签及标签内部嵌套的内容"></a>选取标签及标签内部嵌套的内容</h3><p><code>//div[string(.)]</code></p>
-<h3 id="xpath常用函数-转载"><a href="#xpath常用函数-转载" class="headerlink" title="xpath常用函数(转载)"></a>xpath常用函数(转载)</h3><p>1.contains ()： //div[contains(@id,’in’)] ,表示选择id中包含有’in’的div节点<br>2.text()：由于一个节点的文本值不属于属性，比如“<a class="”baidu“" href="”http://www.baidu.com“">baidu</a>”,所以，用text()函数来匹配节点：//a[text()=’baidu’]<br>3.last()：前面已介绍<br>4.starts-with()： //div[starts-with(@id,’in’)] ，表示选择以’in’开头的id属性的div节点<br>5.not()函数，表示否定，//input[@name=‘identity’ and not(contains(@class,‘a’))] ，表示匹配出name为identity并且class的值中不包含a的input节点。</p>
-<p>not()函数通常与返回值为true or false的函数组合起来用，比如contains(),starts-with()等，但有一种特别情况请注意一下：我们要匹配出input节点含有id属性的，写法如下：//input[@id]，如果我们要匹配出input节点不含用id属性的，则为：//input[not(@id)]</p>
-<h2 id="lxml模块"><a href="#lxml模块" class="headerlink" title="lxml模块"></a>lxml模块</h2><p>在python爬虫代码中使用xpath，就需要lxml模块</p>
-<h3 id="入门使用"><a href="#入门使用" class="headerlink" title="入门使用"></a>入门使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">html = etree.HTML(<span class="string">"XML内容"</span>)  <span class="comment"># 字符串型的xml</span></span><br><span class="line">ret_list = html.xpath(<span class="string">"xpath字符串"</span>) <span class="comment"># 使用xpath语句进行提取，返回个列表</span></span><br></pre></td></tr></table></figure>
-<p>步骤:</p>
-<ol>
-<li>建立etree对象</li>
-<li>进行提取，得到个列表</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">text = <span class="string">''' &lt;div&gt; &lt;ul&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a href="link1.html"&gt;first item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a href="link2.html"&gt;second item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-inactive"&gt;&lt;a href="link3.html"&gt;third item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a href="link4.html"&gt;fourth item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-0"&gt;&lt;a href="link5.html"&gt;fifth item&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/ul&gt; &lt;/div&gt; '''</span></span><br><span class="line"></span><br><span class="line">html = etree.HTML(text)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取href的列表和title的列表</span></span><br><span class="line">href_list = html.xpath(<span class="string">"//li[@class='item-1']/a/@href"</span>)</span><br><span class="line">title_list = html.xpath(<span class="string">"//li[@class='item-1']/a/text()"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#组装成字典</span></span><br><span class="line"><span class="keyword">for</span> href <span class="keyword">in</span> href_list:</span><br><span class="line">    item = &#123;&#125;</span><br><span class="line">    item[<span class="string">"href"</span>] = href</span><br><span class="line">    item[<span class="string">"title"</span>] = title_list[href_list.index(href)]</span><br><span class="line">    print(item)</span><br></pre></td></tr></table></figure>
-<h2 id="进阶使用"><a href="#进阶使用" class="headerlink" title="进阶使用"></a>进阶使用</h2><p>假设在某种情况下，某个连接的href没有，会导致我们所提取的内容对不上。<br>我们可以先根据标签进行分组，分组之后再进行数据的提取。</p>
-<p>使用三目运算符来解决。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line">text = <span class="string">''' &lt;div&gt; &lt;ul&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a&gt;first item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a href="link2.html"&gt;second item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-inactive"&gt;&lt;a href="link3.html"&gt;third item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-1"&gt;&lt;a href="link4.html"&gt;fourth item&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li class="item-0"&gt;&lt;a href="link5.html"&gt;fifth item&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;/ul&gt; &lt;/div&gt; '''</span></span><br><span class="line"><span class="comment">#根据li标签进行分组</span></span><br><span class="line">html = etree.HTML(text)</span><br><span class="line">li_list = html.xpath(<span class="string">"//li[@class='item-1']"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在每一组中继续进行数据的提取</span></span><br><span class="line"><span class="keyword">for</span> li <span class="keyword">in</span> li_list:</span><br><span class="line">    item = &#123;&#125;</span><br><span class="line">    item[<span class="string">"href"</span>] = li.xpath(<span class="string">"./a/@href"</span>)[<span class="number">0</span>] <span class="keyword">if</span> len(li.xpath(<span class="string">"./a/@href"</span>))&gt;<span class="number">0</span> <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">    item[<span class="string">"title"</span>] = li.xpath(<span class="string">"./a/text()"</span>)[<span class="number">0</span>] <span class="keyword">if</span> len(li.xpath(<span class="string">"./a/text()"</span>))&gt;<span class="number">0</span> <span class="keyword">else</span> <span class="keyword">None</span></span><br><span class="line">    print(item)</span><br></pre></td></tr></table></figure>
-<p>以上提取数据的方式：先分组再提取，都会是我们进行数据的提取的主要方法.</p>
-<p>注意分组后进行提取时候的<code>./</code>，点千万要有，不然提取不到。可以使用<code>.//</code></p>
-<p><strong>在浏览器中使用插件进行提取，提取的是elements里面的内容。</strong></p>
-<p><strong>在python中进行提取，提取的是network里包的response的内容。</strong></p>
-<p>注意:在response.content.decode()里提取，提取的是network的response的内容。很有可能和elements里的东西不一样，比如network里网页内容都变成了注释，而elements里能正常显示。</p>
-<p><strong>解决方法:换响应头。换成老浏览器的响应头。然后在对network里dom的response里进行提取</strong></p>
-<p><strong>注意:一定不能按浏览器插件的结果来。那个只是练习用的</strong></p>
-<h1 id="beatuifulsoup"><a href="#beatuifulsoup" class="headerlink" title="beatuifulsoup"></a>beatuifulsoup</h1><p>beautifulsoap也能提取数据，但性能低，操作简单，不符合我的身份！</p>
-<p>``</p>
+        <p>目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。<br>在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。<br><a id="more"></a></p>
+<h2 id="polybar"><a href="#polybar" class="headerlink" title="polybar"></a>polybar</h2><p>屏幕上面的一个状态栏，显示各种内容</p>
+<h2 id="ranger"><a href="#ranger" class="headerlink" title="ranger"></a>ranger</h2><p>文件管理软件，异常NB<br>安装: <code>sudo pacman -S ranger</code><br>启动: <code>ranger</code><br>移动: <code>hjkl</code><br>退出: <code>q</code><br>创建文件夹:<code>F7</code><br>创建文件: 以vim新建，自定义shift+v<br>重命名: <code>cw</code><br>在前面插入: <code>i</code><br>在后缀的前面加入: <code>a</code><br>在后缀的后面加入: <code>shift+a</code><br>剪切文件: <code>dd</code><br>删除文件: <code>dD</code><br>复制文件: <code>yy</code><br>粘贴文件: <code>pp</code><br>多选: <code>空格</code><br>选中全部: <code>v</code><br>批量更名，中间加空格: 选中文件，打<code>:bulkrename</code>，会在vim下打开，然后在vim下用<code>ctrl+v</code>选中一列，从插入空格，保存退出即可。<br>显示隐藏文件:  自定义zh<br>排序: <code>o</code><br>搜索: <code>/</code></p>
+<p>配置: <code>ranger --copy-config=rc</code><br>然后编辑文件: <code>vim ~/.config/ranger/rc.conf</code></p>
+<p>#<br>模糊文件查找</p>
+<p>.</p>
 
       
 
@@ -439,23 +200,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">json</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jsonpath</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">xpath</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">true</a>
         		</li>
       		
 		</ul>
@@ -511,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2018/11/30/数据提取/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2019/06/17/manjaro日记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -525,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/12/redis的详细介绍/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          redis的详细介绍
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/11/28/图解浏览器的基本工作原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图解浏览器的基本工作原理</div>
+    <a href="/2019/06/10/atom插件hydrogen的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">atom插件hydrogen的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -555,19 +291,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#json"><span class="toc-number">2.</span> <span class="toc-text">json</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#json与dict的转化"><span class="toc-number">2.1.</span> <span class="toc-text">json与dict的转化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#json中的数据提取"><span class="toc-number">2.2.</span> <span class="toc-text">json中的数据提取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正则"><span class="toc-number">3.</span> <span class="toc-text">正则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xml"><span class="toc-number">4.</span> <span class="toc-text">xml</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#xml的数据提取"><span class="toc-number">4.1.</span> <span class="toc-text">xml的数据提取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础语法练习"><span class="toc-number">4.1.1.</span> <span class="toc-text">基础语法练习:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查找特定的节点"><span class="toc-number">4.1.2.</span> <span class="toc-text">查找特定的节点:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选取未知节点"><span class="toc-number">4.1.3.</span> <span class="toc-text">选取未知节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选取若干路径"><span class="toc-number">4.1.4.</span> <span class="toc-text">选取若干路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选取不包含某属性的标签"><span class="toc-number">4.1.5.</span> <span class="toc-text">选取不包含某属性的标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选取标签及标签内部嵌套的内容"><span class="toc-number">4.1.6.</span> <span class="toc-text">选取标签及标签内部嵌套的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xpath常用函数-转载"><span class="toc-number">4.1.7.</span> <span class="toc-text">xpath常用函数(转载)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#lxml模块"><span class="toc-number">4.2.</span> <span class="toc-text">lxml模块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#入门使用"><span class="toc-number">4.2.1.</span> <span class="toc-text">入门使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶使用"><span class="toc-number">4.3.</span> <span class="toc-text">进阶使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#beatuifulsoup"><span class="toc-number">5.</span> <span class="toc-text">beatuifulsoup</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>

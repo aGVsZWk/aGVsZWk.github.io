@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luke的个人博客">
 <meta property="og:description" content="vim的一些刻意练习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-18T14:16:10.850Z">
+<meta property="og:updated_time" content="2019-06-23T12:12:30.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim的刻意练习">
 <meta name="twitter:description" content="vim的一些刻意练习。">
@@ -182,47 +182,47 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>vim的一些刻意练习。<br><a id="more"></a></p>
-<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>i<br>o<br>a<br>I<br>O<br>A</p>
-<h2 id="删除字符"><a href="#删除字符" class="headerlink" title="删除字符"></a>删除字符</h2><p>x<br>10x</p>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>dd<br>dw<br>d10w<br>d0<br>d$<br>dG<br>dgg<br>dt + 字母   # 删除所有的内容，知道遇到字母<br>di(    # 删除()内的内容<br>di{    # 删除{}内的内容<br>d(    # 删除到句末的内容<br>d)    # 删除到句首的内容<br>d{    # 删除到段末的内容<br>d}    # 删除到段首的内容<br>dap   # 删除一个段落</p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p><code>i</code><br><code>o</code><br><code>a</code><br><code>I</code><br><code>O</code><br><code>A</code></p>
+<h2 id="删除字符"><a href="#删除字符" class="headerlink" title="删除字符"></a>删除字符</h2><p><code>x</code><br><code>10x</code></p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p><code>dd</code><br><code>dw</code><br><code>d10w</code><br><code>d0</code><br><code>d$</code><br><code>dG</code><br><code>dgg</code><br><code>dt + 字母</code>   # 删除所有的内容，知道遇到字母<br><code>di(</code>    # 删除()内的内容<br><code>di{</code>    # 删除{}内的内容<br><code>d(</code>    # 删除到句末的内容<br><code>d)</code>    # 删除到句首的内容<br><code>d{</code>    # 删除到段末的内容<br><code>d}</code>    # 删除到段首的内容<br><code>dap</code>   # 删除一个段落</p>
 <blockquote>
 <p>补充:<br>1.大小写区别是以空白字符分割的字符串<br>2.句子是以.区别，段落是以空行区别</p>
 </blockquote>
-<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p>w<br>e<br>b<br>G   gg<br>ge   # 和e相反的操作<br>f + 字母   # 向后查找，直接跳到字母<br>F + 字母   # 向前查找，直接跳到字母<br>t + 字母   # 向后查找，直接跳到字母前一位<br>T + 字母<br>0 ^<br>\$ g_<br>:数字   # 命令模式下移动到指定行，也可以:0和:$<br>*:   # 移动光标到当前所在单词的下一匹配单词<br>#:   # 移动光标到当前单词的上一匹配单词<br>%:    # 移动光标到括号左半部分<br>{:    # 移动到段落开头<br>}:    # 移动到段落结尾<br>H:    # 移动到屏幕的第一行<br>M:   # 移动到屏幕的中间行<br>L:   # 移动到屏幕的最后一行<br>ctrl+f:    # 向前滚动一页  forward<br>ctrl+b:    # 向后滚动一页  backward<br>ctrl+u:    # 向前滚动半页  up<br>ctrl+d:    # 向后滚动半页  down</p>
-<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>yy    # yank<br>y^<br>y$<br>yG<br>y1G</p>
-<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h2><p>p</p>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>r<br>R<br>cc<br>cw<br>C<br>~</p>
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p>u<br>U<br>ctrl+r:    # 反撤销</p>
-<h2 id="保存与另存为"><a href="#保存与另存为" class="headerlink" title="保存与另存为"></a>保存与另存为</h2><p>:w<br>:w!<br>:wq<br>:w a.txt<br>:save as 文件名</p>
-<h2 id="显示当前文件信息"><a href="#显示当前文件信息" class="headerlink" title="显示当前文件信息"></a>显示当前文件信息</h2><p>ctrl+g</p>
-<h2 id="变大写"><a href="#变大写" class="headerlink" title="变大写"></a>变大写</h2><p>gU</p>
-<h2 id="变小写"><a href="#变小写" class="headerlink" title="变小写"></a>变小写</h2><p>gu</p>
-<h2 id="字母翻转"><a href="#字母翻转" class="headerlink" title="字母翻转"></a>字母翻转</h2><p>~</p>
-<h2 id="缩进与回退"><a href="#缩进与回退" class="headerlink" title="缩进与回退"></a>缩进与回退</h2><p>>><br>&lt;&lt;</p>
-<h2 id="屏幕暂停与恢复"><a href="#屏幕暂停与恢复" class="headerlink" title="屏幕暂停与恢复"></a>屏幕暂停与恢复</h2><p>ctrl+s<br>ctrl+g<br>补充: 和终端中一样</p>
-<h2 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h2><p>v</p>
-<h2 id="块选择模式"><a href="#块选择模式" class="headerlink" title="块选择模式"></a>块选择模式</h2><p>ctrl+v    # 进入之后，可进行批量插入，删除操作</p>
-<h2 id="调整行内容位置"><a href="#调整行内容位置" class="headerlink" title="调整行内容位置"></a>调整行内容位置</h2><p>居中<br>ce<br>靠右<br>ri<br>靠左<br>le</p>
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br>set hls</p>
-<p>结束搜索<br>noh</p>
-<p>取消大小写敏感<br>:set ignorecase</p>
-<p>智能模式<br>:set smartcase  # 包含大写，则搜索区分大小写; 不包含大小写，则不区分大小写，常和上面那条搭配使用</p>
-<p>/内容\\c: 强制大小写不敏感<br>/内容\\C: 强制大小写敏感</p>
-<p>/内容   ?内容<br>:s/内容     # 全局搜索<br>n    N    # 上下移动</p>
-<p>查找游标所在处单词<br>\*<br>\#<br>可简写<br>*<br>#</p>
-<p>部分匹配<br>g\*<br>g\#</p>
+<h2 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h2><p><code>w</code><br><code>e</code><br><code>b</code><br><code>G</code>   <code>gg</code><br><code>ge</code>   # 和e相反的操作<br><code>f + 字母</code>   # 向后查找，直接跳到字母<br><code>F + 字母</code>   # 向前查找，直接跳到字母<br><code>t + 字母</code>   # 向后查找，直接跳到字母前一位<br><code>T + 字母</code><br><code>0</code> <code>^</code><br><code>$</code> <code>g_</code><br><code>:数字</code>  # 命令模式下移动到指定行，也可以:0和:$<br><code>*</code>:   # 移动光标到当前所在单词的下一匹配单词<br><code>#</code>:   # 移动光标到当前单词的上一匹配单词<br><code>%</code>:    # 移动光标到括号左半部分<br><code>{</code>:    # 移动到段落开头<br><code>}</code>:    # 移动到段落结尾<br><code>H</code>:    # 移动到屏幕的第一行<br><code>M</code>:   # 移动到屏幕的中间行<br><code>L</code>:   # 移动到屏幕的最后一行<br><code>ctrl+f</code>:    # 向前滚动一页  forward<br><code>ctrl+b</code>:    # 向后滚动一页  backward<br><code>ctrl+u</code>:    # 向前滚动半页  up<br><code>ctrl+d</code>:    # 向后滚动半页  down</p>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p><code>yy</code>    # yank<br><code>y^</code><br><code>y$</code><br><code>yG</code><br><code>y1G</code></p>
+<h2 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h2><p><code>p</code></p>
+<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p><code>r</code><br><code>R</code><br><code>cc</code><br><code>cw</code><br><code>C</code><br><code>~</code></p>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><p><code>u</code><br><code>U</code><br><code>ctrl+r</code>:    # 反撤销</p>
+<h2 id="保存与另存为"><a href="#保存与另存为" class="headerlink" title="保存与另存为"></a>保存与另存为</h2><p><code>:w</code><br><code>:w!</code><br><code>:wq</code><br><code>:w a.txt</code><br><code>:save as 文件名</code></p>
+<h2 id="显示当前文件信息"><a href="#显示当前文件信息" class="headerlink" title="显示当前文件信息"></a>显示当前文件信息</h2><p><code>ctrl+g</code></p>
+<h2 id="变大写"><a href="#变大写" class="headerlink" title="变大写"></a>变大写</h2><p><code>gU</code></p>
+<h2 id="变小写"><a href="#变小写" class="headerlink" title="变小写"></a>变小写</h2><p><code>gu</code></p>
+<h2 id="字母翻转"><a href="#字母翻转" class="headerlink" title="字母翻转"></a>字母翻转</h2><p><code>~</code></p>
+<h2 id="缩进与回退"><a href="#缩进与回退" class="headerlink" title="缩进与回退"></a>缩进与回退</h2><p><code>&gt;&gt;</code><br><code>&lt;&lt;</code></p>
+<h2 id="屏幕暂停与恢复"><a href="#屏幕暂停与恢复" class="headerlink" title="屏幕暂停与恢复"></a>屏幕暂停与恢复</h2><p><code>ctrl+s</code><br><code>ctrl+g</code><br>补充: 和终端中一样</p>
+<h2 id="可视模式"><a href="#可视模式" class="headerlink" title="可视模式"></a>可视模式</h2><p><code>v</code></p>
+<h2 id="块选择模式"><a href="#块选择模式" class="headerlink" title="块选择模式"></a>块选择模式</h2><p><code>ctrl+v</code>    # 进入之后，可进行批量插入，删除操作</p>
+<h2 id="调整行内容位置"><a href="#调整行内容位置" class="headerlink" title="调整行内容位置"></a>调整行内容位置</h2><p>居中<br><code>ce</code><br>靠右<br><code>ri</code><br>靠左<br><code>le</code></p>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>设置高亮搜索<br><code>set hls</code></p>
+<p>结束搜索<br><code>noh</code></p>
+<p>取消大小写敏感<br><code>:set ignorecase</code></p>
+<p>智能模式<br><code>:set smartcase</code>  # 包含大写，则搜索区分大小写; 不包含大小写，则不区分大小写，常和上面那条搭配使用</p>
+<p><code>/内容\c</code>: 强制大小写不敏感<br><code>/内容\C</code>: 强制大小写敏感</p>
+<p><code>/内容</code>   <code>?内容</code><br><code>:s/内容</code>     # 全局搜索<br><code>n</code>    <code>N</code>    # 上下移动</p>
+<p>查找游标所在处单词<br><code>\*</code><br><code>\#</code><br>可简写<br><code>\*</code><br><code>\#</code></p>
+<p>部分匹配<br><code>g\*</code><br><code>g\#</code></p>
 <p>补充：</p>
 <ol>
-<li>搜索一些特殊的字符，例如：*, [, ], \^, \%, \/, \?, ~, \$等，需要在它们的前面加上转义符号\\</li>
+<li>搜索一些特殊的字符，例如：<code>*</code>, <code>[</code>, <code>]</code>, <code>^</code>, <code>%</code>, <code>/</code>, <code>?</code>, <code>~</code>, <code>$</code>等，需要在它们的前面加上转义符号<code>\</code></li>
 </ol>
-<h2 id="高级搜索"><a href="#高级搜索" class="headerlink" title="高级搜索"></a>高级搜索</h2><p>/然后按ctrl+r然后按ctrl+w   # 复制当前光标下的单词并将其加入命令行中<br>/然后按ctrl+r然后按ctrl+a   # 复制当前光标下那行并将其加入到命令行中</p>
+<h2 id="高级搜索"><a href="#高级搜索" class="headerlink" title="高级搜索"></a>高级搜索</h2><p><code>/然后按ctrl+r然后按ctrl+w</code>   # 复制当前光标下的单词并将其加入命令行中<br><code>/然后按ctrl+r然后按ctrl+a</code>   # 复制当前光标下那行并将其加入到命令行中</p>
 <p>补充:</p>
 <ol>
 <li>进行过VIM搜索之后，当/、？、:s、:g 命令使用空的搜索模式时会沿用最近一次的搜索模式。所以，在搜索完某个单词后，使用vim替换命令 <code>%s//new/g</code> 会将之前搜索的单词全部替换为new</li>
 <li>在搜索前还可以输入整数n，知道跳到n次结果之后</li>
 </ol>
-<h2 id="正则搜索"><a href="#正则搜索" class="headerlink" title="正则搜索"></a>正则搜索</h2><p>^    # 表示一行的开头<br>$    # 表示一行的结尾<br>.    # 表示任意一个字符<br>*    # 匹配0次或n次<br>补充: 用.*?测试非贪婪失败，也可能是我写的有问题</p>
-<h2 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h2><p>:s    # substitute<br>补充:</p>
+<h2 id="正则搜索"><a href="#正则搜索" class="headerlink" title="正则搜索"></a>正则搜索</h2><p><code>^</code>    # 表示一行的开头<br><code>$</code>    # 表示一行的结尾<br><code>.</code>    # 表示任意一个字符<br><code>*</code>    # 匹配0次或n次<br>补充: 用.*?测试非贪婪失败，也可能是我写的有问题</p>
+<h2 id="替换-1"><a href="#替换-1" class="headerlink" title="替换"></a>替换</h2><p><code>:s</code>    # substitute<br>补充:</p>
 <ol>
 <li>基本语法:<code>[range]s/源字符串/目标字符串/[option]</code>，其中range和option字段都可以缺省不填。</li>
 <li>range表示搜索范围。默认表示当前行，range字段<code>1,10</code>表示从1到10行，%表示整个文件(相当于1,$)，而 .，$代表从当前行到文件末尾</li>
@@ -234,37 +234,34 @@
 <li>注释，在全文的行首加入//字符进行批量注释  <code>:%s/^/\/\</code></li>
 <li>将所有行尾多余的空格删除   <code>%s= *$==</code>  (等号表示删除)</li>
 </ol>
-<h2 id="自动补齐"><a href="#自动补齐" class="headerlink" title="自动补齐"></a>自动补齐</h2><p>ctrl+n<br>ctrl+p<br>ctrl+x    # 进入行补全模式<br>ctrl+l    # 列出所有</p>
-<h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>:ls     # 列出所有缓冲区<br>:buffers    # 列出所有缓冲区<br>补充: 可使用buffer+数字形式跳到指定缓冲区</p>
-<h2 id="遍历列表"><a href="#遍历列表" class="headerlink" title="遍历列表"></a>遍历列表</h2><p>bnext<br>nprev</p>
-<h2 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h2><p>ctrl+w然后按w(也可以ctrl+w按两下)</p>
-<h2 id="跳到缓冲区列表的开头和结尾"><a href="#跳到缓冲区列表的开头和结尾" class="headerlink" title="跳到缓冲区列表的开头和结尾"></a>跳到缓冲区列表的开头和结尾</h2><p>:bfirst<br>:blast</p>
-<h2 id="删除缓冲区列表"><a href="#删除缓冲区列表" class="headerlink" title="删除缓冲区列表"></a>删除缓冲区列表</h2><p>:bdelete<br>:n,m bdelete</p>
-<h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p>vim 1.txt  2.txt</p>
-<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p>ctrl+^<br>:n<br>:N<br>:n!<br>:N!<br>注意:n!和N!不会保存文件</p>
-<h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p>e#</p>
-<h2 id="切换到下一个文件"><a href="#切换到下一个文件" class="headerlink" title="切换到下一个文件"></a>切换到下一个文件</h2><p>:n<br>:bn</p>
-<h2 id="切换到上一个文件"><a href="#切换到上一个文件" class="headerlink" title="切换到上一个文件"></a>切换到上一个文件</h2><p>:N<br>:bp</p>
-<h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p>e 文件名</p>
-<h2 id="保存并退出"><a href="#保存并退出" class="headerlink" title="保存并退出"></a>保存并退出</h2><p>:x<br>:wq<br>ZZ</p>
-<h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p>vim -x file1</p>
-<h2 id="列出以前编辑过的文档"><a href="#列出以前编辑过的文档" class="headerlink" title="列出以前编辑过的文档"></a>列出以前编辑过的文档</h2><p>ls</p>
-<h2 id="显示及更改文件名"><a href="#显示及更改文件名" class="headerlink" title="显示及更改文件名"></a>显示及更改文件名</h2><p>f<br>f 文件名</p>
-<h2 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h2><p>vim -r 文件名<br>ewcover 1.txt</p>
-<h2 id="插入100个desu"><a href="#插入100个desu" class="headerlink" title="插入100个desu"></a>插入100个desu</h2><p>100idesu[ESC]</p>
-<h2 id="重复上一个命令"><a href="#重复上一个命令" class="headerlink" title="重复上一个命令"></a>重复上一个命令</h2><p>.   # 普通模式下一条命令+插入模式输入+普通模式。 重复这个过程</p>
-<h2 id="重复上一个命令3次"><a href="#重复上一个命令3次" class="headerlink" title="重复上一个命令3次"></a>重复上一个命令3次</h2><ol>
-<li>重复上一个命令3次</li>
-</ol>
-<h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><h2 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h2><p>shift + v<br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
-<h2 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h2><p>ctrl + v<br>用hl控制前后，按x可删除</p>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br>vi + “   选择foo<br>va + “   选择”foo”<br>vi + )   选择”foo”<br>va + )   选择(“foo”)<br>v2i + )  选择map (+) (“foo”)<br>v2a + )  选择(map (+) (“foo”))</p>
+<h2 id="自动补齐"><a href="#自动补齐" class="headerlink" title="自动补齐"></a>自动补齐</h2><p><code>ctrl+n</code><br><code>ctrl+p</code><br><code>ctrl+x</code>    # 进入行补全模式<br><code>ctrl+l</code>    # 列出所有</p>
+<h2 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h2><p><code>:ls</code>     # 列出所有缓冲区<br><code>:buffers</code>    # 列出所有缓冲区<br>补充: 可使用buffer+数字形式跳到指定缓冲区</p>
+<h2 id="遍历列表"><a href="#遍历列表" class="headerlink" title="遍历列表"></a>遍历列表</h2><p><code>bnext</code><br><code>nprev</code></p>
+<h2 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h2><p><code>ctrl+w然后按w(也可以ctrl+w按两下)</code></p>
+<h2 id="跳到缓冲区列表的开头和结尾"><a href="#跳到缓冲区列表的开头和结尾" class="headerlink" title="跳到缓冲区列表的开头和结尾"></a>跳到缓冲区列表的开头和结尾</h2><p><code>:bfirst</code><br><code>:blast</code></p>
+<h2 id="删除缓冲区列表"><a href="#删除缓冲区列表" class="headerlink" title="删除缓冲区列表"></a>删除缓冲区列表</h2><p><code>:bdelete</code><br><code>:n,m bdelete</code></p>
+<h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p><code>vim 1.txt  2.txt</code></p>
+<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p><code>ctrl+^</code><br><code>:n</code><br><code>:N</code><br><code>:n!</code><br><code>:N!</code><br>注意:n!和N!不会保存文件</p>
+<h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p><code>e#</code></p>
+<h2 id="切换到下一个文件"><a href="#切换到下一个文件" class="headerlink" title="切换到下一个文件"></a>切换到下一个文件</h2><p><code>:n</code><br><code>:bn</code></p>
+<h2 id="切换到上一个文件"><a href="#切换到上一个文件" class="headerlink" title="切换到上一个文件"></a>切换到上一个文件</h2><p><code>:N</code><br><code>:bp</code></p>
+<h2 id="打开新文件"><a href="#打开新文件" class="headerlink" title="打开新文件"></a>打开新文件</h2><p><code>e 文件名</code></p>
+<h2 id="保存并退出"><a href="#保存并退出" class="headerlink" title="保存并退出"></a>保存并退出</h2><p><code>:x</code><br><code>:wq</code><br><code>ZZ</code></p>
+<h2 id="创建加密文档"><a href="#创建加密文档" class="headerlink" title="创建加密文档"></a>创建加密文档</h2><p><code>vim -x file1</code></p>
+<h2 id="列出以前编辑过的文档"><a href="#列出以前编辑过的文档" class="headerlink" title="列出以前编辑过的文档"></a>列出以前编辑过的文档</h2><p><code>ls</code></p>
+<h2 id="显示及更改文件名"><a href="#显示及更改文件名" class="headerlink" title="显示及更改文件名"></a>显示及更改文件名</h2><p><code>f</code><br><code>f 文件名</code></p>
+<h2 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h2><p><code>vim -r 文件名</code><br><code>ewcover 1.txt</code></p>
+<h2 id="插入100个desu"><a href="#插入100个desu" class="headerlink" title="插入100个desu"></a>插入100个desu</h2><p><code>100idesu[ESC]</code></p>
+<h2 id="重复上一个命令"><a href="#重复上一个命令" class="headerlink" title="重复上一个命令"></a>重复上一个命令</h2><p><code>.</code>   # 普通模式下一条命令+插入模式输入+普通模式。 重复这个过程</p>
+<h2 id="重复上一个命令3次"><a href="#重复上一个命令3次" class="headerlink" title="重复上一个命令3次"></a>重复上一个命令3次</h2><p><code>3.</code>  重复上一个命令3次</p>
+<h1 id="视窗操作"><a href="#视窗操作" class="headerlink" title="视窗操作"></a>视窗操作</h1><h2 id="行选择"><a href="#行选择" class="headerlink" title="行选择"></a>行选择</h2><p><code>shift + v</code><br>可用jk控制上下，然后按&gt;&gt;可缩进</p>
+<h2 id="列选择"><a href="#列选择" class="headerlink" title="列选择"></a>列选择</h2><p><code>ctrl + v</code><br>用hl控制前后，按x可删除</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>假设你有一个字符串 (map (+) (“foo”)).而光标键在第一个 o 的位置。<br><code>vi + &quot;</code>   选择foo<br><code>va + &quot;</code>   选择”foo”<br><code>vi + )</code>   选择”foo”<br><code>va + )</code>   选择(“foo”)<br><code>v2i + )</code>  选择map (+) (“foo”)<br><code>v2a + )</code>  选择(map (+) (“foo”))</p>
 <h2 id="拆分窗口"><a href="#拆分窗口" class="headerlink" title="拆分窗口"></a>拆分窗口</h2><p>在命令模式下<br><code>sp 文件名</code> 可打开水平分屏视窗来编辑文件<br><code>vsp 文件名</code> 可垂直分屏来操作文件</p>
-<p>ctrl + w 待验证</p>
-<h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p>!ls  显示当前目录的内容<br>!rm 文件名 删除文件<br>!w 文件名  另存为</p>
-<h1 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h1><p>F1<br>:h 文件名<br>:ver</p>
-<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="设置缩进字符数"><a href="#设置缩进字符数" class="headerlink" title="设置缩进字符数"></a>设置缩进字符数</h2><p>set shiftwidth=10</p>
-<p>.</p>
+<p><code>ctrl + w</code> 待验证</p>
+<h1 id="执行外部命令"><a href="#执行外部命令" class="headerlink" title="执行外部命令"></a>执行外部命令</h1><p><code>!ls</code>  显示当前目录的内容<br><code>!rm</code> 文件名 删除文件<br><code>!w</code> 文件名  另存为</p>
+<h1 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h1><p>F1<br><code>:h 文件名</code><br><code>:ver</code></p>
+<h1 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h1><h2 id="设置缩进字符数"><a href="#设置缩进字符数" class="headerlink" title="设置缩进字符数"></a>设置缩进字符数</h2><p><code>set shiftwidth=10</code></p>
 
       
 
@@ -520,15 +517,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +537,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -548,19 +545,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,11 +581,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,15 +597,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +621,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,19 +653,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>
@@ -852,7 +857,7 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

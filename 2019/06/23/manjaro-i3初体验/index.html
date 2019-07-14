@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Luke的个人博客">
 <meta property="og:description" content="记录manjaro-i3安装及基本使用.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T15:25:11.221Z">
+<meta property="og:updated_time" content="2019-07-14T13:01:21.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="manjaro-i3初体验">
 <meta name="twitter:description" content="记录manjaro-i3安装及基本使用.">
@@ -182,21 +182,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>记录manjaro-i3安装及基本使用.<br><a id="more"></a></p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>修改home下目录为英文<br><code>vim ~/.config/user-dirs.dirs</code><br>修改一下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">XDG_DESKTOP_DIR=&quot;$HOME/Desktop&quot;</span><br><span class="line">XDG_DOWNLOAD_DIR=&quot;$HOME/Download&quot;</span><br><span class="line">XDG_TEMPLATES_DIR=&quot;$HOME/Templates&quot;</span><br><span class="line">XDG_PUBLICSHARE_DIR=&quot;$HOME/Public&quot;</span><br><span class="line">XDG_DOCUMENTS_DIR=&quot;$HOME/Documents&quot;</span><br><span class="line">XDG_MUSIC_DIR=&quot;$HOME/Music&quot;</span><br><span class="line">XDG_PICTURES_DIR=&quot;$HOME/Pictures&quot;</span><br><span class="line">XDG_VIDEOS_DIR=&quot;$HOME/Videos&quot;</span><br></pre></td></tr></table></figure></p>
-<p>将Home目录下中文目录改为对应英文</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">mv 公共 Public</span><br><span class="line">mv 模板 Templates</span><br><span class="line">mv 视频 Videos</span><br><span class="line">mv 图片 Pictures</span><br><span class="line">mv 文档 Documents</span><br><span class="line">mv 下载 Download</span><br><span class="line">mv 音乐 Music</span><br><span class="line">mv 桌面 Desktop</span><br></pre></td></tr></table></figure>
-<p>重启</p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>修改home下目录为英文</p>
+<p>$ sudo pacman -S xdg-user-dirs-gtk<br>$ export LANG=en_US<br>$ xdg-user-dirs-gtk-update<br>$ #然后会有个窗口提示语言更改，更新名称即可<br>$ export LANG=zh_CN.UTF-8<br>$ #然后重启电脑如果提示语言更改，保留旧的名称即可</p>
 <h1 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h1><p><code>sudo pacman-mirrors -i -c China -m rank //更新镜像排名</code><br><code>sudo pacman -Syy //更新数据源</code><br><code>sudo pacman -S archlinux-keyring  //更新 archlinux 签名</code><br>在/etc/pacman.conf最后增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure></p>
-<p>更新系统<br><code>sudo pacman -Syu</code></p>
+<p><code>sudo pacman -Syy //更新数据源</code><br>更新系统<br><code>sudo pacman -Syu</code></p>
 <h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="openssh"><a href="#openssh" class="headerlink" title="openssh"></a>openssh</h2><p>安装这个软件之后, 就可以开启ssh服务了<br>安装: <code>sudo pacman -Syy openssh</code><br>启动服务: <code>systemctl start sshd</code><br>开机自动启动: <code>systemctl enable sshd.service</code></p>
+<h2 id="net-tools"><a href="#net-tools" class="headerlink" title="net-tools"></a>net-tools</h2><p>没有这个无法使用ifconfig<br><code>sudo pacman -S net-tools</code></p>
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><p><code>sudo pacman -S gcc</code>，少了它谷歌浏览器都不能用</p>
 <h2 id="chrome"><a href="#chrome" class="headerlink" title="chrome"></a>chrome</h2><p><code>sudo pacman -S google-chrome</code><br>修改chrome为默认浏览器：<br><code>vim ~/.config/mimeapps.list</code><br>批量替换:<code>:%s/userapp-Pale Moon/google-chrome-stable/g</code></p>
+<p>上面安装的是正式版，其实可以安装开发板谷歌浏览器，<code>sudo pacman -S chromium</code>，如果装不上就同步一下数据源</p>
 <h2 id="搜狗输入法"><a href="#搜狗输入法" class="headerlink" title="搜狗输入法"></a>搜狗输入法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">安装输入法</span><br><span class="line">我选择的是搜狗拼音输入法</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im</span><br><span class="line">sudo pacman -S fcitx-configtool</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改  ~/.profile，在最下方添加：</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=&quot;@im=fcitx&quot;</span><br></pre></td></tr></table></figure>
 <h2 id="网易云和微信"><a href="#网易云和微信" class="headerlink" title="网易云和微信"></a>网易云和微信</h2><p><code>sudo pacman -S netease-cloud-music</code><br><code>sudo pacman -S electronic-wechat</code></p>
 <p>没有声音的解决方法:<br><code>alsamixer</code><br>标有MM为静音， 标有数字为音量， 按M取消/标记静音<br>如果不能更改音量大小: <code>amixer sset Master unmute</code>, 如果出现<code>Unable to find simple control &#39;Master&#39;, 0</code>, 表示不能设置， 或是找不到声卡设备<br><code>aplay -l</code>能列出声卡， card 0， card 1<br>把下列配置添加到系统级别的 /etc/asound.conf 或用户级别的 ~/.asoundrc 文件。如果文件不存在，可以手动创建。其中的各个ID，请根据实际情况调整：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults.pcm.card 1</span><br><span class="line">defaults.pcm.device 0</span><br><span class="line">defaults.ctl.card 1</span><br></pre></td></tr></table></figure></p>
 <p>重启即可</p>
+<p><a href="http://pragprog.com/titles/dnvim/source_code" target="_blank" rel="noopener">http://pragprog.com/titles/dnvim/source_code</a><br><a href="http://media.pragprog.com/titles/dnvim/code/dnvim-code.tgz" target="_blank" rel="noopener">http://media.pragprog.com/titles/dnvim/code/dnvim-code.tgz</a></p>
 <h2 id="终端模拟器"><a href="#终端模拟器" class="headerlink" title="终端模拟器"></a>终端模拟器</h2><p>要安装的终端: <code>alacritty</code>, 使用显卡渲染， 非常快， 可敲tree测试. <code>pacman -S alacritty</code><br>配置文件路径: <code>~/.config/alacritty/alacritty.yml</code>, 实时更新</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>$mod+Enter</code>: 打开终端<br><code>$mod+方向或jkl;</code>: 切换屏幕,<br><code>$mod+v</code>: 垂直分屏<br><code>$mod+h</code>: 水平分屏<br><code>$mod+d</code>: dmenu模式<br><code>$mod+f</code>: 全屏<br><code>$mod+shift+数字</code>: 将应用移动到其它窗口</p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>首次启动，输入<code>i3-config-wizard</code>进行配置，它会创建<code>~/.i3/config</code></p>
+<h2 id="figlet"><a href="#figlet" class="headerlink" title="figlet"></a>figlet</h2><p>一个类似于cowsay的软件，在vim中使用很爽. <code>sudo pacman -S figlet</code></p>
+<h2 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h2><p>安装net-tools. <code>sudo pacmnan -S net-tools</code></p>
+<h2 id="tree-pstree和htop"><a href="#tree-pstree和htop" class="headerlink" title="tree, pstree和htop"></a>tree, pstree和htop</h2><p><code>sudo pacman -S tree pstree htop</code></p>
+<h2 id="cmake"><a href="#cmake" class="headerlink" title="cmake"></a>cmake</h2><p>安装vim插件YouCompleteMe是爆缺少这个包，安装<code>sudo pacman -S cmake</code></p>
+<h2 id="安装cmake-build-essential-arch下为base-devel"><a href="#安装cmake-build-essential-arch下为base-devel" class="headerlink" title="安装cmake, build-essential(arch下为base-devel)"></a>安装cmake, build-essential(arch下为base-devel)</h2><p>pass</p>
+<h2 id="安装ranger-neofetch"><a href="#安装ranger-neofetch" class="headerlink" title="安装ranger, neofetch"></a>安装ranger, neofetch</h2><p>neofetch会显示系统信息</p>
+<h2 id="zsh-oh-my-zsh"><a href="#zsh-oh-my-zsh" class="headerlink" title="zsh, oh my zsh"></a>zsh, oh my zsh</h2><p>pass<br>设置~/.zshrc中ZSH的环境变量</p>
+<h2 id="安装python3-python-dev-python3-dev"><a href="#安装python3-python-dev-python3-dev" class="headerlink" title="安装python3, python-dev, python3-dev"></a>安装python3, python-dev, python3-dev</h2><p>pass</p>
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><p>pass</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>todo<br><code>$mod+;</code>: 水平分屏 已经自己改按键了</p>
+<p>已经配置好的:<br><code>$mod+Enter</code>: 打开终端<br><code>$mod+方向或jkl;</code>: 切换屏幕,<br><code>$mod+v</code>: 垂直分屏</p>
+<p><code>$mod+d</code>: dmenu模式<br><code>$mod+f</code>: 全屏<br><code>$mod+shift+数字</code>: 将应用移动到其它窗口<br><code>$mod+shift+q</code>: 强制退出<br><code>ctrl+q或ctrl+w</code>: 退出一些没有x关闭可以点击的</p>
+<p>semicolon</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>首次启动，输入<code>i3-config-wizard</code>进行配置，它会创建<code>~/.i3/config</code><br>自定义键位:<br><code>$mod+c</code>: chrome<br><code>$mod+m</code>: 网易云音乐<br><code>$mod+h/j/k/l/上下左右</code>: 切换窗口</p>
 <p>.</p>
 
       
@@ -444,22 +458,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -468,7 +466,31 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -480,14 +502,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
@@ -496,11 +510,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +522,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,7 +534,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,15 +542,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,18 +574,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">json</a>
               </li>
              
@@ -577,6 +583,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xpath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -784,7 +798,7 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
 </html>

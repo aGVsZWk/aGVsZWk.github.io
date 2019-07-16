@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/27/vim笔记/markdown-img-paste-20190715224449288.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/27/vim笔记/markdown-img-paste-20190715224946489.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/27/vim笔记/markdown-img-paste-20190715230003716.png">
-<meta property="og:updated_time" content="2019-07-15T15:00:18.878Z">
+<meta property="og:updated_time" content="2019-07-16T15:13:10.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim笔记">
 <meta name="twitter:description" content="todo 改键  空格改反斜杠 大小写转换改Esc">
@@ -263,7 +263,7 @@
 <h2 id="跳到缓冲区列表的开头和结尾"><a href="#跳到缓冲区列表的开头和结尾" class="headerlink" title="跳到缓冲区列表的开头和结尾"></a>跳到缓冲区列表的开头和结尾</h2><p><code>:bfirst</code><br><code>:blast</code></p>
 <h2 id="删除缓冲区列表"><a href="#删除缓冲区列表" class="headerlink" title="删除缓冲区列表"></a>删除缓冲区列表</h2><p><code>:bdelete</code><br><code>:n,m bdelete</code></p>
 <h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><p><code>vim 1.txt  2.txt</code></p>
-<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p><code>ctrl+^</code><br><code>:n</code><br><code>:N</code><br><code>:n!</code><br><code>:N!</code><br>注意:n!和N!不会保存文件</p>
+<h2 id="切换文件"><a href="#切换文件" class="headerlink" title="切换文件"></a>切换文件</h2><p><code>ctrl+^</code>   <strong>打开缓冲区最近的文件， 特别有用</strong><br><code>:n</code><br><code>:N</code><br><code>:n!</code><br><code>:N!</code><br>注意:n!和N!不会保存文件</p>
 <h2 id="回到前一个文件"><a href="#回到前一个文件" class="headerlink" title="回到前一个文件"></a>回到前一个文件</h2><p><code>e#</code></p>
 <h2 id="切换到下一个文件"><a href="#切换到下一个文件" class="headerlink" title="切换到下一个文件"></a>切换到下一个文件</h2><p><code>:n</code><br><code>:bn</code></p>
 <h2 id="切换到上一个文件"><a href="#切换到上一个文件" class="headerlink" title="切换到上一个文件"></a>切换到上一个文件</h2><p><code>:N</code><br><code>:bp</code></p>
@@ -311,7 +311,7 @@
 <p><img src="/2019/06/27/vim笔记/markdown-img-paste-2019071421414605.png" alt=""></p>
 <h2 id="运行shell"><a href="#运行shell" class="headerlink" title="运行shell"></a>运行shell</h2><p>EX模式下可以用<code>:!{cmd}</code>来执行一次性命令，也可以用<code>:shell</code>来启动交互式的shell会话，输入<code>exit</code>退出后在回到vim中来。</p>
 <p><code>read !{cmd}</code> 把命令的输出读入当前缓冲区中<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714225216222.png" alt=""></p>
-<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><p>缓冲区: 文件是存储在磁盘上的，而缓冲区是存在内存中。 当vim打开一个文件时，该文件被读入一个具有相同名字的缓冲区。二者文件完全相同。当对缓冲区做出修改时，二者的内容就会出现差别。如果要保留缓冲区内容，而需要将其内容在写回文件里。</p>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="缓冲区-2"><a href="#缓冲区-2" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>缓冲区: 文件是存储在磁盘上的，而缓冲区是存在内存中。 当vim打开一个文件时，该文件被读入一个具有相同名字的缓冲区。二者文件完全相同。当对缓冲区做出修改时，二者的内容就会出现差别。如果要保留缓冲区内容，而需要将其内容在写回文件里。</p>
 <p><code>vim *.txt</code><br><code>:ls</code><br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715220043611.png" alt=""><br><code>%</code>表示哪个缓冲区在当前窗口中可见。<code>#</code>表示轮换文件。</p>
 <p><code>buffer next</code>  <code>bn</code><br><code>buffer prev</code>  <code>bp</code><br><code>buffer first</code> <code>bf</code><br><code>buffer last</code> <code>bl</code><br><code>bdelete 缓冲区名</code>  <code>bd 缓冲区名</code> 或 <code>N,Mbd</code>N,M均为缓冲区编号</p>
 <p><code>:args</code>:   缓冲区列表<br><code>:args 文件名1 文件名2</code>: 将文件1和文件2读入缓冲区</p>
@@ -319,11 +319,17 @@
 <p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222658251.png" alt=""><br>前面有加号，表示这个缓冲区被修改过了。切换要用强制切换.<br><code>bn!</code>之后<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222931758.png" alt=""><br><code>a</code>表示当前活动的缓冲区，<code>h</code>表示隐藏的缓存区.<br>在你退出的时候<code>:quit</code>(不管在哪个缓冲区窗口)，第一个隐藏的缓冲区都会弹出来问你是否保存。 <code>:write</code>可将其写入到文件。<code>:edit!</code>可将其从磁盘重新读出来，覆盖隐藏的缓冲区。</p>
 <p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715223535950.png" alt=""></p>
 <p><code>bufdo和argdo</code>: 执行EX模式</p>
-<p>水平切割: 屏幕中间出来一条水平线，窗口被分为上下两部分<br>切割窗口: <code>&lt;C-w&gt;s</code>和<code>&lt;C-w&gt;v</code><br>切割窗口，并在新窗口中载入文件: <code>:sp 文件名</code>  `vsp 文件名</p>
+<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h2><p>水平切割: 屏幕中间出来一条水平线，窗口被分为上下两部分<br>切割窗口: <code>&lt;C-w&gt;s</code>和<code>&lt;C-w&gt;v</code><br>切割窗口，并在新窗口中载入文件: <code>:sp 文件名</code>  `vsp 文件名</p>
 <p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224449288.png" alt=""></p>
 <p>关闭活动窗口: <code>:clo</code>  <code>&lt;C-w&gt;c</code><br>只保留活动窗口，关闭其它窗口: <code>:on</code> <code>&lt;C-w&gt;o</code></p>
 <p>更改窗口大小:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224946489.png" alt=""><br>感觉可能<code>&lt;C-w&gt;=</code>可能会被用到吧</p>
-<p>标签页: 类似于linux虚拟桌面，一个标签页中可以有多个缓冲区，多个窗口<br><code>:tab</code> 控制<br><code>tabn</code>  <code>tabp</code> <code>tabf</code> <code>tabl</code><br><code>:tabedit+文件名</code>  <code>tabe+文件名</code> 在新标签页中打开文件<br><code>tabo</code>  <code>tabc</code>: 和分屏相同<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715230003716.png" alt=""></p>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><p>标签页: 类似于linux虚拟桌面，一个标签页中可以有多个缓冲区，多个窗口<br><code>:tab</code> 控制<br><code>tabn</code>  <code>tabp</code> <code>tabf</code> <code>tabl</code><br><code>:tabedit+文件名</code>  <code>tabe+文件名</code> 在新标签页中打开文件<br><code>tabo</code>  <code>tabc</code>: 和分屏相同<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715230003716.png" alt=""></p>
+<h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><p>使用edit打开文件: <code>edit 文件名</code><br>打开活动活动区的完整路径: <code>:edit %&lt;Tab&gt;</code>  会自动补充当前文件名字<br>如果想要去除文件名，可以<code>:edit %:h&lt;Tab&gt;</code></p>
+<p>使用find打开文件： <code>:find 文件名</code>. 需要配置路径的<br>配置路径: <code>set path+=app/**</code></p>
+<h2 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h2><p>打开目录树，默认调用netrw插件(vim原生的文件管理器目录)<code>vim .</code><br>如果要切换根目录，用<code>:edit path</code><br><code>edit .</code>可简写为<code>e.</code><br><code>edit %:h</code><br>打开目录树，并显示缓冲区内容:<code>:Explore</code>  <code>:E</code>  <code>:Sexplore</code>  <code>:Vexplore</code></p>
+<h2 id="目录不存在和没有权限"><a href="#目录不存在和没有权限" class="headerlink" title="目录不存在和没有权限"></a>目录不存在和没有权限</h2><p>edit可向缓冲区中读入一个不存在的路径的文件，操作完成从缓冲区写入硬盘时会报错，可以用shell创建文件路径 <code>!mkdir -p %:h</code></p>
+<p>如果没有打开文件的写权限，可以去用sudo去执行tee。 <code>:w !sudo tee % &gt; /dev/null</code></p>
+<p><code>ctrl+g</code>可查看文件状态</p>
 <p>.</p>
 
       
@@ -437,7 +443,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim的刻意练习"><span class="toc-number">1.</span> <span class="toc-text">vim的刻意练习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc-true"><span class="toc-number">1.1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">1.2.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插入"><span class="toc-number">1.2.1.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除字符"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-number">1.2.3.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动"><span class="toc-number">1.2.4.</span> <span class="toc-text">移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制"><span class="toc-number">1.2.5.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粘贴"><span class="toc-number">1.2.6.</span> <span class="toc-text">粘贴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换"><span class="toc-number">1.2.7.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-number">1.2.8.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存与另存为"><span class="toc-number">1.2.9.</span> <span class="toc-text">保存与另存为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示当前文件信息"><span class="toc-number">1.2.10.</span> <span class="toc-text">显示当前文件信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变大写"><span class="toc-number">1.2.11.</span> <span class="toc-text">变大写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变小写"><span class="toc-number">1.2.12.</span> <span class="toc-text">变小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字母翻转"><span class="toc-number">1.2.13.</span> <span class="toc-text">字母翻转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缩进与回退"><span class="toc-number">1.2.14.</span> <span class="toc-text">缩进与回退</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#屏幕暂停与恢复"><span class="toc-number">1.2.15.</span> <span class="toc-text">屏幕暂停与恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视模式"><span class="toc-number">1.3.</span> <span class="toc-text">可视模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块选择模式"><span class="toc-number">1.3.1.</span> <span class="toc-text">块选择模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行选择模式"><span class="toc-number">1.3.2.</span> <span class="toc-text">行选择模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调整行内容位置"><span class="toc-number">1.4.</span> <span class="toc-text">调整行内容位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索"><span class="toc-number">1.5.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级搜索"><span class="toc-number">1.6.</span> <span class="toc-text">高级搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则搜索"><span class="toc-number">1.7.</span> <span class="toc-text">正则搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换-1"><span class="toc-number">1.8.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动补齐"><span class="toc-number">1.9.</span> <span class="toc-text">自动补齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区"><span class="toc-number">1.10.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历列表"><span class="toc-number">1.11.</span> <span class="toc-text">遍历列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换窗口"><span class="toc-number">1.12.</span> <span class="toc-text">切换窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳到缓冲区列表的开头和结尾"><span class="toc-number">1.13.</span> <span class="toc-text">跳到缓冲区列表的开头和结尾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除缓冲区列表"><span class="toc-number">1.14.</span> <span class="toc-text">删除缓冲区列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开多个文件"><span class="toc-number">1.15.</span> <span class="toc-text">打开多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换文件"><span class="toc-number">1.16.</span> <span class="toc-text">切换文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到前一个文件"><span class="toc-number">1.17.</span> <span class="toc-text">回到前一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到下一个文件"><span class="toc-number">1.18.</span> <span class="toc-text">切换到下一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到上一个文件"><span class="toc-number">1.19.</span> <span class="toc-text">切换到上一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开新文件"><span class="toc-number">1.20.</span> <span class="toc-text">打开新文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存并退出"><span class="toc-number">1.21.</span> <span class="toc-text">保存并退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建加密文档"><span class="toc-number">1.22.</span> <span class="toc-text">创建加密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出以前编辑过的文档"><span class="toc-number">1.23.</span> <span class="toc-text">列出以前编辑过的文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示及更改文件名"><span class="toc-number">1.24.</span> <span class="toc-text">显示及更改文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复文件"><span class="toc-number">1.25.</span> <span class="toc-text">恢复文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入100个desu"><span class="toc-number">1.26.</span> <span class="toc-text">插入100个desu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令"><span class="toc-number">1.27.</span> <span class="toc-text">重复上一个命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接搜索当前单词"><span class="toc-number">1.28.</span> <span class="toc-text">直接搜索当前单词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行内跳"><span class="toc-number">1.29.</span> <span class="toc-text">行内跳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令3次"><span class="toc-number">1.30.</span> <span class="toc-text">重复上一个命令3次</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#视窗操作"><span class="toc-number">2.</span> <span class="toc-text">视窗操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#行选择"><span class="toc-number">2.1.</span> <span class="toc-text">行选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列选择"><span class="toc-number">2.2.</span> <span class="toc-text">列选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择"><span class="toc-number">2.3.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拆分窗口"><span class="toc-number">2.4.</span> <span class="toc-text">拆分窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行外部命令"><span class="toc-number">2.5.</span> <span class="toc-text">执行外部命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#帮助"><span class="toc-number">2.6.</span> <span class="toc-text">帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置"><span class="toc-number">2.7.</span> <span class="toc-text">设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置缩进字符数"><span class="toc-number">2.7.1.</span> <span class="toc-text">设置缩进字符数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本配置"><span class="toc-number">2.8.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">2.9.</span> <span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-plug"><span class="toc-number">2.9.1.</span> <span class="toc-text">vim-plug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件配置"><span class="toc-number">2.9.2.</span> <span class="toc-text">插件配置:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视模式-1"><span class="toc-number">2.10.</span> <span class="toc-text">可视模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可视行模式"><span class="toc-number">2.10.1.</span> <span class="toc-text">可视行模式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视块模式"><span class="toc-number">2.10.2.</span> <span class="toc-text">可视块模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动窗口"><span class="toc-number">2.10.3.</span> <span class="toc-text">移动窗口:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vim实用手册"><span class="toc-number">3.</span> <span class="toc-text">vim实用手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区-1"><span class="toc-number">3.1.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EX模式-也就是命令模式"><span class="toc-number">3.2.</span> <span class="toc-text">EX模式(也就是命令模式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令窗口"><span class="toc-number">3.3.</span> <span class="toc-text">命令窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行shell"><span class="toc-number">3.4.</span> <span class="toc-text">运行shell</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件"><span class="toc-number">4.</span> <span class="toc-text">文件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim的刻意练习"><span class="toc-number">1.</span> <span class="toc-text">vim的刻意练习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#toc-true"><span class="toc-number">1.1.</span> <span class="toc-text">toc: true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令"><span class="toc-number">1.2.</span> <span class="toc-text">命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插入"><span class="toc-number">1.2.1.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除字符"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-number">1.2.3.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动"><span class="toc-number">1.2.4.</span> <span class="toc-text">移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制"><span class="toc-number">1.2.5.</span> <span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粘贴"><span class="toc-number">1.2.6.</span> <span class="toc-text">粘贴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换"><span class="toc-number">1.2.7.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#撤销"><span class="toc-number">1.2.8.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存与另存为"><span class="toc-number">1.2.9.</span> <span class="toc-text">保存与另存为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示当前文件信息"><span class="toc-number">1.2.10.</span> <span class="toc-text">显示当前文件信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变大写"><span class="toc-number">1.2.11.</span> <span class="toc-text">变大写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变小写"><span class="toc-number">1.2.12.</span> <span class="toc-text">变小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字母翻转"><span class="toc-number">1.2.13.</span> <span class="toc-text">字母翻转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缩进与回退"><span class="toc-number">1.2.14.</span> <span class="toc-text">缩进与回退</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#屏幕暂停与恢复"><span class="toc-number">1.2.15.</span> <span class="toc-text">屏幕暂停与恢复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视模式"><span class="toc-number">1.3.</span> <span class="toc-text">可视模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块选择模式"><span class="toc-number">1.3.1.</span> <span class="toc-text">块选择模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#行选择模式"><span class="toc-number">1.3.2.</span> <span class="toc-text">行选择模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调整行内容位置"><span class="toc-number">1.4.</span> <span class="toc-text">调整行内容位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索"><span class="toc-number">1.5.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级搜索"><span class="toc-number">1.6.</span> <span class="toc-text">高级搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则搜索"><span class="toc-number">1.7.</span> <span class="toc-text">正则搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换-1"><span class="toc-number">1.8.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动补齐"><span class="toc-number">1.9.</span> <span class="toc-text">自动补齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区"><span class="toc-number">1.10.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遍历列表"><span class="toc-number">1.11.</span> <span class="toc-text">遍历列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换窗口"><span class="toc-number">1.12.</span> <span class="toc-text">切换窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跳到缓冲区列表的开头和结尾"><span class="toc-number">1.13.</span> <span class="toc-text">跳到缓冲区列表的开头和结尾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除缓冲区列表"><span class="toc-number">1.14.</span> <span class="toc-text">删除缓冲区列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开多个文件"><span class="toc-number">1.15.</span> <span class="toc-text">打开多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换文件"><span class="toc-number">1.16.</span> <span class="toc-text">切换文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到前一个文件"><span class="toc-number">1.17.</span> <span class="toc-text">回到前一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到下一个文件"><span class="toc-number">1.18.</span> <span class="toc-text">切换到下一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换到上一个文件"><span class="toc-number">1.19.</span> <span class="toc-text">切换到上一个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开新文件"><span class="toc-number">1.20.</span> <span class="toc-text">打开新文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存并退出"><span class="toc-number">1.21.</span> <span class="toc-text">保存并退出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建加密文档"><span class="toc-number">1.22.</span> <span class="toc-text">创建加密文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出以前编辑过的文档"><span class="toc-number">1.23.</span> <span class="toc-text">列出以前编辑过的文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示及更改文件名"><span class="toc-number">1.24.</span> <span class="toc-text">显示及更改文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恢复文件"><span class="toc-number">1.25.</span> <span class="toc-text">恢复文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入100个desu"><span class="toc-number">1.26.</span> <span class="toc-text">插入100个desu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令"><span class="toc-number">1.27.</span> <span class="toc-text">重复上一个命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接搜索当前单词"><span class="toc-number">1.28.</span> <span class="toc-text">直接搜索当前单词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#行内跳"><span class="toc-number">1.29.</span> <span class="toc-text">行内跳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重复上一个命令3次"><span class="toc-number">1.30.</span> <span class="toc-text">重复上一个命令3次</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#视窗操作"><span class="toc-number">2.</span> <span class="toc-text">视窗操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#行选择"><span class="toc-number">2.1.</span> <span class="toc-text">行选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列选择"><span class="toc-number">2.2.</span> <span class="toc-text">列选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择"><span class="toc-number">2.3.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拆分窗口"><span class="toc-number">2.4.</span> <span class="toc-text">拆分窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#执行外部命令"><span class="toc-number">2.5.</span> <span class="toc-text">执行外部命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#帮助"><span class="toc-number">2.6.</span> <span class="toc-text">帮助</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置"><span class="toc-number">2.7.</span> <span class="toc-text">设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置缩进字符数"><span class="toc-number">2.7.1.</span> <span class="toc-text">设置缩进字符数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本配置"><span class="toc-number">2.8.</span> <span class="toc-text">基本配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件"><span class="toc-number">2.9.</span> <span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-plug"><span class="toc-number">2.9.1.</span> <span class="toc-text">vim-plug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件配置"><span class="toc-number">2.9.2.</span> <span class="toc-text">插件配置:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可视模式-1"><span class="toc-number">2.10.</span> <span class="toc-text">可视模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可视行模式"><span class="toc-number">2.10.1.</span> <span class="toc-text">可视行模式:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视块模式"><span class="toc-number">2.10.2.</span> <span class="toc-text">可视块模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移动窗口"><span class="toc-number">2.10.3.</span> <span class="toc-text">移动窗口:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vim实用手册"><span class="toc-number">3.</span> <span class="toc-text">vim实用手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区-1"><span class="toc-number">3.1.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EX模式-也就是命令模式"><span class="toc-number">3.2.</span> <span class="toc-text">EX模式(也就是命令模式)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令窗口"><span class="toc-number">3.3.</span> <span class="toc-text">命令窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#运行shell"><span class="toc-number">3.4.</span> <span class="toc-text">运行shell</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件"><span class="toc-number">4.</span> <span class="toc-text">文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓冲区-2"><span class="toc-number">4.1.</span> <span class="toc-text">缓冲区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#窗口"><span class="toc-number">4.2.</span> <span class="toc-text">窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-number">4.3.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打开文件"><span class="toc-number">4.4.</span> <span class="toc-text">打开文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录树"><span class="toc-number">4.5.</span> <span class="toc-text">目录树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录不存在和没有权限"><span class="toc-number">4.6.</span> <span class="toc-text">目录不存在和没有权限</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -571,15 +577,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,6 +593,22 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -603,15 +617,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,10 +626,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,7 +641,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,7 +649,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +657,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,11 +677,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,10 +690,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,11 +713,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>
@@ -896,5 +902,22 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
 </html>

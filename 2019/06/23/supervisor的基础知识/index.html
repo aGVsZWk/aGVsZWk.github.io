@@ -17,7 +17,7 @@
 <meta property="og:description" content="记录supervisor的运行及配置规则.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/23/supervisor的基础知识/markdown-img-paste-20190618150454652.png">
-<meta property="og:updated_time" content="2019-06-23T12:15:19.202Z">
+<meta property="og:updated_time" content="2019-10-03T14:00:25.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="supervisor的基础知识">
 <meta name="twitter:description" content="记录supervisor的运行及配置规则.">
@@ -738,8 +738,6 @@
 </ul>
 <p>配置示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">[eventlistener:theeventlistenername]</span><br><span class="line">command=/bin/eventlistener</span><br><span class="line">process_name=%(program_name)s_%(process_num)02d</span><br><span class="line">numprocs=5</span><br><span class="line">events=PROCESS_STATE</span><br><span class="line">buffer_size=10</span><br><span class="line">directory=/tmp</span><br><span class="line">umask=022</span><br><span class="line">priority=-1</span><br><span class="line">autostart=true</span><br><span class="line">autorestart=unexpected</span><br><span class="line">startsecs=1</span><br><span class="line">startretries=3</span><br><span class="line">exitcodes=0,2</span><br><span class="line">stopsignal=QUIT</span><br><span class="line">stopwaitsecs=10</span><br><span class="line">stopasgroup=false</span><br><span class="line">killasgroup=false</span><br><span class="line">user=chrism</span><br><span class="line">redirect_stderr=false</span><br><span class="line">stdout_logfile=/a/path</span><br><span class="line">stdout_logfile_maxbytes=1MB</span><br><span class="line">stdout_logfile_backups=10</span><br><span class="line">stdout_events_enabled=false</span><br><span class="line">stderr_logfile=/a/path</span><br><span class="line">stderr_logfile_maxbytes=1MB</span><br><span class="line">stderr_logfile_backups=10</span><br><span class="line">stderr_events_enabled=false</span><br><span class="line">environment=A=&quot;1&quot;,B=&quot;2&quot;</span><br><span class="line">serverurl=AUTO</span><br></pre></td></tr></table></figure></p>
 <h3 id="rpcinterface配置段"><a href="#rpcinterface配置段" class="headerlink" title="rpcinterface配置段"></a>rpcinterface配置段</h3><p>扩展用的, 工厂模式, pass吧</p>
-<p>.</p>
-<p>.</p>
 
       
 
@@ -1003,19 +1001,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1023,15 +1013,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1040,6 +1038,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,15 +1057,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,7 +1065,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1083,7 +1077,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,7 +1085,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1099,15 +1093,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">

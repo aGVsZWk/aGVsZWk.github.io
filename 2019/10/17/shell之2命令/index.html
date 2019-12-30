@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
   <title>shell之2命令 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则与通配符区别正则: 在文件中匹配符合的字符串  (包含匹配)通配符: 匹配符合条件的文件名     (完全匹配) ls, find, cp 不认识正则表达式, 只认识通配符.1234touch aatouch aabbls aagrep &apos;size&apos;  xxx grep只要包含就会列出ls必须完全匹配才会列出 grep a* xxx 列出整篇文档, 没任何意义. 表示a出现或没出现都行grep">
+  <meta name="description" content="接着上篇内容">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell之2命令">
 <meta property="og:url" content="https://agvszwk.github.io/2019/10/17/shell之2命令/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="正则与通配符区别正则: 在文件中匹配符合的字符串  (包含匹配)通配符: 匹配符合条件的文件名     (完全匹配) ls, find, cp 不认识正则表达式, 只认识通配符.1234touch aatouch aabbls aagrep &apos;size&apos;  xxx grep只要包含就会列出ls必须完全匹配才会列出 grep a* xxx 列出整篇文档, 没任何意义. 表示a出现或没出现都行grep">
+<meta property="og:description" content="接着上篇内容">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-20190821143025206.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-2019082114503431.png">
@@ -34,10 +34,10 @@
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-20190822102637872.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-20190822103047898.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-2019082210340744.png">
-<meta property="og:updated_time" content="2019-12-30T12:21:00.176Z">
+<meta property="og:updated_time" content="2019-12-30T12:34:36.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell之2命令">
-<meta name="twitter:description" content="正则与通配符区别正则: 在文件中匹配符合的字符串  (包含匹配)通配符: 匹配符合条件的文件名     (完全匹配) ls, find, cp 不认识正则表达式, 只认识通配符.1234touch aatouch aabbls aagrep &apos;size&apos;  xxx grep只要包含就会列出ls必须完全匹配才会列出 grep a* xxx 列出整篇文档, 没任何意义. 表示a出现或没出现都行grep">
+<meta name="twitter:description" content="接着上篇内容">
 <meta name="twitter:image" content="https://agvszwk.github.io/2019/10/17/shell之2命令/markdown-img-paste-20190821143025206.png">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
@@ -200,7 +200,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="正则与通配符区别"><a href="#正则与通配符区别" class="headerlink" title="正则与通配符区别"></a>正则与通配符区别</h2><p>正则: 在文件中匹配符合的<strong>字符串</strong>  (包含匹配)<br>通配符: 匹配符合条件的<strong>文件名</strong>     (完全匹配)</p>
+        <p>接着上篇内容<br><a id="more"></a></p>
+<h2 id="正则与通配符区别"><a href="#正则与通配符区别" class="headerlink" title="正则与通配符区别"></a>正则与通配符区别</h2><p>正则: 在文件中匹配符合的<strong>字符串</strong>  (包含匹配)<br>通配符: 匹配符合条件的<strong>文件名</strong>     (完全匹配)</p>
 <p>ls, find, cp 不认识正则表达式, 只认识通配符.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch aa</span><br><span class="line">touch aabb</span><br><span class="line">ls aa</span><br><span class="line">grep <span class="string">'size'</span>  xxx</span><br></pre></td></tr></table></figure></p>
 <p>grep只要包含就会列出<br>ls必须完全匹配才会列出</p>
 <p><code>grep a* xxx</code> 列出整篇文档, 没任何意义. 表示a出现或没出现都行<br><code>grep aa* xxx</code> a至少出现一次<br><code>grep aaa* xxx</code> a至少出现2次<br><code>grep &quot;^[0-9]\{3,\}[a-z]&quot; xxx</code> 括号要用转义</p>
@@ -507,6 +508,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -515,7 +524,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,11 +548,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,14 +565,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,6 +588,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
@@ -595,10 +604,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -607,11 +612,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,6 +633,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">

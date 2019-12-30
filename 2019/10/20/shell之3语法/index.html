@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
   <title>shell之3语法 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;/dev/sda">
+  <meta name="description" content="最后一篇内容。 if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell之3语法">
 <meta property="og:url" content="https://agvszwk.github.io/2019/10/20/shell之3语法/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;/dev/sda">
+<meta property="og:description" content="最后一篇内容。 if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-30T12:20:12.263Z">
+<meta property="og:updated_time" content="2019-12-30T12:34:48.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell之3语法">
-<meta name="twitter:description" content="if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;/dev/sda">
+<meta name="twitter:description" content="最后一篇内容。 if代替[ -n $aa -a $aa -gt 23 ] &amp;amp;&amp;amp; echo yes || echo no 格式1:123if [条件判断式];then    程序fi 格式2:1234if [条件判断式]    then        程序fi 举例: 判断分区使用率123456789#!/bin/bash# 统计根分区使用率rate=$(df -h | grep &quot;">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -181,7 +181,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><p>代替<code>[ -n $aa -a $aa -gt 23 ] &amp;&amp; echo yes || echo no</code></p>
+        <p>最后一篇内容。<br><!--mroe--></p>
+<h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><p>代替<code>[ -n $aa -a $aa -gt 23 ] &amp;&amp; echo yes || echo no</code></p>
 <p>格式1:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [条件判断式];<span class="keyword">then</span></span><br><span class="line">    程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
 <p>格式2:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [条件判断式]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
 <p>举例: 判断分区使用率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计根分区使用率</span></span><br><span class="line"></span><br><span class="line">rate=$(df -h | grep <span class="string">"/dev/sda2"</span> | awk <span class="string">'&#123;print $5&#125;'</span> | cut -d % -f 1)</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$rate</span> -ge 80 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Warning! /dev/sda2 is full!!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
@@ -272,11 +273,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/30/python版设计模式实践/3.结构型/结构型设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/01/ansible知识1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          ansible知识1
         
       </div>
     </a>
@@ -444,6 +445,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -452,7 +461,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,11 +485,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,14 +502,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,6 +525,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
@@ -532,10 +541,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -544,11 +549,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,6 +570,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
   <title>shell之1基础 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用bash, fish会报错. 历史命令与补全查看历史命令: history历史命令保存目录: ~/.bash_history敲的命令并不会实时保存到bash_history中, 而是等登陆退出后, 将内存中的历史命令写入bash_history中history -w: 把缓存中的历史命令写入历史命令保存文件history -c: 将缓存和bash_history中历史命令全部清除历史命令条数:">
+  <meta name="description" content="细说 linux 笔记。">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell之1基础">
 <meta property="og:url" content="https://agvszwk.github.io/2019/10/15/shell之1基础/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="使用bash, fish会报错. 历史命令与补全查看历史命令: history历史命令保存目录: ~/.bash_history敲的命令并不会实时保存到bash_history中, 而是等登陆退出后, 将内存中的历史命令写入bash_history中history -w: 把缓存中的历史命令写入历史命令保存文件history -c: 将缓存和bash_history中历史命令全部清除历史命令条数:">
+<meta property="og:description" content="细说 linux 笔记。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190819163032258.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190819163829294.png">
@@ -28,10 +28,10 @@
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190820112743504.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190820113222863.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190820113522798.png">
-<meta property="og:updated_time" content="2019-12-30T12:19:07.576Z">
+<meta property="og:updated_time" content="2019-12-30T12:34:54.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell之1基础">
-<meta name="twitter:description" content="使用bash, fish会报错. 历史命令与补全查看历史命令: history历史命令保存目录: ~/.bash_history敲的命令并不会实时保存到bash_history中, 而是等登陆退出后, 将内存中的历史命令写入bash_history中history -w: 把缓存中的历史命令写入历史命令保存文件history -c: 将缓存和bash_history中历史命令全部清除历史命令条数:">
+<meta name="twitter:description" content="细说 linux 笔记。">
 <meta name="twitter:image" content="https://agvszwk.github.io/2019/10/15/shell之1基础/markdown-img-paste-20190819163032258.png">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
@@ -194,7 +194,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用bash, fish会报错.</p>
+        <p>细说 linux 笔记。<br><a id="more"></a></p>
+<p>使用bash, fish会报错.</p>
 <h2 id="历史命令与补全"><a href="#历史命令与补全" class="headerlink" title="历史命令与补全"></a>历史命令与补全</h2><p>查看历史命令: <code>history</code><br>历史命令保存目录: <code>~/.bash_history</code><br>敲的命令并不会实时保存到bash_history中, 而是等登陆退出后, 将内存中的历史命令写入bash_history中<br><code>history -w</code>: 把缓存中的历史命令写入历史命令保存文件<br><code>history -c</code>: 将缓存和bash_history中历史命令全部清除<br>历史命令条数: <code>/etc/profile</code>的HISTSIZE</p>
 <p><code>!n</code> 重复指定地n条命令<br><code>!!</code> 执行上条命令<br><code>!n</code> 重复执行最后一条以该字符串开头的命令.</p>
 <p>上面三条命令在fish中不存在.</p>
@@ -510,6 +511,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">atom</a>
               </li>
              
@@ -518,7 +527,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +551,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,14 +568,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,6 +591,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
@@ -598,10 +607,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -610,11 +615,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">scrapy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,6 +636,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -6,19 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
-  <title>Archives: 2019/8 | Luke的个人博客</title>
+  <title>windows部署wsgi服务 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="python,django,drf,jwt,fastdfs,开发者,程序员,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luke的个人博客">
-<meta property="og:url" content="https://agvszwk.github.io/archives/2019/08/index.html">
+  <meta name="description" content="在 windows 下使用 apache 部署 django。">
+<meta name="keywords" content="部署,windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows部署wsgi服务">
+<meta property="og:url" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="人生苦短，我用python">
+<meta property="og:description" content="在 windows 下使用 apache 部署 django。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813095714291.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310031977.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310044440.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813101156139.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310215741.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813102413421.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813110940824.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813110928785.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813145218762.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813144708760.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813141710537.png">
+<meta property="og:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813142101589.png">
+<meta property="og:updated_time" content="2019-12-30T13:06:19.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luke的个人博客">
-<meta name="twitter:description" content="人生苦短，我用python">
+<meta name="twitter:title" content="windows部署wsgi服务">
+<meta name="twitter:description" content="在 windows 下使用 apache 部署 django。">
+<meta name="twitter:image" content="https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813095714291.png">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -160,43 +174,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-windows部署wsgi服务" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      windows部署wsgi服务
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/13/windows部署wsgi服务/" class="archive-article-date">
-  	<time datetime="2019-08-13T01:44:38.492Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-13</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+        
+        <a href="/2019/06/27/windows部署wsgi服务/" class="archive-article-date">
+  	<time datetime="2019-06-27T14:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 windows 下使用 apache 部署 django。<br><a id="more"></a><br>操作系统: windows10专业版.<br>apache版本:2.4.39(2.4系列应该都ok的)</p>
+<h2 id="windows安装apache"><a href="#windows安装apache" class="headerlink" title="windows安装apache"></a>windows安装apache</h2><ul>
+<li><p>下载apache<br>官方下载地址: <code>https://www.apachehaus.com/cgi-bin/download.plx</code><br>32位还是64位的自己确定, 解压后放到C盘根目录</p>
+</li>
+<li><p>查看文档 README.txt<br>里面写安装看INSTALL.txt. 安装文档又说windows看 <code>http://httpd.apache.org/docs/2.4/platform/windows.html</code></p>
+</li>
+<li><p>安装apache</p>
+</li>
+</ul>
+<ol>
+<li>排除干扰. 安装前如果IIS在运行, 停掉它. 设置成开机不启动. 我之前还安装了LAMP, 安装前把它给卸载了</li>
+<li>管理员身份打开cmd, 切到apache的bin目录下, <code>httpd -k start</code></li>
+<li><p>如果报443端口被占用, 找到443端口的进程, 停掉它. <code>netstat -aon|findstr &quot;443&quot;</code> <code>tasklist|findstr &quot;进程号&quot;</code>. 我的是VMware占用了443.<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813095714291.png" alt></p>
+</li>
+<li><p>进行安装<br>以管理员身份开cmd, cd到bin目录下. <code>httpd.exe -k install</code><br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310031977.png" alt><br>安装成功, 无报错内容<br>在服务中进行查看:<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310044440.png" alt></p>
+</li>
+<li>其它命令:<br>指定服务名和配置文件安装: <code>httpd.exe -k install -n &quot;MyServiceName&quot; -f &quot;c:\files\my.conf&quot;</code><br>卸载: <code>httpd.exe -k uninstall</code><br>卸载指定服务名: <code>httpd.exe -k uninstall -n &quot;MyServiceName&quot;</code><br>停止服务: <code>httpd.exe -k stop -n &quot;MyServiceName&quot;</code> or <code>httpd.exe -k shutdown -n &quot;MyServiceName&quot;</code><br>重启: <code>httpd.exe -k restart -n &quot;MyServiceName&quot;</code><br>检测配置文件: <code>httpd.exe -n &quot;MyServiceName&quot; -t</code><br>启动: <code>httpd.exe -k start -n &quot;MyServiceName&quot;</code></li>
+</ol>
+<ul>
+<li>查看运行信息以及版本: <code>httpd.exe -V</code> and <code>httpd.exe -v</code></li>
+<li>查看apache如何解析配置文件: <code>httpd.exe -S</code></li>
+<li>查看安装的模块: <code>httpd.exe -M</code></li>
+</ul>
+<ol>
+<li>-f和-n<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813101156139.png" alt></li>
+</ol>
+<h2 id="配置apache"><a href="#配置apache" class="headerlink" title="配置apache"></a>配置apache</h2><p>文档目录: <code>http://httpd.apache.org/docs/2.4/zh-cn/</code></p>
+<h3 id="安装界面的内容"><a href="#安装界面的内容" class="headerlink" title="安装界面的内容"></a>安装界面的内容</h3><p>conf文件夹里面. httpd.conf<br>Document为网络资源根配置. 默认路径:<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-2019081310215741.png" alt><br>可用通用路径, ip地址, 别名方式指定访问路径:<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813102413421.png" alt></p>
+<h3 id="绑定地址和端口"><a href="#绑定地址和端口" class="headerlink" title="绑定地址和端口"></a>绑定地址和端口</h3><p><code>Listen</code></p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>Include xxx</code><br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813110940824.png" alt></p>
+<h3 id="配置片段"><a href="#配置片段" class="headerlink" title="配置片段"></a>配置片段</h3><p><code>&lt;Directory&gt;</code>, <code>&lt;Location&gt;</code>, <code>&lt;VirtualHost&gt;</code>, …<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813110928785.png" alt></p>
+<h4 id="DocumentRoot"><a href="#DocumentRoot" class="headerlink" title="DocumentRoot"></a>DocumentRoot</h4><p><code>DocumentRoot &quot;/app/website1&quot;</code><br>网站根目录, 先改这个!</p>
+<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><p><code>&lt;Directory /&gt;    AllowOverride none    Require all denied&lt;/Directory&gt;</code></p>
+<p><directory>path</directory>主要是对目录文件访问权限的控制</p>
+<p>AllowOverride从字面上解释是允许覆盖的意思，即Apache允许另一配置文件覆盖现有配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AllowOverride   None            不读取.htaccess，完全忽视.htaccess文件</span><br><span class="line">AllowOverride   all              允许.htaccess所有指令，缺省是all</span><br><span class="line">AllowOverride   Limit           .htaccess函盖具体限定的主机(allow,deny)</span><br><span class="line">AllowOverride   AuthConfig      .htaccess函盖跟认证有关指令(AuthType,AuthName)</span><br></pre></td></tr></table></figure>
+<p>Option：该参数用于定义对目录的操作权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">option none           禁止对目录的所有操作</span><br><span class="line">option all            允许对目录的所有操作，ALL---所有操作</span><br><span class="line">option ExecCGI        对该目录，可以执行cgi脚本</span><br><span class="line">option Indexes        允许访问该目录（而该目录没有index.html）时，返回目录下的文件列表   option FollowSymLinks 只允许对目录的FollowSymLinks操作</span><br></pre></td></tr></table></figure></p>
+<p>所有远程主机都可以访问这个目录, 需要在里面加<br><code>Require all granted</code></p>
+<h4 id="Require"><a href="#Require" class="headerlink" title="Require"></a>Require</h4><p><code>&lt;RequireAll&gt;&lt;/RequireAll&gt;</code><br><code>&lt;RequireAny&gt;&lt;/RequreAny&gt;</code></p>
+<p><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813145218762.png" alt><br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813144708760.png" alt></p>
+<h4 id="VirtualHost"><a href="#VirtualHost" class="headerlink" title="VirtualHost"></a>VirtualHost</h4><p>虚拟端口, 要启用它需要在<code>httpd.conf</code>中设置包含<code>Include conf/extra/httpd-vhosts.conf</code><br>要开启<code>Listen</code>, 不然也不能访问</p>
+<h3 id="MPM模块"><a href="#MPM模块" class="headerlink" title="MPM模块"></a>MPM模块</h3><p>prefork<br>worker<br>event<br>…</p>
+<h2 id="ab压测工具"><a href="#ab压测工具" class="headerlink" title="ab压测工具"></a>ab压测工具</h2><p><code>ab -c 100 -n 1000</code> 并发100, 总数10000<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813141710537.png" alt></p>
+<p>超时表示性能达不到<br><img src="/2019/06/27/windows部署wsgi服务/markdown-img-paste-20190813142101589.png" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">windows</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2019/06/27/windows部署wsgi服务/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/06/27/vim笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vim笔记
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/06/23/nginx复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nginx复习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows安装apache"><span class="toc-number">1.</span> <span class="toc-text">windows安装apache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置apache"><span class="toc-number">2.</span> <span class="toc-text">配置apache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装界面的内容"><span class="toc-number">2.1.</span> <span class="toc-text">安装界面的内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绑定地址和端口"><span class="toc-number">2.2.</span> <span class="toc-text">绑定地址和端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">2.3.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置片段"><span class="toc-number">2.4.</span> <span class="toc-text">配置片段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DocumentRoot"><span class="toc-number">2.4.1.</span> <span class="toc-text">DocumentRoot</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Directory"><span class="toc-number">2.4.2.</span> <span class="toc-text">Directory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Require"><span class="toc-number">2.4.3.</span> <span class="toc-text">Require</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VirtualHost"><span class="toc-number">2.4.4.</span> <span class="toc-text">VirtualHost</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPM模块"><span class="toc-number">2.5.</span> <span class="toc-text">MPM模块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ab压测工具"><span class="toc-number">3.</span> <span class="toc-text">ab压测工具</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -220,8 +406,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -327,11 +513,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -351,11 +537,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -375,19 +561,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,11 +585,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -412,10 +598,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -435,7 +617,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,6 +626,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,10 +654,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,6 +860,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
 </html>

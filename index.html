@@ -404,16 +404,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最后一篇内容。<br><!--mroe--></p>
-<h2 id="if"><a href="#if" class="headerlink" title="if"></a>if</h2><p>代替<code>[ -n $aa -a $aa -gt 23 ] &amp;&amp; echo yes || echo no</code></p>
-<p>格式1:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [条件判断式];<span class="keyword">then</span></span><br><span class="line">    程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
-<p>格式2:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [条件判断式]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
-<p>举例: 判断分区使用率<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计根分区使用率</span></span><br><span class="line"></span><br><span class="line">rate=$(df -h | grep <span class="string">"/dev/sda2"</span> | awk <span class="string">'&#123;print $5&#125;'</span> | cut -d % -f 1)</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$rate</span> -ge 80 ]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Warning! /dev/sda2 is full!!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
-<p>多分支, 格式3:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [条件判断式]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">        程序</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        另一个程序</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></p>
-<p>举例: 备份mysql数据<br><code>date +%y%m%d</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 同步系统时间</span></span><br><span class="line">ntpdate asia.pool.ntp.org &amp;&gt; /dev/null</span><br><span class="line"><span class="comment"># 把当前系统时间按照"年月日"格式赋予变量date</span></span><br><span class="line">date=$(date +%y%m%d)</span><br><span class="line"><span class="comment"># 统计mysql数据库大小, 并把大小赋予size变量</span></span><br><span class="line">size=$(du -sh /var/lib/mysql)</span><br></pre></td></tr></table></figure></p>
-<p>./configure —add-module=/root/ngx_http_proxy_connect_module-master —with-http_ssl_module</p>
-<p>htpasswd -cd /etc/squid3/passwords luke<br>/usr/lib64/squid/basic_ncsa_auth /etc/squid3/passwords</p>
-<h2 id="case"><a href="#case" class="headerlink" title="case"></a>case</h2><h2 id="for"><a href="#for" class="headerlink" title="for"></a>for</h2><h2 id="while"><a href="#while" class="headerlink" title="while"></a>while</h2>
+        <p>最后一篇内容。<br></p>
+        
       
 
       
@@ -614,68 +606,6 @@
 
 
   
-    <article id="post-html和css入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/14/html和css入门/">html和css入门</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/14/html和css入门/" class="archive-article-date">
-  	<time datetime="2019-10-14T14:27:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/14/html和css入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-shell知识简单记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -824,56 +754,31 @@
 
 
   
-    <article id="post-windows部署wsgi服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vim笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/27/vim笔记/">vim笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/27/vim笔记/" class="archive-article-date">
+  	<time datetime="2019-06-27T14:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>操作系统: windows10专业版.<br>apache版本:2.4.39(2.4系列应该都ok的)</p>
-<h2 id="windows安装apache"><a href="#windows安装apache" class="headerlink" title="windows安装apache"></a>windows安装apache</h2><ul>
-<li><p>下载apache<br>官方下载地址: <code>https://www.apachehaus.com/cgi-bin/download.plx</code><br>32位还是64位的自己确定, 解压后放到C盘根目录</p>
-</li>
-<li><p>查看文档 README.txt<br>里面写安装看INSTALL.txt. 安装文档又说windows看 <code>http://httpd.apache.org/docs/2.4/platform/windows.html</code></p>
-</li>
-<li><p>安装apache</p>
-</li>
-</ul>
+        <p>todo 改键</p>
 <ol>
-<li>排除干扰. 安装前如果IIS在运行, 停掉它. 设置成开机不启动. 我之前还安装了LAMP, 安装前把它给卸载了</li>
-<li>管理员身份打开cmd, 切到apache的bin目录下, <code>httpd -k start</code></li>
-<li><p>如果报443端口被占用, 找到443端口的进程, 停掉它. <code>netstat -aon|findstr &quot;443&quot;</code> <code>tasklist|findstr &quot;进程号&quot;</code>. 我的是VMware占用了443.<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813095714291.png" alt></p>
-</li>
-<li><p>进行安装<br>以管理员身份开cmd, cd到bin目录下. <code>httpd.exe -k install</code><br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-2019081310031977.png" alt><br>安装成功, 无报错内容<br>在服务中进行查看:<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-2019081310044440.png" alt></p>
-</li>
-<li>其它命令:<br>指定服务名和配置文件安装: <code>httpd.exe -k install -n &quot;MyServiceName&quot; -f &quot;c:\files\my.conf&quot;</code><br>卸载: <code>httpd.exe -k uninstall</code><br>卸载指定服务名: <code>httpd.exe -k uninstall -n &quot;MyServiceName&quot;</code><br>停止服务: <code>httpd.exe -k stop -n &quot;MyServiceName&quot;</code> or <code>httpd.exe -k shutdown -n &quot;MyServiceName&quot;</code><br>重启: <code>httpd.exe -k restart -n &quot;MyServiceName&quot;</code><br>检测配置文件: <code>httpd.exe -n &quot;MyServiceName&quot; -t</code><br>启动: <code>httpd.exe -k start -n &quot;MyServiceName&quot;</code></li>
-</ol>
-<ul>
-<li>查看运行信息以及版本: <code>httpd.exe -V</code> and <code>httpd.exe -v</code></li>
-<li>查看apache如何解析配置文件: <code>httpd.exe -S</code></li>
-<li>查看安装的模块: <code>httpd.exe -M</code></li>
-</ul>
-<ol>
-<li>-f和-n<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813101156139.png" alt></li>
-</ol>
-<h2 id="配置apache"><a href="#配置apache" class="headerlink" title="配置apache"></a>配置apache</h2><p>文档目录: <code>http://httpd.apache.org/docs/2.4/zh-cn/</code></p>
-<h3 id="安装界面的内容"><a href="#安装界面的内容" class="headerlink" title="安装界面的内容"></a>安装界面的内容</h3><p>conf文件夹里面. httpd.conf<br>Document为网络资源根配置. 默认路径:<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-2019081310215741.png" alt><br>可用通用路径, ip地址, 别名方式指定访问路径:<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813102413421.png" alt></p>
-<h3 id="绑定地址和端口"><a href="#绑定地址和端口" class="headerlink" title="绑定地址和端口"></a>绑定地址和端口</h3><p><code>Listen</code></p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>Include xxx</code><br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813110940824.png" alt></p>
-<h3 id="配置片段"><a href="#配置片段" class="headerlink" title="配置片段"></a>配置片段</h3><p><code>&lt;Directory&gt;</code>, <code>&lt;Location&gt;</code>, <code>&lt;VirtualHost&gt;</code>, …<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813110928785.png" alt></p>
-<h4 id="DocumentRoot"><a href="#DocumentRoot" class="headerlink" title="DocumentRoot"></a>DocumentRoot</h4><p><code>DocumentRoot &quot;/app/website1&quot;</code><br>网站根目录, 先改这个!</p>
-<h4 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h4><p><code>&lt;Directory /&gt;    AllowOverride none    Require all denied&lt;/Directory&gt;</code></p>
-<p><directory>path</directory>主要是对目录文件访问权限的控制</p>
-<p>AllowOverride从字面上解释是允许覆盖的意思，即Apache允许另一配置文件覆盖现有配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AllowOverride   None            不读取.htaccess，完全忽视.htaccess文件</span><br><span class="line">AllowOverride   all              允许.htaccess所有指令，缺省是all                  </span><br><span class="line">AllowOverride   Limit           .htaccess函盖具体限定的主机(allow,deny)</span><br><span class="line">AllowOverride   AuthConfig      .htaccess函盖跟认证有关指令(AuthType,AuthName)</span><br></pre></td></tr></table></figure>
-<p>Option：该参数用于定义对目录的操作权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">option none           禁止对目录的所有操作</span><br><span class="line">option all            允许对目录的所有操作，ALL---所有操作</span><br><span class="line">option ExecCGI        对该目录，可以执行cgi脚本</span><br><span class="line">option Indexes        允许访问该目录（而该目录没有index.html）时，返回目录下的文件列表   option FollowSymLinks 只允许对目录的FollowSymLinks操作</span><br></pre></td></tr></table></figure></p>
-<p>所有远程主机都可以访问这个目录, 需要在里面加<br><code>Require all granted</code></p>
-<h4 id="Require"><a href="#Require" class="headerlink" title="Require"></a>Require</h4><p><code>&lt;RequireAll&gt;&lt;/RequireAll&gt;</code><br><code>&lt;RequireAny&gt;&lt;/RequreAny&gt;</code></p>
-<p><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813145218762.png" alt><br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813144708760.png" alt></p>
-<h4 id="VirtualHost"><a href="#VirtualHost" class="headerlink" title="VirtualHost"></a>VirtualHost</h4><p>虚拟端口, 要启用它需要在<code>httpd.conf</code>中设置包含<code>Include conf/extra/httpd-vhosts.conf</code><br>要开启<code>Listen</code>, 不然也不能访问</p>
-<h3 id="MPM模块"><a href="#MPM模块" class="headerlink" title="MPM模块"></a>MPM模块</h3><p>prefork<br>worker<br>event<br>…</p>
-<h2 id="ab压测工具"><a href="#ab压测工具" class="headerlink" title="ab压测工具"></a>ab压测工具</h2><p><code>ab -c 100 -n 1000</code> 并发100, 总数10000<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813141710537.png" alt></p>
-<p>超时表示性能达不到<br><img src="/2019/08/13/windows部署wsgi服务/markdown-img-paste-20190813142101589.png" alt></p>
-
+<li>空格改反斜杠</li>
+<li>大小写转换改Esc</li></ol>
+        
       
 
       
@@ -881,11 +786,100 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vim</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/13/windows部署wsgi服务/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/27/vim笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-windows部署wsgi服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/27/windows部署wsgi服务/">windows部署wsgi服务</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/27/windows部署wsgi服务/" class="archive-article-date">
+  	<time datetime="2019-06-27T14:26:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 windows 下使用 apache 部署 django。<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">部署</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">windows</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/27/windows部署wsgi服务/">展开全文 >></a>
         </p>
       
 
@@ -1050,11 +1044,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color2">django</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">django</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1074,11 +1068,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1098,19 +1092,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1122,11 +1116,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">python高级</a>
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1135,10 +1129,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1158,7 +1148,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1167,6 +1157,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,10 +1185,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1393,6 +1391,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
 </html>

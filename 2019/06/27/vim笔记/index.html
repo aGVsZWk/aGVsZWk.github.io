@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -181,7 +181,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vim笔记" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-vim笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -305,9 +305,9 @@
 <h3 id="移动窗口"><a href="#移动窗口" class="headerlink" title="移动窗口:"></a>移动窗口:</h3><p><code>&lt;ctrl&gt;wh</code>  <code>h</code><br><code>&lt;ctrl&gt;wj</code>  <code>j</code><br><code>&lt;ctrl&gt;wk</code>  <code>k</code><br><code>&lt;ctrl&gt;wl</code>  <code>l</code></p>
 <h1 id="vim实用手册"><a href="#vim实用手册" class="headerlink" title="vim实用手册"></a>vim实用手册</h1><p>普通模式下:<br><code>ctrl+a, ctrl+x</code>: 对数字进行加减</p>
 <h2 id="缓冲区-1"><a href="#缓冲区-1" class="headerlink" title="缓冲区"></a>缓冲区</h2><p>插入模式下:<br><code>&lt;ctrl+r&gt;0</code> 读取复制的内容<br><code>&lt;ctrl+r&gt;=</code>输入算数表达式</p>
-<h2 id="EX模式-也就是命令模式"><a href="#EX模式-也就是命令模式" class="headerlink" title="EX模式(也就是命令模式)"></a>EX模式(也就是命令模式)</h2><p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714171620784.png" alt=""><br><code>:行号</code>: 跳转到指定行<br><code>:$</code>: 跳到最后一行<br><code>:print</code> 显示本行内容<br><code>:p</code>： print的简写<br><code>:3p</code>: 光标移动到第三行，然后显示其内容<br><code>:2,5p</code>: 显示第2到第5行间的内容<br><code>.,$p</code>: 显示当前行到最后一行的内容. 点表示当前行<br><code>:delete</code> 删除本行</p>
+<h2 id="EX模式-也就是命令模式"><a href="#EX模式-也就是命令模式" class="headerlink" title="EX模式(也就是命令模式)"></a>EX模式(也就是命令模式)</h2><p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714171620784.png" alt><br><code>:行号</code>: 跳转到指定行<br><code>:$</code>: 跳到最后一行<br><code>:print</code> 显示本行内容<br><code>:p</code>： print的简写<br><code>:3p</code>: 光标移动到第三行，然后显示其内容<br><code>:2,5p</code>: 显示第2到第5行间的内容<br><code>.,$p</code>: 显示当前行到最后一行的内容. 点表示当前行<br><code>:delete</code> 删除本行</p>
 <p>可在选择模式下进入EX模式，这样就会自动帮我们写操作的范围</p>
-<p>+号表示偏移<br><code>.,.+3p</code>: 当前行到下三行的内容<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714172359173.png" alt=""></p>
+<p>+号表示偏移<br><code>.,.+3p</code>: 当前行到下三行的内容<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714172359173.png" alt></p>
 <p><code>6copy.</code> <code>6co.</code> <code>6t.</code> : 把第6行内容复制到当前行下方<br><code>t6</code>: 把当前行复制到第6行下方<br><code>:t.</code>: 赋值当前行到下方. 相当于yyp<br><code>:t$</code>: 把当前行复制到文本结尾<br><code>:&#39;&lt;&#39;&gt;t0</code>: 把高亮选中的行复制到文件开头<br>通用范式: <code>复制行(范围)t粘贴行</code></p>
 <p>move和copy相同，move可简写为m</p>
 <p>normal命令可以解读为对其执行普通模式下的命令<br>举例: 在每一行后面加分号。 先改第一行，然后选中要修改的行。<code>:&#39;&lt;&#39;&gt;normal .</code>就把选中的行全部修改了。<br><code>:normal A;</code><br>normal后可以跟任意普通模式下的命令<br>普通模式下<code>@:</code> 可以重复上次EX模式下执行的命令</p>
@@ -315,39 +315,39 @@
 <p>命令模式下: <code>&lt;ctrl+r&gt;&lt;ctrl+w&gt;</code>能把当前光标下的词读入命令行中.</p>
 <p>历史记录: 可用上下键翻阅，也可用<code>&lt;ctrl+p&gt;</code>和<code>&lt;ctrl+n&gt;</code>来翻阅</p>
 <h2 id="命令窗口"><a href="#命令窗口" class="headerlink" title="命令窗口"></a>命令窗口</h2><p>查看命令窗口有关的帮助:<code>h cmdwin</code><br>可在命令窗口任意修改内容<br>关闭命令窗口按回车(光标在最后一行时)。</p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-2019071421414605.png" alt=""></p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-2019071421414605.png" alt></p>
 <h2 id="运行shell"><a href="#运行shell" class="headerlink" title="运行shell"></a>运行shell</h2><p>EX模式下可以用<code>:!{cmd}</code>来执行一次性命令，也可以用<code>:shell</code>来启动交互式的shell会话，输入<code>exit</code>退出后在回到vim中来。</p>
-<p><code>read !{cmd}</code> 把命令的输出读入当前缓冲区中<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714225216222.png" alt=""></p>
+<p><code>read !{cmd}</code> 把命令的输出读入当前缓冲区中<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190714225216222.png" alt></p>
 <h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><h3 id="缓冲区-2"><a href="#缓冲区-2" class="headerlink" title="缓冲区"></a>缓冲区</h3><p>缓冲区: 文件是存储在磁盘上的，而缓冲区是存在内存中。 当vim打开一个文件时，该文件被读入一个具有相同名字的缓冲区。二者文件完全相同。当对缓冲区做出修改时，二者的内容就会出现差别。如果要保留缓冲区内容，而需要将其内容在写回文件里。</p>
-<p><code>vim *.txt</code><br><code>:ls</code><br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715220043611.png" alt=""><br><code>%</code>表示哪个缓冲区在当前窗口中可见。<code>#</code>表示轮换文件。</p>
+<p><code>vim *.txt</code><br><code>:ls</code><br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715220043611.png" alt><br><code>%</code>表示哪个缓冲区在当前窗口中可见。<code>#</code>表示轮换文件。</p>
 <p><code>buffer next</code>  <code>bn</code><br><code>buffer prev</code>  <code>bp</code><br><code>buffer first</code> <code>bf</code><br><code>buffer last</code> <code>bl</code><br><code>bdelete 缓冲区名</code>  <code>bd 缓冲区名</code> 或 <code>N,Mbd</code>N,M均为缓冲区编号</p>
 <p><code>:args</code>:   缓冲区列表<br><code>:args 文件名1 文件名2</code>: 将文件1和文件2读入缓冲区</p>
-<p><code>*</code>表示匹配0个或多个字符，范围仅限于指定的目录， 不会递归匹配子目录<br><code>**</code>也是0个或多个字符，但是可以匹配子目录<br><code>:args **</code>: 将目录都读入到缓存区中<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222233598.png" alt=""><br>也可以同时匹配多个</p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222658251.png" alt=""><br>前面有加号，表示这个缓冲区被修改过了。切换要用强制切换.<br><code>bn!</code>之后<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222931758.png" alt=""><br><code>a</code>表示当前活动的缓冲区，<code>h</code>表示隐藏的缓存区.<br>在你退出的时候<code>:quit</code>(不管在哪个缓冲区窗口)，第一个隐藏的缓冲区都会弹出来问你是否保存。 <code>:write</code>可将其写入到文件。<code>:edit!</code>可将其从磁盘重新读出来，覆盖隐藏的缓冲区。</p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715223535950.png" alt=""></p>
+<p><code>*</code>表示匹配0个或多个字符，范围仅限于指定的目录， 不会递归匹配子目录<br><code>**</code>也是0个或多个字符，但是可以匹配子目录<br><code>:args **</code>: 将目录都读入到缓存区中<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222233598.png" alt><br>也可以同时匹配多个</p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222658251.png" alt><br>前面有加号，表示这个缓冲区被修改过了。切换要用强制切换.<br><code>bn!</code>之后<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715222931758.png" alt><br><code>a</code>表示当前活动的缓冲区，<code>h</code>表示隐藏的缓存区.<br>在你退出的时候<code>:quit</code>(不管在哪个缓冲区窗口)，第一个隐藏的缓冲区都会弹出来问你是否保存。 <code>:write</code>可将其写入到文件。<code>:edit!</code>可将其从磁盘重新读出来，覆盖隐藏的缓冲区。</p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715223535950.png" alt></p>
 <p><code>bufdo和argdo</code>: 执行EX模式</p>
 <h3 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h3><p>水平切割: 屏幕中间出来一条水平线，窗口被分为上下两部分<br>切割窗口: <code>&lt;C-w&gt;s</code>和<code>&lt;C-w&gt;v</code><br>切割窗口，并在新窗口中载入文件: <code>:sp 文件名</code>  `vsp 文件名</p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224449288.png" alt=""></p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224449288.png" alt></p>
 <p>关闭活动窗口: <code>:co</code>  <code>&lt;C-w&gt;c</code><br>只保留活动窗口，关闭其它窗口: <code>:on</code> <code>&lt;C-w&gt;o</code></p>
-<p>更改窗口大小:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224946489.png" alt=""><br>感觉可能<code>&lt;C-w&gt;=</code>可能会被用到吧</p>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>标签页: 类似于linux虚拟桌面，一个标签页中可以有多个缓冲区，多个窗口<br><code>:tab</code> 控制<br><code>tabn</code>  <code>tabp</code> <code>tabf</code> <code>tabl</code><br><code>:tabedit+文件名</code>  <code>tabe+文件名</code> 在新标签页中打开文件<br><code>tabo</code>  <code>tabc</code>: 和分屏相同<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715230003716.png" alt=""></p>
+<p>更改窗口大小:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715224946489.png" alt><br>感觉可能<code>&lt;C-w&gt;=</code>可能会被用到吧</p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>标签页: 类似于linux虚拟桌面，一个标签页中可以有多个缓冲区，多个窗口<br><code>:tab</code> 控制<br><code>tabn</code>  <code>tabp</code> <code>tabf</code> <code>tabl</code><br><code>:tabedit+文件名</code>  <code>tabe+文件名</code> 在新标签页中打开文件<br><code>tabo</code>  <code>tabc</code>: 和分屏相同<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190715230003716.png" alt></p>
 <h3 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h3><p>使用edit打开文件: <code>edit 文件名</code><br>打开活动活动区的完整路径: <code>:edit %&lt;Tab&gt;</code>  会自动补充当前文件名字<br>如果想要去除文件名，可以<code>:edit %:h&lt;Tab&gt;</code></p>
 <p>使用find打开文件： <code>:find 文件名</code>. 需要配置路径的<br>配置路径: <code>set path+=app/**</code></p>
 <h3 id="目录树"><a href="#目录树" class="headerlink" title="目录树"></a>目录树</h3><p>打开目录树，默认调用netrw插件(vim原生的文件管理器目录)<code>vim .</code><br>如果要切换根目录，用<code>:edit path</code><br><code>edit .</code>可简写为<code>e.</code><br><code>edit %:h</code><br>打开目录树，并显示缓冲区内容:<code>:Explore</code>  <code>:E</code>  <code>:Sexplore</code>  <code>:Vexplore</code></p>
 <h3 id="目录不存在和没有权限"><a href="#目录不存在和没有权限" class="headerlink" title="目录不存在和没有权限"></a>目录不存在和没有权限</h3><p>edit可向缓冲区中读入一个不存在的路径的文件，操作完成从缓冲区写入硬盘时会报错，可以用shell创建文件路径 <code>!mkdir -p %:h</code></p>
 <p>如果没有打开文件的写权限，可以去用sudo去执行tee。 <code>:w !sudo tee % &gt; /dev/null</code></p>
 <p><code>ctrl+g</code>可查看文件状态</p>
-<h2 id="移动与跳转"><a href="#移动与跳转" class="headerlink" title="移动与跳转"></a>移动与跳转</h2><h3 id="行"><a href="#行" class="headerlink" title="行"></a>行</h3><p>实际行与屏幕行:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717222753883.png" alt=""><br>如图，上面3个实际行，9个屏幕行。<br><code>j</code>和<code>k</code>移动实际行<br><code>gj</code>和<code>gk</code>移动屏幕行<br><code>0</code>和<code>$</code>,<code>^</code>也一样</p>
+<h2 id="移动与跳转"><a href="#移动与跳转" class="headerlink" title="移动与跳转"></a>移动与跳转</h2><h3 id="行"><a href="#行" class="headerlink" title="行"></a>行</h3><p>实际行与屏幕行:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717222753883.png" alt><br>如图，上面3个实际行，9个屏幕行。<br><code>j</code>和<code>k</code>移动实际行<br><code>gj</code>和<code>gk</code>移动屏幕行<br><code>0</code>和<code>$</code>,<code>^</code>也一样</p>
 <h3 id="单词与句子"><a href="#单词与句子" class="headerlink" title="单词与句子"></a>单词与句子</h3><p><code>w</code>, <code>b</code>, <code>e</code>, <code>ge</code>, <code>W</code>, <code>B</code>, <code>E</code><br>组合按键: <code>ea</code>, <code>gea</code></p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-2019071722375330.png" alt=""></p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-2019071722375330.png" alt></p>
 <p><code>;</code>和<code>,</code>上下重复查找<br>组合命令:<code>f,</code>, <code>dt.</code></p>
-<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224620478.png" alt=""></p>
-<p><code>t</code>表示标签里的内容<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224712893.png" alt=""></p>
+<p><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224620478.png" alt></p>
+<p><code>t</code>表示标签里的内容<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224712893.png" alt></p>
 <p>组合命令: <code>ci[</code>  <code>cit</code></p>
-<p><code>w</code>, <code>s</code>, <code>p</code>, <code>W</code>, <code>S</code>, <code>P</code><br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224910592.png" alt=""></p>
-<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p><code>m+字母</code>: 设置标记。 设置的标记并不会显示. 多用<code>mm</code><br><code>\``+字母</code>: 跳到指定的标记<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717225557736.png" alt=""><br>上图很有用，多记一下。按键很难。。。</p>
+<p><code>w</code>, <code>s</code>, <code>p</code>, <code>W</code>, <code>S</code>, <code>P</code><br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717224910592.png" alt></p>
+<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p><code>m+字母</code>: 设置标记。 设置的标记并不会显示. 多用<code>mm</code><br><code>\``+字母</code>: 跳到指定的标记<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190717225557736.png" alt><br>上图很有用，多记一下。按键很难。。。</p>
 <h3 id="匹配括号"><a href="#匹配括号" class="headerlink" title="匹配括号"></a>匹配括号</h3><p><code>%</code> 移动到括号或匹配括号(包括//)</p>
-<h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><p>任何改变当前窗口中活动文件的命令，都可以被称为跳转命令。<br>vim会把执行跳转命令之前和之后的光标位置，记录到跳转列表中。<br>举例：<code>:edit 文件名</code> 之后，可以使用<code>&lt;C-i&gt;</code>和<code>&lt;C-o&gt;</code>在文件之间跳转.  用<code>数字G</code>到的方式也会被当成跳转，但每次向上或向下移动一行则不算。<br>算跳转的命令:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190718232137441.png" alt=""></p>
+<h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><p>任何改变当前窗口中活动文件的命令，都可以被称为跳转命令。<br>vim会把执行跳转命令之前和之后的光标位置，记录到跳转列表中。<br>举例：<code>:edit 文件名</code> 之后，可以使用<code>&lt;C-i&gt;</code>和<code>&lt;C-o&gt;</code>在文件之间跳转.  用<code>数字G</code>到的方式也会被当成跳转，但每次向上或向下移动一行则不算。<br>算跳转的命令:<br><img src="/2019/06/27/vim笔记/markdown-img-paste-20190718232137441.png" alt></p>
 <p>查看跳转列表:     <code>:jumps</code><br>查看对修改列表:    <code>:changes</code><br>用<code>g;</code>和<code>g,</code>对修改列表进行遍历</p>
 <h2 id="surround"><a href="#surround" class="headerlink" title="surround"></a>surround</h2><p><code>veS&quot;</code>: 将选中单词用双引号引起来<br>可自己选择区域，可将上面双引号替换成中括号等。<br>需要安装vim-surround插件</p>
 <p><code>cs}]</code> 可将单词的大括号改成中括号，不需要选中单词。<br><code>ds&quot;</code> 可将单词的双引号删除，不需要选中单词<br><code>yss}</code> 将行内容加大括号<br><code>ysiw]</code> 将单词添加中括号   <code>ys2w{</code><br><code>ysiw&lt;em&gt;</code> 添加Html标签</p>
@@ -621,15 +621,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,11 +629,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,7 +637,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,11 +661,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,11 +689,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,7 +701,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,7 +709,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -721,11 +721,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -769,7 +769,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -956,8 +956,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

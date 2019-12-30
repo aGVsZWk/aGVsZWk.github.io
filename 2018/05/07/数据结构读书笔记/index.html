@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2018/05/07/数据结构读书笔记/markdown-img-paste-2018121119520012.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211201529344.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211210045185.png">
-<meta property="og:updated_time" content="2019-04-14T16:40:46.432Z">
+<meta property="og:updated_time" content="2019-04-14T16:40:46.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构读书笔记">
 <meta name="twitter:description" content="本文主要记录我在看严蔚敏的数据结构中学到的知识。">
@@ -179,7 +179,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构读书笔记" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-数据结构读书笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -207,14 +207,14 @@
 <p>实例: 1.书 2.复数的表示</p>
 <!--more-->
 <p>数据元素之间关系称为结构.根据数据元素之间的不同特性,通常有四类基本结构:<br>1 集合 结构中的数据元素之间除了”同属于一个集合”的关系外,别无其他关系<br>2 线性结构 结构中的数据元素之间存在一个对一个的关系<br>3 树形结构 结构中的数据元素之间存在一个对多个的关系<br>4 图状结构或网状结构 结构中的数据元素之间存在多个对多个的关系</p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-2018120723454140.png" alt=""></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-2018120723454140.png" alt></p>
 <h3 id="数据在计算机中的描述"><a href="#数据在计算机中的描述" class="headerlink" title="数据在计算机中的描述"></a>数据在计算机中的描述</h3><p>数据结构在计算机中的表示(又称<strong>映像</strong>)称为数据的物理结构,又称存储结构. 它包括数据元素的表示和关系的表示</p>
 <p>数据元素在计算机中用二进制的位串表示,通常称这个位串为元素(Element)或结点(Node)</p>
 <p>当数据元素由若干数据项组成时,位串中对应于各个数据项的子位串称为数据域(Data Field).因此,元素或结点可看成是数据元素在计算机中的映像.</p>
 <p>数据元素之间的关系的关系在计算机中有两种不同的表示方法:顺序映像和非顺序映像,并由此得到两种不同的数据结构:<strong>顺序存储结构和链式存储结构</strong></p>
 <p>顺序存储结构是借助元素在存储器中的相对位置来表示数据元素之间的逻辑关系<br>链式存储结构是借助指示元素存储地址的指针(Pointer)表示数据元素之间的逻辑关系</p>
-<p>例:复数 z=3.0-2.3i 的存储结构<br>顺序存储结构:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181208001254958.png" alt=""></p>
-<p>链式存储结构:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181208001316390.png" alt=""></p>
+<p>例:复数 z=3.0-2.3i 的存储结构<br>顺序存储结构:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181208001254958.png" alt></p>
+<p>链式存储结构:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181208001316390.png" alt></p>
 <p>不能像上面那样直接以内存地址来描述存储结构,用高级程序语言提供的”数据类型”来描述数据结构<br>C语言数组可描述顺序存储结构,C语言指针描述链式存储结构</p>
 <p>数据类型(Data Type)是一个<strong>值的集合</strong>和定义在这个值集上的一组操作的总称.</p>
 <p>按照值的不同特性,数据类型可分为两类:<br>1 非结构的<strong>原子类型</strong>,原子类型的值是不可分解的.如:C语言中的基本类型(整型,实型,字符型和枚举类型),指针类型和空类型<br>2 结构类型,可分解.它的成分可以是非结构的,也可以是结构的(再分解)</p>
@@ -228,12 +228,12 @@
 <li>抽象数据类型的线性表</li>
 </ol>
 <h3 id="线性表-1"><a href="#线性表-1" class="headerlink" title="线性表"></a>线性表</h3><p>合并:<br>例1: A=AUB(A和B已经排好序)<br>例2: C=A∪B(A和B已经排好序)<br>插入:<br>删除:</p>
-<h3 id="线性链表-LinkList"><a href="#线性链表-LinkList" class="headerlink" title="线性链表 LinkList"></a>线性链表 LinkList</h3><p>结点:定义,pass<br>线性列表的结点包括两个域,数据域和指针域<br>空:NULL<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181209124848530.png" alt=""><br>头结点<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181209125238842.png" alt=""><br>头结点的数据域可以不存储任何信息,也可以存储入线性表长度等类的附加信息<br>头指针(头结点的指针域)指向第一个结点(存储地址)的指针</p>
+<h3 id="线性链表-LinkList"><a href="#线性链表-LinkList" class="headerlink" title="线性链表 LinkList"></a>线性链表 LinkList</h3><p>结点:定义,pass<br>线性列表的结点包括两个域,数据域和指针域<br>空:NULL<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181209124848530.png" alt><br>头结点<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181209125238842.png" alt><br>头结点的数据域可以不存储任何信息,也可以存储入线性表长度等类的附加信息<br>头指针(头结点的指针域)指向第一个结点(存储地址)的指针</p>
 <p>头指针(头结点的指针域)</p>
 <p>一些符号的含义:<br>-&gt;next  和 -&gt;data<br>a<br>&amp;a<br>b<br>*b<br>c标准函数:malloc和free</p>
 <p>插入算法:<code>s-&gt;next=p-&gt;next;p-&gt;next=s;</code><br>删除算法:<code>p-&gt;next=p-&gt;next-&gt;next;</code></p>
 <p>有序链表的合并:C=AUB<br><code>pc-&gt;next=pa;pc=pa;pa=pa-&gt;next;</code></p>
-<h3 id="一元多项式的运算"><a href="#一元多项式的运算" class="headerlink" title="一元多项式的运算"></a>一元多项式的运算</h3><p>用线性表表示的两种方式:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210084920108.png" alt=""><br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210084931355.png" alt=""></p>
+<h3 id="一元多项式的运算"><a href="#一元多项式的运算" class="headerlink" title="一元多项式的运算"></a>一元多项式的运算</h3><p>用线性表表示的两种方式:<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210084920108.png" alt><br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210084931355.png" alt></p>
 <p>两个一元多项式相加<br>两个一元多项式相乘(解决方法:可将乘法运算转化为加法运算)</p>
 <h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>十进制转二进制的算法,使用栈!</p>
 <p>括号匹配</p>
@@ -241,7 +241,7 @@
 <p>迷宫探索</p>
 <p>算数表达式求值</p>
 <p>content为题目给出的目标<br>xpath:<br>result = lxml.xpath(‘//a/@href’,content)</p>
-<p>正则:<br>pattern = re.search(‘<a.*?href="(.*?)".*?< a="">‘,content)<br>result = pattern[0]</a.*?href="(.*?)".*?<></p>
+<p>正则:<br>pattern = re.search(‘<a.*?href="(.*?)".*?< a>‘,content)<br>result = pattern[0]</a.*?href="(.*?)".*?<></p>
 <p>字符串切割:<br>str_list = content.split(‘\”‘,2)<br>result = str_list[1]</p>
 <h3 id="栈与递归的实现"><a href="#栈与递归的实现" class="headerlink" title="栈与递归的实现"></a>栈与递归的实现</h3><p>递归来源:<br>1 通过递归定义的数学函数</p>
 <ul>
@@ -257,36 +257,36 @@
 <p>多个函数构成嵌套调用时,按照<strong>“后调用先返回”</strong>的原则,上述函数之间的信息传递和控制转移必选通过”栈”来实现</p>
 <p>即系统将整个程序运行时所需的数据空间安排在一个栈中,<strong>每当调用一个函数时,就为它在栈顶分配一个存储区</strong>,<strong>每当从一个函数退出时就释放它的存储区</strong>,<strong>则当前正运行的函数的存储区必在栈顶</strong></p>
 <p>递归工作栈:系统建立的作为整个递归函数运行期间使用的数据存储区<br>每一层递归所需信息构成一个”工作记录”,其中<strong>包括所有的实在参数,所有的局部变量以及上一层的返回地址</strong><br>每进入一层递归,就产生一个新的工作记录压入栈顶;每退出一层递归,就从栈顶弹出一个工作记录<br>当前执行层的工作记录必须是递归工作栈栈顶的工作记录,称这个记录为”活动记录”,并指示活动记录的栈顶指针为”当前环境指针”</p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210114453958.png" alt=""></p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091656956.png" alt=""></p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091720848.png" alt=""></p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091741522.png" alt=""></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181210114453958.png" alt></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091656956.png" alt></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091720848.png" alt></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211091741522.png" alt></p>
 <p>启发:<br>递归调用,栈,保护现场,好像单片机中的中断也是放栈里,保护现场.</p>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列:先进先出(First In First Out,缩写为FIFO)<br>链队列:<br>循环队列:开两个指针,一个指向队列头元素,一个执行那个队列尾元素.开始默认空队列,两边都指向队列头元素,每当插入新的队列尾元素时,尾指针增加1,每当删除一个队列头元素时,头指针加1.这样做,就能实现:头指针始终指向队列头元素,尾指针始终指向队列尾元素的下一个位置<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211093941553.png" alt=""><br>当处于d时,就不可再继续插入新的队尾元素了.<br>解决方法就是引入循环队列<br>我插插插插满的时候,队尾指针跑出的时候,队尾指针在指向队头第一个元素<br>在插插插,等队尾指针跟队头指针重合,这样元素就满了</p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列:先进先出(First In First Out,缩写为FIFO)<br>链队列:<br>循环队列:开两个指针,一个指向队列头元素,一个执行那个队列尾元素.开始默认空队列,两边都指向队列头元素,每当插入新的队列尾元素时,尾指针增加1,每当删除一个队列头元素时,头指针加1.这样做,就能实现:头指针始终指向队列头元素,尾指针始终指向队列尾元素的下一个位置<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211093941553.png" alt><br>当处于d时,就不可再继续插入新的队尾元素了.<br>解决方法就是引入循环队列<br>我插插插插满的时候,队尾指针跑出的时候,队尾指针在指向队头第一个元素<br>在插插插,等队尾指针跟队头指针重合,这样元素就满了</p>
 <h3 id="操作系统中的作业排队"><a href="#操作系统中的作业排队" class="headerlink" title="操作系统中的作业排队"></a>操作系统中的作业排队</h3><p>在允许多个程序运行的计算机系统中,同时有几个作业运行.如果运行的结果都需要通过通道输出,那就要按请求输出的先后次序排队</p>
 <p>每当通道传输完毕可以接受新的输出任务时,队头的作业先从队列中退出作输出操作,凡是申请输出的作业都从队尾进入队列</p>
-<h3 id="银行客户逗留时间"><a href="#银行客户逗留时间" class="headerlink" title="银行客户逗留时间"></a>银行客户逗留时间</h3><p>事件:事件出现的时间和事件的类型<br><code>EventDrived(OccurTime,EventType)</code><br>客户到达事件和客户离开事件<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211095641955.png" alt=""><br>发生不同事件时,调用不同的函数进行处理.swtich()语句,根据事件类型(EventType)进行判断<br>很难,先pass</p>
+<h3 id="银行客户逗留时间"><a href="#银行客户逗留时间" class="headerlink" title="银行客户逗留时间"></a>银行客户逗留时间</h3><p>事件:事件出现的时间和事件的类型<br><code>EventDrived(OccurTime,EventType)</code><br>客户到达事件和客户离开事件<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211095641955.png" alt><br>发生不同事件时,调用不同的函数进行处理.swtich()语句,根据事件类型(EventType)进行判断<br>很难,先pass</p>
 <h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><p>串(String)就是字符串,由零个或多个字符组成的有序序列<br>串的长度:串中字符的数目<br>空串:串的长度为0<br>子串:字符串中任意个连续的字符组成的子序列<br>主串:包含子串的串<br>位置:称字符在该序列中的序号为该字符在串中的位置(针对字符而言,不是针对长度为n的子串而言)<br>串相等:串的长度相等,并且各个对应位置的字符都相等<br>空格串与空串:pass</p>
 <p>串的逻辑结构和线性表极为相似,区别仅在于串的数据对象约束为字符集(线性表,数据对象可以是int,float,char,pointer,……).</p>
 <h3 id="串的表示"><a href="#串的表示" class="headerlink" title="串的表示:"></a>串的表示:</h3><p>如果串只是作为输入或输出的常量出现,则只需存储此串的串值,即字符序列</p>
 <p>如果串以变量的形式出现,串有三种机内表示方法:<br>1 定长顺序存储表示: 类似于线性表的顺序存储结构，用一组地址连续的存储单元存储串值的字符序列<br>2 堆分配存储表示<br>3 串的块链存储表示</p>
-<h4 id="定长顺序存储表示"><a href="#定长顺序存储表示" class="headerlink" title="定长顺序存储表示:"></a>定长顺序存储表示:</h4><p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211120258829.png" alt=""></p>
-<h5 id="串长"><a href="#串长" class="headerlink" title="串长:"></a>串长:</h5><p>串的实际长度在预定义长度的范围内随意,超过预定义长度的串值会被舍去(称之为”截断”)<br>对串长的表示有两种:<br>1 下标为0的数组分量存放串的实际长度(PASCAL)<br>2 在串值后面加一个不计入串长的结束标记字符(C语言,以’\\0’表示串值的终结)</p>
+<h4 id="定长顺序存储表示"><a href="#定长顺序存储表示" class="headerlink" title="定长顺序存储表示:"></a>定长顺序存储表示:</h4><p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211120258829.png" alt></p>
+<h5 id="串长"><a href="#串长" class="headerlink" title="串长:"></a>串长:</h5><p>串的实际长度在预定义长度的范围内随意,超过预定义长度的串值会被舍去(称之为”截断”)<br>对串长的表示有两种:<br>1 下标为0的数组分量存放串的实际长度(PASCAL)<br>2 在串值后面加一个不计入串长的结束标记字符(C语言,以’\0’表示串值的终结)</p>
 <p>例:串连接</p>
 <p>例:求子串</p>
 <h4 id="堆分配存储的表示"><a href="#堆分配存储的表示" class="headerlink" title="堆分配存储的表示:"></a>堆分配存储的表示:</h4><p>以一组地址连续的存储单元存放串值字符序列,但它们的存储空间是在程序执行过程中动态分配获得的.</p>
 <p>在C语言中,存在一个称之为”堆”的自由存储区,由C语言的动态分配函数malloc()和free()来管理</p>
-<p>利用函数malloc()为每一个新产生的串分配一块实际串长所需的存储空间,若分配成功,则返回一个指向起始地址的新指针,作为串的基址.同时,为了以后处理方便,约定串长也作为存储结构的一部分<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-2018121119520012.png" alt=""></p>
+<p>利用函数malloc()为每一个新产生的串分配一块实际串长所需的存储空间,若分配成功,则返回一个指向起始地址的新指针,作为串的基址.同时,为了以后处理方便,约定串长也作为存储结构的一部分<br><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-2018121119520012.png" alt></p>
 <p>例:串赋值</p>
 <p>例:串插入</p>
 <h4 id="串的块链存储表示"><a href="#串的块链存储表示" class="headerlink" title="串的块链存储表示"></a>串的块链存储表示</h4><p>采用链表方式存储串值</p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211201529344.png" alt=""></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211201529344.png" alt></p>
 <p>子串位置的定位操作称做串的模式匹配</p>
 <h3 id="串的匹配"><a href="#串的匹配" class="headerlink" title="串的匹配"></a>串的匹配</h3><p>普通匹配</p>
 <p>01串匹配,图形显示,ASCII码(8个二进位的01串),汉字(01串和其它的字符换)</p>
 <p>KMP算法(看得懂一半,next函数的值看不懂)</p>
 <h3 id="串的应用举例"><a href="#串的应用举例" class="headerlink" title="串的应用举例"></a>串的应用举例</h3><p>文本编辑<br>建立词索引表</p>
-<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211210045185.png" alt=""></p>
+<p><img src="/2018/05/07/数据结构读书笔记/markdown-img-paste-20181211210045185.png" alt></p>
 <p>.<br>每个递归函数都有两部分:基线条件(base case)和递归条件(recursive case).递归条件指的是函数调用自己,而基线条件指的是函数不再调用自己,从而避免形成循环</p>
 
       
@@ -409,8 +409,8 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据"><span class="toc-number">1.1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据在计算机中的描述"><span class="toc-number">1.2.</span> <span class="toc-text">数据在计算机中的描述</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#线性"><span class="toc-number"></span> <span class="toc-text">线性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性表"><span class="toc-number">1.</span> <span class="toc-text">线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表-1"><span class="toc-number">1.1.</span> <span class="toc-text">线性表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性链表-LinkList"><span class="toc-number">1.2.</span> <span class="toc-text">线性链表 LinkList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一元多项式的运算"><span class="toc-number">1.3.</span> <span class="toc-text">一元多项式的运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栈"><span class="toc-number">2.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈与递归的实现"><span class="toc-number">2.1.</span> <span class="toc-text">栈与递归的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列"><span class="toc-number">3.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统中的作业排队"><span class="toc-number">3.1.</span> <span class="toc-text">操作系统中的作业排队</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#银行客户逗留时间"><span class="toc-number">3.2.</span> <span class="toc-text">银行客户逗留时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串"><span class="toc-number">4.</span> <span class="toc-text">串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#串的表示"><span class="toc-number">4.1.</span> <span class="toc-text">串的表示:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定长顺序存储表示"><span class="toc-number">4.1.1.</span> <span class="toc-text">定长顺序存储表示:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#串长"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">串长:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#堆分配存储的表示"><span class="toc-number">4.1.2.</span> <span class="toc-text">堆分配存储的表示:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#串的块链存储表示"><span class="toc-number">4.1.3.</span> <span class="toc-text">串的块链存储表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串的匹配"><span class="toc-number">4.2.</span> <span class="toc-text">串的匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串的应用举例"><span class="toc-number">4.3.</span> <span class="toc-text">串的应用举例</span></a></li></ol></li></ol>
-                    </li></div>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据"><span class="toc-number">1.1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据在计算机中的描述"><span class="toc-number">1.2.</span> <span class="toc-text">数据在计算机中的描述</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线性"><span class="toc-number"></span> <span class="toc-text">线性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性表"><span class="toc-number">1.</span> <span class="toc-text">线性表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#线性表-1"><span class="toc-number">1.1.</span> <span class="toc-text">线性表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性链表-LinkList"><span class="toc-number">1.2.</span> <span class="toc-text">线性链表 LinkList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一元多项式的运算"><span class="toc-number">1.3.</span> <span class="toc-text">一元多项式的运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栈"><span class="toc-number">2.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#栈与递归的实现"><span class="toc-number">2.1.</span> <span class="toc-text">栈与递归的实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列"><span class="toc-number">3.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作系统中的作业排队"><span class="toc-number">3.1.</span> <span class="toc-text">操作系统中的作业排队</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#银行客户逗留时间"><span class="toc-number">3.2.</span> <span class="toc-text">银行客户逗留时间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#串"><span class="toc-number">4.</span> <span class="toc-text">串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#串的表示"><span class="toc-number">4.1.</span> <span class="toc-text">串的表示:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定长顺序存储表示"><span class="toc-number">4.1.1.</span> <span class="toc-text">定长顺序存储表示:</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#串长"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">串长:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#堆分配存储的表示"><span class="toc-number">4.1.2.</span> <span class="toc-text">堆分配存储的表示:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#串的块链存储表示"><span class="toc-number">4.1.3.</span> <span class="toc-text">串的块链存储表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串的匹配"><span class="toc-number">4.2.</span> <span class="toc-text">串的匹配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串的应用举例"><span class="toc-number">4.3.</span> <span class="toc-text">串的应用举例</span></a></li></ol></li></ol>
+                    </div>
                 </span>
             </div>
         </div>
@@ -551,15 +551,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +559,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,7 +567,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,11 +591,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,11 +619,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,7 +631,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,7 +639,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +651,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,7 +699,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -886,8 +886,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

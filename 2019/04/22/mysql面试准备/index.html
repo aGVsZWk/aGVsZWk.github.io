@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2019/04/22/mysql面试准备/markdown-img-paste-20190422212126103.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/04/22/mysql面试准备/markdown-img-paste-20190422223452526.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/04/22/mysql面试准备/markdown-img-paste-20190422223507769.png">
-<meta property="og:updated_time" content="2019-04-23T13:55:05.880Z">
+<meta property="og:updated_time" content="2019-04-23T13:55:05.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql面试准备">
 <meta name="twitter:description" content="本文为面试中手写sql做准备。">
@@ -172,7 +172,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql面试准备" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-mysql面试准备" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -199,10 +199,10 @@
 <h2 id="Q1-1-查询-1"><a href="#Q1-1-查询-1" class="headerlink" title="Q1.1:查询"></a>Q1.1:查询</h2><p>有Student表，字段主键为Sid，姓名Sname，性别Sex(值为“男”或“女”)；有课程表Course，字段主键为Cid，课程名称为Cname；关系表SC_Relation，字段为Student表主键Sid和Course表主键Cid，组成联合主键。请用SQL查询语句写出查询所有选“计算机”课程的男士的姓名。</p>
 <h3 id="数据准备-1"><a href="#数据准备-1" class="headerlink" title="数据准备"></a>数据准备</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line"><span class="keyword">sid</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">not</span> <span class="literal">NULL</span>,</span><br><span class="line">sname <span class="built_in">varchar</span>(<span class="number">128</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">sex enum(<span class="string">'男'</span>,<span class="string">'女'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> course(</span><br><span class="line">cid <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">cname <span class="built_in">varchar</span>(<span class="number">128</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> sc_relation(</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line"><span class="keyword">Sid</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">Cid <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student(sname,sex) <span class="keyword">values</span></span><br><span class="line">(<span class="string">"zhangsan"</span>, <span class="number">1</span>),</span><br><span class="line">(<span class="string">"lisi"</span>, <span class="number">2</span>),</span><br><span class="line">(<span class="string">"wangwu"</span>, <span class="number">1</span>),</span><br><span class="line">(<span class="string">"zhaoyun"</span>, <span class="number">1</span>),</span><br><span class="line">(<span class="string">"guanyu"</span>, <span class="number">2</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> course(cname) <span class="keyword">values</span></span><br><span class="line">(<span class="string">"语文"</span>),</span><br><span class="line">(<span class="string">"数学"</span>),</span><br><span class="line">(<span class="string">"英语"</span>),</span><br><span class="line">(<span class="string">"计算机"</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sc_relation(<span class="keyword">sid</span>,cid) <span class="keyword">values</span></span><br><span class="line">(<span class="number">1</span>,<span class="number">4</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="number">3</span>),</span><br><span class="line">(<span class="number">3</span>,<span class="number">4</span>),</span><br><span class="line">(<span class="number">4</span>,<span class="number">1</span>),</span><br><span class="line">(<span class="number">5</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="答案-1"><a href="#答案-1" class="headerlink" title="答案"></a>答案</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> s.sname <span class="keyword">from</span> student s <span class="keyword">inner</span> <span class="keyword">join</span> SC_Relation sc <span class="keyword">ON</span></span><br><span class="line">  s.sid=sc.sid <span class="keyword">inner</span> <span class="keyword">join</span> course c <span class="keyword">ON</span></span><br><span class="line">  sc.cid=c.cid</span><br><span class="line">  <span class="keyword">where</span> c.cname=<span class="string">'计算机'</span> <span class="keyword">and</span> s.sex=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="Q1-2-查询"><a href="#Q1-2-查询" class="headerlink" title="Q1.2:查询"></a>Q1.2:查询</h2><p>给定一个 Weather 表，编写一个 SQL 查询，来查找与之前（昨天的）日期相比温度更高的所有日期的 Id。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422220748262.png" alt=""><br>例如，根据上述给定的 Weather 表格，返回如下 Id:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422220758835.png" alt=""></p>
+<h2 id="Q1-2-查询"><a href="#Q1-2-查询" class="headerlink" title="Q1.2:查询"></a>Q1.2:查询</h2><p>给定一个 Weather 表，编写一个 SQL 查询，来查找与之前（昨天的）日期相比温度更高的所有日期的 Id。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422220748262.png" alt><br>例如，根据上述给定的 Weather 表格，返回如下 Id:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422220758835.png" alt></p>
 <h3 id="答案-2"><a href="#答案-2" class="headerlink" title="答案"></a>答案</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> w1.Id</span><br><span class="line"><span class="keyword">from</span> Weather w1,Weather w2</span><br><span class="line"><span class="keyword">where</span> w1.Temperature&gt;w2.Temperature</span><br><span class="line"><span class="keyword">and</span> <span class="keyword">DATEDIFF</span>(w1.RecordDate,w2.RecordDate)=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <p>感觉可以不使用DATEDIFF，日期直接计算加减就可，但提交不通过，使用DATEDIFF就过了.</p>
-<h2 id="Q1-3-查询"><a href="#Q1-3-查询" class="headerlink" title="Q1.3: 查询"></a>Q1.3: 查询</h2><p>有一个courses 表 ，有: student (学生) 和 class (课程)。<br>请列出所有超过或等于5名学生的课。<br>例如,表:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422222047396.png" alt=""><br>应该输出:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422222101117.png" alt=""><br>Note:<br>学生在每个课中不应被重复计算。</p>
+<h2 id="Q1-3-查询"><a href="#Q1-3-查询" class="headerlink" title="Q1.3: 查询"></a>Q1.3: 查询</h2><p>有一个courses 表 ，有: student (学生) 和 class (课程)。<br>请列出所有超过或等于5名学生的课。<br>例如,表:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422222047396.png" alt><br>应该输出:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422222101117.png" alt><br>Note:<br>学生在每个课中不应被重复计算。</p>
 <h3 id="答案-3"><a href="#答案-3" class="headerlink" title="答案"></a>答案</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">class</span> <span class="keyword">from</span> courses <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">class</span> <span class="keyword">having</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> student)&gt;=<span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="Q1-4-查询"><a href="#Q1-4-查询" class="headerlink" title="Q1.4: 查询"></a>Q1.4: 查询</h2><p>表格t1:<br>| id  | good_id | count | user_name |<br>| —- | ———- | ——- | ————- |<br>| 1   | 1       | 2     | 张三      |<br>| 2   | 2       | 5     | 李四      |<br>| 3   | 3       | 1     | 张三      |<br>| 4   | 1       | 3     | 王五      |<br>| 5   | 2       | 2     | 王五      |<br>| 6   | 3       | 2     | 李四      |<br>| 7   | 1       | 2     | 张三      |<br>表格t2:<br>| id  | good_name | price |<br>| —- | ————- | ——- |<br>| 1   | 苹果      | 5     |<br>| 2   | 香蕉      | 6     |<br>| 3   | 西瓜      | 10    |</p>
 <h3 id="q1-查询总共卖出价格最多的商品名称和总价格"><a href="#q1-查询总共卖出价格最多的商品名称和总价格" class="headerlink" title="q1: 查询总共卖出价格最多的商品名称和总价格"></a>q1: 查询总共卖出价格最多的商品名称和总价格</h3><h3 id="q2-查询单个用户购买同一种水果花费价格最多的人和总价格"><a href="#q2-查询单个用户购买同一种水果花费价格最多的人和总价格" class="headerlink" title="q2: 查询单个用户购买同一种水果花费价格最多的人和总价格"></a>q2: 查询单个用户购买同一种水果花费价格最多的人和总价格</h3><h3 id="数据准备-2"><a href="#数据准备-2" class="headerlink" title="数据准备"></a>数据准备</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t1(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">unsigned</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    good_id <span class="built_in">int</span> <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    <span class="keyword">count</span> <span class="built_in">int</span> <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    user_name <span class="built_in">varchar</span>(<span class="number">128</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> t2(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">int</span> <span class="keyword">unsigned</span> primary <span class="keyword">key</span> auto_increment <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    good_name <span class="built_in">varchar</span>(<span class="number">128</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    price <span class="built_in">int</span> <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t1(good_id, <span class="keyword">count</span>, user_name) <span class="keyword">values</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="string">'张三'</span>),</span><br><span class="line">    (<span class="number">2</span>,<span class="number">5</span>,<span class="string">"李四"</span>),</span><br><span class="line">    (<span class="number">3</span>,<span class="number">1</span>,<span class="string">"张三"</span>),</span><br><span class="line">    (<span class="number">1</span>,<span class="number">3</span>,<span class="string">"王五"</span>),</span><br><span class="line">    (<span class="number">2</span>,<span class="number">2</span>,<span class="string">"王五"</span>),</span><br><span class="line">    (<span class="number">3</span>,<span class="number">2</span>,<span class="string">"李四"</span>),</span><br><span class="line">    (<span class="number">1</span>,<span class="number">2</span>,<span class="string">'张三'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> t2(good_name, price) <span class="keyword">values</span> (<span class="string">'苹果'</span>, <span class="number">5</span>),</span><br><span class="line">    (<span class="string">'香蕉'</span>, <span class="number">6</span>),</span><br><span class="line">    (<span class="string">'西瓜'</span>, <span class="number">10</span>);</span><br></pre></td></tr></table></figure>
@@ -212,12 +212,12 @@
 <h2 id="Q3-1-日期"><a href="#Q3-1-日期" class="headerlink" title="Q3.1: 日期"></a>Q3.1: 日期</h2><p>写出满足时间在 2010-9-6~2011-9-6之间的表table_user的sql查询语句<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table_user <span class="keyword">where</span> create_time &gt; <span class="string">'2010-9-6'</span> <span class="keyword">and</span> create_time &lt; <span class="string">'2011-9-6'</span>;</span><br></pre></td></tr></table></figure></p>
 <h2 id="Q3-2日期"><a href="#Q3-2日期" class="headerlink" title="Q3.2日期"></a>Q3.2日期</h2><p>一个数据库表中记录了用户卡号消费情况，表由如下字段组成<br>| file_name    | type   | comment                   |<br>| —————— | ——— | ————————————- |<br>| sys_trabs_id | string | 流水号，如154             |<br>| settle_dt    | string | 日期，如20140814 09:01:20 |<br>| pri_care_id  | string | 卡号                      |<br>| much_cd      | string | 商户号，如fcad23a8cd920c  |<br>| trans_at     | float  | 交易金额，如998.00        |<br>请编写sql来统计2014年8月14日每个卡号的每个小时段的交易次数和交易金额</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="第二高的薪水-limit函数"><a href="#第二高的薪水-limit函数" class="headerlink" title="第二高的薪水(limit函数)"></a>第二高的薪水(limit函数)</h2><p>编写一个SQL查询，获取Employee 表中第二高的薪水（Salary） 。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422205327816.png" alt=""><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422205348396.png" alt=""><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">解法1:</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(Salary) SecondHighestSalary <span class="keyword">from</span> Employee <span class="keyword">where</span> Salary <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> <span class="keyword">max</span>(Salary) <span class="keyword">from</span> Employee);</span><br><span class="line"></span><br><span class="line">解法2：将不同的薪资按降序排序，然后使用 LIMIT 子句获得第二高的薪资。</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">    Salary <span class="keyword">AS</span> SecondHighestSalary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span>;</span><br><span class="line">然而，如果没有这样的第二最高工资，这个解决方案将被判断为 “错误答案”，因为本表可能只有一项记录。为了克服这个问题，我们可以将其作为临时表。</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">        Salary</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        Employee</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></span><br><span class="line">    <span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span></span><br><span class="line">) <span class="keyword">AS</span> SecondHighestSalary;</span><br><span class="line"></span><br><span class="line">解法3：使用ifnull</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ifnull</span>((<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> Employee <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span>), <span class="literal">null</span>) <span class="keyword">as</span> SecondHighestSalary;</span><br></pre></td></tr></table></figure></p>
-<h2 id="超过经理收入的员工-自关联"><a href="#超过经理收入的员工-自关联" class="headerlink" title="超过经理收入的员工(自关联)"></a>超过经理收入的员工(自关联)</h2><p>Employee 表包含所有员工，他们的经理也属于员工。每个员工都有一个 Id，此外还有一列对应员工的经理的 Id。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422212113998.png" alt=""></p>
-<p>给定 Employee 表，编写一个 SQL 查询，该查询可以获取收入超过他们经理的员工的姓名。在上面的表格中，Joe 是唯一一个收入超过他的经理的员工。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422212126103.png" alt=""></p>
+<h2 id="第二高的薪水-limit函数"><a href="#第二高的薪水-limit函数" class="headerlink" title="第二高的薪水(limit函数)"></a>第二高的薪水(limit函数)</h2><p>编写一个SQL查询，获取Employee 表中第二高的薪水（Salary） 。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422205327816.png" alt><br>例如上述 Employee 表，SQL查询应该返回 200 作为第二高的薪水。如果不存在第二高的薪水，那么查询应返回 null。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422205348396.png" alt><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">解法1:</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(Salary) SecondHighestSalary <span class="keyword">from</span> Employee <span class="keyword">where</span> Salary <span class="keyword">not</span> <span class="keyword">in</span> (<span class="keyword">select</span> <span class="keyword">max</span>(Salary) <span class="keyword">from</span> Employee);</span><br><span class="line"></span><br><span class="line">解法2：将不同的薪资按降序排序，然后使用 LIMIT 子句获得第二高的薪资。</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">    Salary <span class="keyword">AS</span> SecondHighestSalary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span>;</span><br><span class="line">然而，如果没有这样的第二最高工资，这个解决方案将被判断为 “错误答案”，因为本表可能只有一项记录。为了克服这个问题，我们可以将其作为临时表。</span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">(</span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">        Salary</span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        Employee</span><br><span class="line">    <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></span><br><span class="line">    <span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span></span><br><span class="line">) <span class="keyword">AS</span> SecondHighestSalary;</span><br><span class="line"></span><br><span class="line">解法3：使用ifnull</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ifnull</span>((<span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> Employee <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span> <span class="keyword">LIMIT</span> <span class="number">1</span> <span class="keyword">OFFSET</span> <span class="number">1</span>), <span class="literal">null</span>) <span class="keyword">as</span> SecondHighestSalary;</span><br></pre></td></tr></table></figure></p>
+<h2 id="超过经理收入的员工-自关联"><a href="#超过经理收入的员工-自关联" class="headerlink" title="超过经理收入的员工(自关联)"></a>超过经理收入的员工(自关联)</h2><p>Employee 表包含所有员工，他们的经理也属于员工。每个员工都有一个 Id，此外还有一列对应员工的经理的 Id。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422212113998.png" alt></p>
+<p>给定 Employee 表，编写一个 SQL 查询，该查询可以获取收入超过他们经理的员工的姓名。在上面的表格中，Joe 是唯一一个收入超过他的经理的员工。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422212126103.png" alt></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e1.Name Employee <span class="keyword">FROM</span> Employee e1 <span class="keyword">inner</span> <span class="keyword">join</span> Employee e2 <span class="keyword">on</span> e1.ManagerId = e2.Id <span class="keyword">where</span> e1.Salary &gt; e2.Salary;</span><br></pre></td></tr></table></figure>
 <h2 id="交换性别-if函数"><a href="#交换性别-if函数" class="headerlink" title="交换性别(if函数)"></a>交换性别(if函数)</h2><p>给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。</p>
-<p>注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422223452526.png" alt=""><br>运行你所编写的更新语句之后，将会得到以下表:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422223507769.png" alt=""></p>
+<p>注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422223452526.png" alt><br>运行你所编写的更新语句之后，将会得到以下表:<br><img src="/2019/04/22/mysql面试准备/markdown-img-paste-20190422223507769.png" alt></p>
 <h3 id="答案-6"><a href="#答案-6" class="headerlink" title="答案"></a>答案</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> salary <span class="keyword">set</span> sex = <span class="keyword">if</span>(sex=<span class="string">'m'</span>, <span class="string">'f'</span>, <span class="string">'m'</span>);</span><br></pre></td></tr></table></figure>
 
       
@@ -469,15 +469,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,11 +477,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,7 +485,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +509,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,11 +537,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +549,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,7 +557,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,11 +569,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -617,7 +617,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -804,8 +804,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

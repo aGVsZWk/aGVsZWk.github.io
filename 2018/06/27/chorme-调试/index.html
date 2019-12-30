@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -194,7 +194,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-chorme-调试" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-chorme-调试" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -216,75 +216,75 @@
       
         <p>本文主要介绍chorme浏览器调试工具的使用，以及分析人人网登录的过程</p>
 <a id="more"></a>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212106965.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212106965.png" alt></p>
 <p>打开chorme浏览器，按ctrl+shift+I，或者右键—检查</p>
-<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112721231922.png" alt=""><br>Network看所有的包</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212943871.png" alt=""><br>clear按钮能清空，preview能预浏览些资源，比如图片</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212427349.png" alt=""><br>左侧选择一个包，在右侧请求主要关注请求url和请求方式</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212603839.png" alt=""><br>还有自己提交的数据，这里是人人网登录，所以提交的是表单数据</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112721231922.png" alt><br>Network看所有的包</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212943871.png" alt><br>clear按钮能清空，preview能预浏览些资源，比如图片</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212427349.png" alt><br>左侧选择一个包，在右侧请求主要关注请求url和请求方式</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127212603839.png" alt><br>还有自己提交的数据，这里是人人网登录，所以提交的是表单数据</p>
 <p>要用爬虫，模拟js行为，提交上述数据</p>
 <h2 id="信息搜寻"><a href="#信息搜寻" class="headerlink" title="信息搜寻"></a>信息搜寻</h2><h3 id="pc端"><a href="#pc端" class="headerlink" title="pc端"></a>pc端</h3><h4 id="思路1-找rkey"><a href="#思路1-找rkey" class="headerlink" title="思路1: 找rkey"></a>思路1: 找rkey</h4><p>rkey: 找它</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127213106275.png" alt=""><br>点三个点，点Search进行搜索，输入rkey</p>
-<p>发现了个js文件，点开只有一行。很多网站的js都压缩成了一行。<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128083706478.png" alt=""><br>点{},能自动排版查看</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128084544509.png" alt=""><br>按ctrl+f，调出搜索，点Aa，完全匹配，发现并没有收到rkey</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181127213106275.png" alt><br>点三个点，点Search进行搜索，输入rkey</p>
+<p>发现了个js文件，点开只有一行。很多网站的js都压缩成了一行。<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128083706478.png" alt><br>点{},能自动排版查看</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128084544509.png" alt><br>按ctrl+f，调出搜索，点Aa，完全匹配，发现并没有收到rkey</p>
 <p>回去搜索文件试试，发现也没有rkey</p>
-<h4 id="思路2-找email"><a href="#思路2-找email" class="headerlink" title="思路2:找email"></a>思路2:找email</h4><p>搜文件，打开看，再搜关键字，发现这么个东西<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128085422959.png" alt=""></p>
+<h4 id="思路2-找email"><a href="#思路2-找email" class="headerlink" title="思路2:找email"></a>思路2:找email</h4><p>搜文件，打开看，再搜关键字，发现这么个东西<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128085422959.png" alt></p>
 <p>js看不懂，感觉好难，太难了。</p>
 <h3 id="尝试换到手机端，降低难度"><a href="#尝试换到手机端，降低难度" class="headerlink" title="尝试换到手机端，降低难度"></a>尝试换到手机端，降低难度</h3><p>进行登录的时候，输入个错误的密码。</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128090703256.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128090703256.png" alt></p>
 <p>输入前把包清空，点Preserve log。点登录之后，发现下面两个包。</p>
 <p>看看rkey这个包都干了什么。</p>
-<h4 id="分析rkey包"><a href="#分析rkey包" class="headerlink" title="分析rkey包"></a>分析rkey包</h4><p>分析他的请求和响应<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091025709.png" alt=""></p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091124754.png" alt=""></p>
+<h4 id="分析rkey包"><a href="#分析rkey包" class="headerlink" title="分析rkey包"></a>分析rkey包</h4><p>分析他的请求和响应<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091025709.png" alt></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091124754.png" alt></p>
 <p>GET请求，返回了个data</p>
-<p>把响应ctrl+a，ctrl+c，拿到json在线解析工具中查看<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091310353.png" alt=""></p>
+<p>把响应ctrl+a，ctrl+c，拿到json在线解析工具中查看<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091310353.png" alt></p>
 <p>有rkey，但没有发现账号和密码，没有进行登录。</p>
 <p>所以我们要分析的登录行为不在这。</p>
-<h4 id="看看另外的那个clog包"><a href="#看看另外的那个clog包" class="headerlink" title="看看另外的那个clog包"></a>看看另外的那个clog包</h4><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809185731.png" alt=""></p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809212152.png" alt=""></p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128092002419.png" alt=""><br>post请求，请求url中有ajax，提交的表单数据有手机号密码、c1、rkey</p>
+<h4 id="看看另外的那个clog包"><a href="#看看另外的那个clog包" class="headerlink" title="看看另外的那个clog包"></a>看看另外的那个clog包</h4><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809185731.png" alt></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809212152.png" alt></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128092002419.png" alt><br>post请求，请求url中有ajax，提交的表单数据有手机号密码、c1、rkey</p>
 <p>响应回了个msg密码错误</p>
 <p>对的，就是它，发送的账号密码，进行的登录。</p>
-<h4 id="password加密分析"><a href="#password加密分析" class="headerlink" title="password加密分析"></a>password加密分析</h4><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128092556563.png" alt=""></p>
+<h4 id="password加密分析"><a href="#password加密分析" class="headerlink" title="password加密分析"></a>password加密分析</h4><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128092556563.png" alt></p>
 <p>账号我们有，密码我们有，rkey使我们刚刚所拿到的，c1嘛，再放放，先分析password是怎么来的。</p>
 <p>刚刚发的是ajax请求，肯定是找js了。</p>
 <p>复习个知识点: html, css, js:  html是骨骼，js是肌肉，css是皮肤</p>
 <h3 id="寻找js"><a href="#寻找js" class="headerlink" title="寻找js"></a>寻找js</h3><p>先解释一下刚刚rkey的行为:<br>rkey应该是对称加密的。一个公钥，一个私钥。<br>刚刚发GET请求拿的rkey，应该是公钥。<br><br></p>
 <p>登录界面，在重新来过</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128094204750.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128094204750.png" alt></p>
 <p>发现了4发现了个js文件</p>
 <p>有三种方法，找到到底是哪个js发送了ajax请求，干了这档子事！主要采用第1种方法</p>
 <h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><p>Initiator</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128094439848.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128094439848.png" alt></p>
 <p>Initiator就是说前面的请求是由哪个js发起的。<br>点那个js，跳到source，点{}，尝试分析分析看它的代码。</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809495728.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-2018112809495728.png" alt></p>
 <p>接下来找进行登录的ajax请求，找函数，好乱……</p>
 <p><strong>在js中寻找函数</strong></p>
 <p>我们可以把刚刚发rkey的url拿过来，看看哪个函数是发rkey的get请求的</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128095731401.png" alt=""></p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128095802275.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128095731401.png" alt></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128095802275.png" alt></p>
 <p>共有两个，前面那个貌似不是，后面那个是的，就是个ajax发送GET请求获取rKey。</p>
 <h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h4><p>寻找事件监听</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100240786.png" alt=""></p>
-<p>看左边:<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100444863.png" alt=""><br>style: 样式<br>Computed: 计算<br>Event Listeners: 事件监听</p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100240786.png" alt></p>
+<p>看左边:<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100444863.png" alt><br>style: 样式<br>Computed: 计算<br>Event Listeners: 事件监听</p>
 <p>click:点击<br>load:加载<br>resize:重新定义尺寸</p>
 <p>点开click,里面有js,点进去,点{},就跳到了我们要的js函数。</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100803276.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128100803276.png" alt></p>
 <p>黄色那行代码的的意思: 给.login这个选择器添加事件监听，监听click，执行下面那一坨函数</p>
 <p>这一坨函数，就是我们需要找的</p>
 <h4 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h4><p>ctrl+f,ctrl+f<br>先搜索包含rkey的js文件，然后在此文件中继续搜包含rkey的函数</p>
-<h2 id="行为分析"><a href="#行为分析" class="headerlink" title="行为分析"></a>行为分析</h2><h3 id="js行为分析"><a href="#js行为分析" class="headerlink" title="js行为分析"></a>js行为分析</h3><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128101848771.png" alt=""></p>
-<p>之前抓包的到的一个数据<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091310353.png" alt=""><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">formSubmit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 定义t字典(对象)，添加事件监听</span></span><br><span class="line">       <span class="keyword">var</span> e, t = &#123;&#125;;</span><br><span class="line">       $(<span class="string">".login"</span>).addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="comment">// 点击之后把账号和密码给赋值过去</span></span><br><span class="line">           t.phoneNum = $(<span class="string">".phonenum"</span>).value,</span><br><span class="line">           t.password = $(<span class="string">".password"</span>).value,</span><br><span class="line">           <span class="comment">// loginValidate把t放进去，不管(可以看下，是检查账号密码为空之类的)</span></span><br><span class="line">           e = loginValidate(t),</span><br><span class="line">           <span class="comment">// t.c1，c1应该是前面的，抓包得到的，写死-100应该就ok了</span></span><br><span class="line">           t.c1 = c1 || <span class="number">0</span>,</span><br><span class="line">           <span class="comment">// 拿公钥，发get请求，url为"http://activity.renren.com/livecell/rKey"，拼接参数为空，得到返回值e又传给下面函数了</span></span><br><span class="line">           <span class="comment">// 这个e，应该就是我们上面拿到的e</span></span><br><span class="line">           e.flag ? ajaxFunc(<span class="string">"get"</span>, <span class="string">"http://activity.renren.com/livecell/rKey"</span>, <span class="string">""</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">             <span class="comment">// js对e进行解析（格式转换），得到对象n，就可以在js里使用n了</span></span><br><span class="line">               <span class="keyword">var</span> n = <span class="built_in">JSON</span>.parse(e).data;</span><br><span class="line">               <span class="keyword">if</span> (<span class="number">0</span> == n.code) &#123;</span><br><span class="line">                 <span class="comment">// 密码逆置，这个看的懂</span></span><br><span class="line">                   t.password = t.password.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>),</span><br><span class="line">                   setMaxDigits(<span class="number">130</span>); <span class="comment">// 应该不用管</span></span><br><span class="line">                   <span class="comment">// e和n拿出来，放入RSAKeyPair函数,实例化个对象，创建o，可以理解o就是公钥</span></span><br><span class="line">                   <span class="keyword">var</span> o = <span class="keyword">new</span> RSAKeyPair(n.e,<span class="string">""</span>,n.n)</span><br><span class="line">                   <span class="comment">// encryptedString,把公钥和我们输入的密码放进去，得到这个r，这个r就是我们加密后的密码！！！</span></span><br><span class="line">                     , r = encryptedString(o, t.password);</span><br><span class="line">                     <span class="comment">// 把加密后的密码赋给t对象</span></span><br><span class="line">                   t.password = r,</span><br><span class="line">                   <span class="comment">// 把公钥也给了t</span></span><br><span class="line">                   t.rKey = n.rkey</span><br><span class="line">               &#125; <span class="keyword">else</span></span><br><span class="line">                   toast(<span class="string">"公钥获取失败"</span>),</span><br><span class="line">                   t.rKey = <span class="string">""</span>;</span><br><span class="line">                <span class="comment">// 发ajax请求，给我们抓包看到的"http://activity.renren.com/livecell/ajax/clog"，请求参数是t，调用结果给了下面的函数</span></span><br><span class="line">               ajaxFunc(<span class="string">"post"</span>, <span class="string">"http://activity.renren.com/livecell/ajax/clog"</span>, t, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                   <span class="keyword">var</span> e = <span class="built_in">JSON</span>.parse(e).logInfo;</span><br><span class="line">                   <span class="comment">// 登录失败的处理</span></span><br><span class="line">                   <span class="number">0</span> == e.code ? location.href = localStorage.getItem(<span class="string">"url"</span>) || <span class="string">""</span> : toast(e.msg || <span class="string">"登录出错"</span>)</span><br><span class="line">               &#125;)</span><br><span class="line">           &#125;) : toast(e.msg)</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="行为分析"><a href="#行为分析" class="headerlink" title="行为分析"></a>行为分析</h2><h3 id="js行为分析"><a href="#js行为分析" class="headerlink" title="js行为分析"></a>js行为分析</h3><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128101848771.png" alt></p>
+<p>之前抓包的到的一个数据<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128091310353.png" alt><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">formSubmit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 定义t字典(对象)，添加事件监听</span></span><br><span class="line">       <span class="keyword">var</span> e, t = &#123;&#125;;</span><br><span class="line">       $(<span class="string">".login"</span>).addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="comment">// 点击之后把账号和密码给赋值过去</span></span><br><span class="line">           t.phoneNum = $(<span class="string">".phonenum"</span>).value,</span><br><span class="line">           t.password = $(<span class="string">".password"</span>).value,</span><br><span class="line">           <span class="comment">// loginValidate把t放进去，不管(可以看下，是检查账号密码为空之类的)</span></span><br><span class="line">           e = loginValidate(t),</span><br><span class="line">           <span class="comment">// t.c1，c1应该是前面的，抓包得到的，写死-100应该就ok了</span></span><br><span class="line">           t.c1 = c1 || <span class="number">0</span>,</span><br><span class="line">           <span class="comment">// 拿公钥，发get请求，url为"http://activity.renren.com/livecell/rKey"，拼接参数为空，得到返回值e又传给下面函数了</span></span><br><span class="line">           <span class="comment">// 这个e，应该就是我们上面拿到的e</span></span><br><span class="line">           e.flag ? ajaxFunc(<span class="string">"get"</span>, <span class="string">"http://activity.renren.com/livecell/rKey"</span>, <span class="string">""</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">             <span class="comment">// js对e进行解析（格式转换），得到对象n，就可以在js里使用n了</span></span><br><span class="line">               <span class="keyword">var</span> n = <span class="built_in">JSON</span>.parse(e).data;</span><br><span class="line">               <span class="keyword">if</span> (<span class="number">0</span> == n.code) &#123;</span><br><span class="line">                 <span class="comment">// 密码逆置，这个看的懂</span></span><br><span class="line">                   t.password = t.password.split(<span class="string">""</span>).reverse().join(<span class="string">""</span>),</span><br><span class="line">                   setMaxDigits(<span class="number">130</span>); <span class="comment">// 应该不用管</span></span><br><span class="line">                   <span class="comment">// e和n拿出来，放入RSAKeyPair函数,实例化个对象，创建o，可以理解o就是公钥</span></span><br><span class="line">                   <span class="keyword">var</span> o = <span class="keyword">new</span> RSAKeyPair(n.e,<span class="string">""</span>,n.n)</span><br><span class="line">                   <span class="comment">// encryptedString,把公钥和我们输入的密码放进去，得到这个r，这个r就是我们加密后的密码！！！</span></span><br><span class="line">                     , r = encryptedString(o, t.password);</span><br><span class="line">                     <span class="comment">// 把加密后的密码赋给t对象</span></span><br><span class="line">                   t.password = r,</span><br><span class="line">                   <span class="comment">// 把公钥也给了t</span></span><br><span class="line">                   t.rKey = n.rkey</span><br><span class="line">               &#125; <span class="keyword">else</span></span><br><span class="line">                   toast(<span class="string">"公钥获取失败"</span>),</span><br><span class="line">                   t.rKey = <span class="string">""</span>;</span><br><span class="line">                <span class="comment">// 发ajax请求，给我们抓包看到的"http://activity.renren.com/livecell/ajax/clog"，请求参数是t，调用结果给了下面的函数</span></span><br><span class="line">               ajaxFunc(<span class="string">"post"</span>, <span class="string">"http://activity.renren.com/livecell/ajax/clog"</span>, t, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                   <span class="keyword">var</span> e = <span class="built_in">JSON</span>.parse(e).logInfo;</span><br><span class="line">                   <span class="comment">// 登录失败的处理</span></span><br><span class="line">                   <span class="number">0</span> == e.code ? location.href = localStorage.getItem(<span class="string">"url"</span>) || <span class="string">""</span> : toast(e.msg || <span class="string">"登录出错"</span>)</span><br><span class="line">               &#125;)</span><br><span class="line">           &#125;) : toast(e.msg)</span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="登录过程分析总结"><a href="#登录过程分析总结" class="headerlink" title="登录过程分析总结"></a>登录过程分析总结</h3><div id="flowchart-0" class="flow-chart"></div>
 
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="RSAKeyPair的搜寻"><a href="#RSAKeyPair的搜寻" class="headerlink" title="RSAKeyPair的搜寻"></a>RSAKeyPair的搜寻</h3><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112613345.png" alt=""></p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="RSAKeyPair的搜寻"><a href="#RSAKeyPair的搜寻" class="headerlink" title="RSAKeyPair的搜寻"></a>RSAKeyPair的搜寻</h3><p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112613345.png" alt></p>
 <p>发现只有一个，说明定义不在这，我们直接调用的</p>
 <p>它在哪？</p>
-<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112835358.png" alt=""><br>回到document，浏览器给我们的全部东西都在这。</p>
-<p>点开看，找response，看看里面都有哪些js，所有的js都在这里面<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112943539.png" alt=""></p>
+<p><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112835358.png" alt><br>回到document，浏览器给我们的全部东西都在这。</p>
+<p>点开看，找response，看看里面都有哪些js，所有的js都在这里面<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128112943539.png" alt></p>
 <p>关掉这个吧，就是随便说说。。</p>
-<p>复制，点三个点，调出搜索，搜RSAKeyPair<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128113448526.png" alt=""></p>
-<p>一搜，就找到了他所在的js文件<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128113639814.png" alt=""></p>
+<p>复制，点三个点，调出搜索，搜RSAKeyPair<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128113448526.png" alt></p>
+<p>一搜，就找到了他所在的js文件<br><img src="/2018/06/27/chorme-调试/markdown-img-paste-20181128113639814.png" alt></p>
 <p>点进去看，大概就是这些东西吧</p>
 <h3 id="浏览器知识"><a href="#浏览器知识" class="headerlink" title="浏览器知识"></a>浏览器知识</h3><p>其实上面让你看一眼dom，是有用的。</p>
 <p>我们的浏览器，号称内置什么什么引擎。在服务器拿到html(骨骼文件)之后，这些引擎，就是加载这个html用的。html里面有js文件，css文件，图片……它去下载，下载完之后，这个引擎再去把这些文件执行.</p>
@@ -559,15 +559,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,11 +567,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,7 +575,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,11 +599,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,11 +627,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -639,7 +639,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,7 +647,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -659,11 +659,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,7 +707,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -894,8 +894,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

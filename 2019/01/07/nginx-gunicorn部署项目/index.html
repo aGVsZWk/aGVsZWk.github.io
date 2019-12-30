@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -173,7 +173,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-nginx-gunicorn部署项目" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-nginx-gunicorn部署项目" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -194,8 +194,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>部署环境: 基于ubuntu16.04系统, 使用Gunicorn+Nginx, 云服务器为腾讯云。<br>2019.4.15新增内容: 基于centos7.2，采用git部署<br><a id="more"></a></p>
-<h1 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h1><p><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201229380.png" alt=""><br>进控制台, 配置安全组, 设置入站规则和出站规则<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201348144.png" alt=""><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201401859.png" alt=""><br>入站的端口允许80(http默认服务器端口),22(ssh登录),5000和5001(项目端口),出站全都放出了</p>
-<p>第一次买, 在消息里面看用户名和密码, 然后登录就行了, 最好重置密码一下, 还要设置root账号的密码<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201642372.png" alt=""><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201803450.png" alt=""><br>或者 <code>ssh ubuntu@公网ip</code>, 然后输入密码</p>
+<h1 id="控制台"><a href="#控制台" class="headerlink" title="控制台"></a>控制台</h1><p><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201229380.png" alt><br>进控制台, 配置安全组, 设置入站规则和出站规则<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201348144.png" alt><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201401859.png" alt><br>入站的端口允许80(http默认服务器端口),22(ssh登录),5000和5001(项目端口),出站全都放出了</p>
+<p>第一次买, 在消息里面看用户名和密码, 然后登录就行了, 最好重置密码一下, 还要设置root账号的密码<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201642372.png" alt><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190107201803450.png" alt><br>或者 <code>ssh ubuntu@公网ip</code>, 然后输入密码</p>
 <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><h2 id="设置root账号"><a href="#设置root账号" class="headerlink" title="设置root账号"></a>设置root账号</h2><p>设置root账号密码: <code>sudo passwd</code><br>切换至root账号: <code>su root</code></p>
 <h2 id="更新apt下载源"><a href="#更新apt下载源" class="headerlink" title="更新apt下载源"></a>更新apt下载源</h2><p><code>sudo apt-get update</code></p>
 <h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p><code>apt-get install mysql-server</code><br><code>apt-get install libmysqlclient-dev</code><br>会弹出来让你设置密码的, 设好密码登录mysql验证下</p>
@@ -225,7 +225,7 @@
 <li>开nginx, 配置负载均衡, 测试下能不能实现, ok</li>
 </ol>
 <h1 id="基于centos7-2的部署"><a href="#基于centos7-2的部署" class="headerlink" title="基于centos7.2的部署"></a>基于centos7.2的部署</h1><p>教程在centos7.5.x和centos7.2.x上通过检测</p>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="一台干净的Linux-Centos-7服务器"><a href="#一台干净的Linux-Centos-7服务器" class="headerlink" title="一台干净的Linux Centos 7服务器"></a>一台干净的Linux Centos 7服务器</h3><h3 id="查看当前系统"><a href="#查看当前系统" class="headerlink" title="查看当前系统"></a>查看当前系统</h3><p><code>cat /etc/issue</code><br>如果失败，执行<code>cat /etc/redhat-release</code><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415213943681.png" alt=""></p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="一台干净的Linux-Centos-7服务器"><a href="#一台干净的Linux-Centos-7服务器" class="headerlink" title="一台干净的Linux Centos 7服务器"></a>一台干净的Linux Centos 7服务器</h3><h3 id="查看当前系统"><a href="#查看当前系统" class="headerlink" title="查看当前系统"></a>查看当前系统</h3><p><code>cat /etc/issue</code><br>如果失败，执行<code>cat /etc/redhat-release</code><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415213943681.png" alt></p>
 <h2 id="安装python3，方法1"><a href="#安装python3，方法1" class="headerlink" title="安装python3，方法1"></a>安装python3，方法1</h2><p><code>python -V &amp;&amp; which python</code></p>
 <p>如果指向的是python2继续进行，如果是python3跳过此步</p>
 <h3 id="安装python3环境"><a href="#安装python3环境" class="headerlink" title="安装python3环境"></a>安装python3环境</h3><p><code>yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make gcc gcc-c++ autoconf automake zlib-devel bzip2-devel xz-libs wget</code> # 不使用</p>
@@ -238,7 +238,7 @@
 <p>转到安装的目录: <code>cd /usr/local/python3/bin</code>，输入<code>./python3</code>测试，进入则ok，说明安装成功</p>
 <p>配置软连接: <code>ln -s /usr/local/python3/bin/python3  /usr/bin/python3</code><br>然后测试是否能成功进入python3: <code>python3</code></p>
 <p>如果只需要使用python3这一条命令，下面的可以不看了，如果想要python这一条命令也指向pytho3，则执行下面的步骤：</p>
-<p><code>cd /bin</code><br><code>ll |grep python</code><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415215847806.png" alt=""><br>可以看到python指向python2</p>
+<p><code>cd /bin</code><br><code>ll |grep python</code><br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415215847806.png" alt><br>可以看到python指向python2</p>
 <p>修改指向<br><code>rm ./python</code><br><code>ln -s /usr/local/python3/bin/python3.6 /bin/python</code></p>
 <h3 id="处理善后工作"><a href="#处理善后工作" class="headerlink" title="处理善后工作"></a>处理善后工作</h3><p>更改yum的配置: <code>vi /usr/bin/yum</code><br>把第一行的<code>#!/usr/bin/python</code> 改成 <code>#!/usr/bin/python2</code> 就可以了</p>
 <p>更改urlgrabber-ext-down的配置: <code>vi /usr/libexec/urlgrabber-ext-down</code><br>将第一行<code>#!/usr/bin/python</code> 改为 <code>#!/usr/bin/python2</code>即可。</p>
@@ -260,7 +260,7 @@
 <p>或者通过修改 /etc/yum.repos.d/mysql-community.repo 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Enable to use MySQL 5.6</span><br><span class="line">[mysql56-community]</span><br><span class="line">name=MySQL 5.6 Community Server</span><br><span class="line">baseurl=http://repo.mysql.com/yum/mysql-5.6-community/el/7/$basearch/</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:/etc/pki/rpm-gpg/RPM-GPG-KEY-mysql</span><br></pre></td></tr></table></figure></p>
 <p>其中 enabled=0 是指禁用，enabled=1 指启用。<br>注意： 任何时候，只能启用一个版本。</p>
 <h3 id="通过-Yum-来安装-MySQL"><a href="#通过-Yum-来安装-MySQL" class="headerlink" title="通过 Yum 来安装 MySQL"></a>通过 Yum 来安装 MySQL</h3><p><code>yum install mysql-community-server</code></p>
-<h3 id="进行mysql安全设置（设置密码）"><a href="#进行mysql安全设置（设置密码）" class="headerlink" title="进行mysql安全设置（设置密码）"></a>进行mysql安全设置（设置密码）</h3><p><code>mysql_secure_installation</code><br>敲完回车后，如果出现2002错误，文本如下:<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415220613565.png" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 2002 (HY000): Can&apos;t connect to local MySQL server through socket &apos;/var/lib/mysql/mysql.sock&apos; (2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="进行mysql安全设置（设置密码）"><a href="#进行mysql安全设置（设置密码）" class="headerlink" title="进行mysql安全设置（设置密码）"></a>进行mysql安全设置（设置密码）</h3><p><code>mysql_secure_installation</code><br>敲完回车后，如果出现2002错误，文本如下:<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415220613565.png" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 2002 (HY000): Can&apos;t connect to local MySQL server through socket &apos;/var/lib/mysql/mysql.sock&apos; (2)</span><br></pre></td></tr></table></figure></p>
 <p>解决方法: 重启mysql</p>
 <p>先查看mysql进程号:<br><code>ps -A | grep -i mysql</code> 如果没有，跳过下面那步，直接重启mysql<br>杀掉列出来的进程:<br><code>kill 进程号</code><br>重启mysql服务:<br><code>service mysql start</code><br>然后再执行设置root账户密码及其他一系列的操作</p>
 <h3 id="尝试远程登录mysql"><a href="#尝试远程登录mysql" class="headerlink" title="尝试远程登录mysql:"></a>尝试远程登录mysql:</h3><p><code>mysql -h 1xx.1xx.xxx.xxx -P xxx -uxxx -p&#39;xxxx&#39;</code></p>
@@ -279,7 +279,7 @@
 <h3 id="安装nginx源"><a href="#安装nginx源" class="headerlink" title="安装nginx源"></a>安装nginx源</h3><p><code>rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm</code></p>
 <p>安装该rpm后，我们就能在/etc/yum.repos.d目录中看到一个名为nginx.repo的文件</p>
 <h3 id="安装nginx-1"><a href="#安装nginx-1" class="headerlink" title="安装nginx"></a>安装nginx</h3><p><code>yum install -y nginx</code></p>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>启动:<br><code>nginx</code><br>测试nginx配置是否正确:<br><code>nginx -t</code><br>优雅重启:<br><code>ngnix -s reload</code><br>如果出现nginx: [error] invalid PID number “” in “/var/run/nginx.pid”的错误:<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415222201423.png" alt=""><br>解决方法:<br><code>nginx -c /etc/nginx/nginx.conf</code></p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>启动:<br><code>nginx</code><br>测试nginx配置是否正确:<br><code>nginx -t</code><br>优雅重启:<br><code>ngnix -s reload</code><br>如果出现nginx: [error] invalid PID number “” in “/var/run/nginx.pid”的错误:<br><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415222201423.png" alt><br>解决方法:<br><code>nginx -c /etc/nginx/nginx.conf</code></p>
 <p>正常部署后面的两步跳过</p>
 <p>查看nginx的进程号:<br><code>ps -axu|grep nginx</code><br>nginx服务停止:<br><code>nginx -s stop</code></p>
 <h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><p>直接yum安装即可<br><code>yum install -y mongodb</code></p>
@@ -288,7 +288,7 @@
 <h3 id="解压并重命名"><a href="#解压并重命名" class="headerlink" title="解压并重命名"></a>解压并重命名</h3><p><code>tar zxvf mongodb-linux-x86_64-4.0.0.tgz</code><br><code>mv mongodb-linux-x86_64-4.0.0 mongodb</code></p>
 <h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><p><code>vim /etc/profile</code></p>
 <p>在<code>export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL</code>一行的上面添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Set Mongodb</span><br><span class="line">export PATH=/usr/mongodb/bin:$PATH</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415225640158.png" alt=""></p>
+<p><img src="/2019/01/07/nginx-gunicorn部署项目/markdown-img-paste-20190415225640158.png" alt></p>
 <p>使环境变量生效:<br><code>cd ~</code><br><code>source /etc/profile</code></p>
 <h3 id="创建数据库目录"><a href="#创建数据库目录" class="headerlink" title="创建数据库目录"></a>创建数据库目录</h3><p><code>cd /usr/local/mongodb</code><br><code>touch mongodb.conf</code><br><code>mkdir db</code><br><code>mkdir log</code><br><code>cd log</code><br><code>touch mongodb.log</code></p>
 <h3 id="修改mongodb配置文件"><a href="#修改mongodb配置文件" class="headerlink" title="修改mongodb配置文件"></a>修改mongodb配置文件</h3><p><code>vim /usr/mongodb/mongodb.conf</code><br>添加以下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">port=27017 #端口</span><br><span class="line">dbpath= /usr/local/mongodb/db #数据库存文件存放目录</span><br><span class="line">logpath= /usr/local/mongodb/log/mongodb.log #日志文件存放路径</span><br><span class="line">logappend=true #使用追加的方式写日志</span><br><span class="line">fork=true #以守护进程的方式运行，创建服务器进程</span><br><span class="line">maxConns=100 #最大同时连接数</span><br><span class="line">noauth=true #不启用验证</span><br><span class="line">journal=true #每次写入会记录一条操作日志（通过journal可以重新构造出写入的数据）。</span><br><span class="line">#即使宕机，启动时wiredtiger会先将数据恢复到最近一次的checkpoint点，然后重放后续的journal日志来恢复。</span><br><span class="line">storageEngine=wiredTiger  #存储引擎有mmapv1、wiretiger、mongorocks</span><br><span class="line">bind_ip = 0.0.0.0  #这样就可外部访问了，例如从win10中去连虚拟机中的MongoDB</span><br></pre></td></tr></table></figure></p>
@@ -304,7 +304,7 @@
 <h2 id="恢复nginx的备份"><a href="#恢复nginx的备份" class="headerlink" title="恢复nginx的备份"></a>恢复nginx的备份</h2><h3 id="将nginx的备份文件恢复"><a href="#将nginx的备份文件恢复" class="headerlink" title="将nginx的备份文件恢复"></a>将nginx的备份文件恢复</h3><p>将之前项目备份的文件nginx.conf和ssmgr.conf分别拷贝到/etc/nginx/和/etc/nginx/conf.d/中，删掉/etc/nginx/conf.d/default.conf</p>
 <h3 id="进行测试"><a href="#进行测试" class="headerlink" title="进行测试"></a>进行测试</h3><p><code>nginx -t</code><br>如果出现的信息中含有successful，继续执行下面的操作，否则修改配置信息</p>
 <h3 id="重启nginx"><a href="#重启nginx" class="headerlink" title="重启nginx"></a>重启nginx</h3><p><code>nginx -s reload</code></p>
-<p><img alt="centos搭建python3,mysql5.6,redis4.0,flask教程-e574c02f.png" src="/2019/01/07/nginx-gunicorn部署项目/centos搭建python3,mysql5.6,redis4.0,flask教程-e574c02f.png" width="" height=""></p>
+<p><img alt="centos搭建python3,mysql5.6,redis4.0,flask教程-e574c02f.png" src="/2019/01/07/nginx-gunicorn部署项目/centos搭建python3,mysql5.6,redis4.0,flask教程-e574c02f.png" width height></p>
 <p>如果出现上面的错误，先杀掉和nginx有关的进程，然后再使用-c，指定配置文件的方法启动<br><code>nginx -c /etc/nginx/nginx.conf</code></p>
 <h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>确定在服务器上127.0.0.1:5000能访问，直接使用服务器ip也能访问<br><code>curl 127.0.0.1:5000</code><br><code>curl 160.124.50.70  # 160.124.50.70为服务器地址</code></p>
 <p>测试客户端是否能访问:<br>直接在浏览器中输入服务器ip地址</p>
@@ -573,15 +573,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,11 +581,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,7 +589,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,11 +613,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,11 +641,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,7 +653,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,7 +661,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,11 +673,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -721,7 +721,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -908,8 +908,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

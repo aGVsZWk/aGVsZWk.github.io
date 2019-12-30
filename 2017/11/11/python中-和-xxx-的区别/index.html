@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
   <title>python中_,__和__xxx__的区别 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文介绍python中_，，和xxx__的区别。">
+  <meta name="description" content="本文介绍python中，，和xxx_的区别。">
 <meta name="keywords" content="python高级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python中_,__和__xxx__的区别">
 <meta property="og:url" content="https://agvszwk.github.io/2017/11/11/python中-和-xxx-的区别/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="本文介绍python中_，，和xxx__的区别。">
+<meta property="og:description" content="本文介绍python中，，和xxx_的区别。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2017/11/11/python中-和-xxx-的区别/markdown-img-paste-20190111223439763.png">
 <meta property="og:updated_time" content="2019-04-14T16:40:45.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中_,__和__xxx__的区别">
-<meta name="twitter:description" content="本文介绍python中_，，和xxx__的区别。">
+<meta name="twitter:description" content="本文介绍python中，，和xxx_的区别。">
 <meta name="twitter:image" content="https://agvszwk.github.io/2017/11/11/python中-和-xxx-的区别/markdown-img-paste-20190111223439763.png">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
@@ -163,7 +163,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python中-和-xxx-的区别" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-python中-和-xxx-的区别" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -183,15 +183,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文介绍python中_，<strong>，和</strong>xxx__的区别。<br><a id="more"></a></p>
-<h1 id="和-的区别"><a href="#和-的区别" class="headerlink" title="_和__的区别"></a>_和__的区别</h1><p>区别主要有两点, 一个是导包时, 另一个是作为类的属性或方法时.</p>
-<h2 id="区别1-导包的区别"><a href="#区别1-导包的区别" class="headerlink" title="区别1: 导包的区别"></a>区别1: 导包的区别</h2><p>以_开头的不能被导出, 即_和__开头的不能被导出<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__X = <span class="number">0</span></span><br><span class="line">_X = <span class="number">1</span></span><br><span class="line">X = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+        <p>本文介绍python中<em>，<strong>，和</strong>xxx_</em>的区别。<br><a id="more"></a></p>
+<h1 id="和-的区别"><a href="#和-的区别" class="headerlink" title="和_的区别"></a><em>和_</em>的区别</h1><p>区别主要有两点, 一个是导包时, 另一个是作为类的属性或方法时.</p>
+<h2 id="区别1-导包的区别"><a href="#区别1-导包的区别" class="headerlink" title="区别1: 导包的区别"></a>区别1: 导包的区别</h2><p>以<em>开头的不能被导出, 即</em>和__开头的不能被导出<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__X = <span class="number">0</span></span><br><span class="line">_X = <span class="number">1</span></span><br><span class="line">X = <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
 <p>导出此模块时, 只有X能被其它文件调用. 就算使用<strong>all</strong>指定_X和__X, 也不能被调用</p>
-<h2 id="区别2-作为类的属性或方法的区别"><a href="#区别2-作为类的属性或方法的区别" class="headerlink" title="区别2: 作为类的属性或方法的区别"></a>区别2: 作为类的属性或方法的区别</h2><h3 id=""><a href="#" class="headerlink" title="_"></a>_</h3><p>在python的类中, 没有真正的私有化, 不管是方法还是属性, 为了编程的需要, 约定了加下划线_的属性和方法不应该在类的外面直接调用它. 但实际上加了_的方法也可以在类外面被调用.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._x = <span class="string">"约定为不在类外面直接调用的方法, 但是也可以调用"</span></span><br><span class="line">c = C()</span><br><span class="line">print(c._x)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2017/11/11/python中-和-xxx-的区别/markdown-img-paste-20190111223439763.png" alt=""></p>
+<h2 id="区别2-作为类的属性或方法的区别"><a href="#区别2-作为类的属性或方法的区别" class="headerlink" title="区别2: 作为类的属性或方法的区别"></a>区别2: 作为类的属性或方法的区别</h2><h3 id><a href="#" class="headerlink" title="_"></a>_</h3><p>在python的类中, 没有真正的私有化, 不管是方法还是属性, 为了编程的需要, 约定了加下划线<em>的属性和方法不应该在类的外面直接调用它. 但实际上加了</em>的方法也可以在类外面被调用.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._x = <span class="string">"约定为不在类外面直接调用的方法, 但是也可以调用"</span></span><br><span class="line">c = C()</span><br><span class="line">print(c._x)</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2017/11/11/python中-和-xxx-的区别/markdown-img-paste-20190111223439763.png" alt></p>
 <h3 id="-1"><a href="#-1" class="headerlink" title="__"></a>__</h3><p>python中的<strong>和一项称为name mangling的技术有关, 又叫name decoration命名修饰(名字会变, 变成_类名</strong>XX). 用来解决命名冲突, 重载等问题.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__method</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是A的_A__method方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">method</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__method()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__method</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是B的_B__method方法"</span>)</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">b = B()</span><br><span class="line">a.method()      <span class="comment"># 这是A的_A__method方法</span></span><br><span class="line">b.method()      <span class="comment"># 这是A的_A__method方法</span></span><br><span class="line">a._A__method()  <span class="comment"># 这是A的_A__method方法</span></span><br><span class="line">b._B__method()  <span class="comment"># 这是B的_B__method方法</span></span><br><span class="line">b._A__method()  <span class="comment"># 这是A的_A__method方法</span></span><br><span class="line">a.__method()    <span class="comment"># 报错, A中没有__method方法</span></span><br><span class="line">b.__method()    <span class="comment"># 报错, B中没有__method方法</span></span><br></pre></td></tr></table></figure></p>
 <p>在类A中, _method方法其实由于命名修饰的原因, 变成了_A<strong>method, B中_method方法变成了_B</strong>method, 所以在调用B中的method方法时, 返回的还是A的_A__method方法.</p>
-<h1 id="python中没有私有化"><a href="#python中没有私有化" class="headerlink" title="python中没有私有化"></a>python中没有私有化</h1><p>python中没有真正的私有化, 所以以_和__开头的都能在类外面访问到.</p>
+<h1 id="python中没有私有化"><a href="#python中没有私有化" class="headerlink" title="python中没有私有化"></a>python中没有私有化</h1><p>python中没有真正的私有化, 所以以<em>和_</em>开头的都能在类外面访问到.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__method</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是A的_A__method方法"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">method</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__method()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__method</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是B的_B__method方法"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hahaha</span><span class="params">()</span>:</span> print(<span class="string">"hahaha"</span>)</span><br><span class="line">a._A__method = hahaha</span><br><span class="line">a.method()    <span class="comment"># hahaha</span></span><br></pre></td></tr></table></figure>
 <p>看, 外面也能改, python中没有私有化.</p>
 <h1 id="xxx前后各双下划线"><a href="#xxx前后各双下划线" class="headerlink" title="xxx前后各双下划线"></a><strong>xxx</strong>前后各双下划线</h1><p>当你看到<strong>xxx</strong>的方法时, 就知道不要调用它. 因为它的意思是用于python调用的. 但其实你也可以进行调用.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'igor'</span></span><br><span class="line">print(name.__len__)   <span class="comment"># 4</span></span><br><span class="line">print(len(name))  <span class="comment"># 4</span></span><br></pre></td></tr></table></figure></p>
@@ -206,27 +206,27 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">__new__</td>
+<td style="text-align:center">_<em>new_</em></td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">__del__</td>
+<td style="text-align:center">_<em>del_</em></td>
 <td style="text-align:center">del</td>
 </tr>
 <tr>
-<td style="text-align:center">__init__</td>
+<td style="text-align:center">_<em>init_</em></td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">__eq__</td>
+<td style="text-align:center">_<em>eq_</em></td>
 <td style="text-align:center">==</td>
 </tr>
 <tr>
-<td style="text-align:center">__cmp__</td>
+<td style="text-align:center">_<em>cmp_</em></td>
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">__ne__</td>
+<td style="text-align:center">_<em>ne_</em></td>
 <td style="text-align:center">!=</td>
 </tr>
 <tr>
@@ -363,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#和-的区别"><span class="toc-number">1.</span> <span class="toc-text">_和__的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别1-导包的区别"><span class="toc-number">1.1.</span> <span class="toc-text">区别1: 导包的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区别2-作为类的属性或方法的区别"><span class="toc-number">1.2.</span> <span class="toc-text">区别2: 作为类的属性或方法的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.2.1.</span> <span class="toc-text">_</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">__</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python中没有私有化"><span class="toc-number">2.</span> <span class="toc-text">python中没有私有化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xxx前后各双下划线"><span class="toc-number">3.</span> <span class="toc-text">xxx前后各双下划线</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#和-的区别"><span class="toc-number">1.</span> <span class="toc-text">和_的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#区别1-导包的区别"><span class="toc-number">1.1.</span> <span class="toc-text">区别1: 导包的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区别2-作为类的属性或方法的区别"><span class="toc-number">1.2.</span> <span class="toc-text">区别2: 作为类的属性或方法的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.2.1.</span> <span class="toc-text">_</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">__</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python中没有私有化"><span class="toc-number">2.</span> <span class="toc-text">python中没有私有化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#xxx前后各双下划线"><span class="toc-number">3.</span> <span class="toc-text">xxx前后各双下划线</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -505,15 +505,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +513,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,7 +521,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,11 +545,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,11 +573,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,7 +585,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,7 +593,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,11 +605,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,7 +653,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -840,8 +840,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

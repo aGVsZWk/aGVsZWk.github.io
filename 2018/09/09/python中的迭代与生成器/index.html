@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -17,7 +17,7 @@
 <meta property="og:description" content="本文详细介绍python中的迭代概念，以及生成器与迭代器之间的关系，还有生成器的使用。嫌啰嗦的可直接看代码!!!">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2018/09/09/python中的迭代与生成器/markdown-img-paste-20190109222011900.png">
-<meta property="og:updated_time" content="2019-04-14T16:40:44.258Z">
+<meta property="og:updated_time" content="2019-04-14T16:40:44.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python中的迭代与生成器">
 <meta name="twitter:description" content="本文详细介绍python中的迭代概念，以及生成器与迭代器之间的关系，还有生成器的使用。嫌啰嗦的可直接看代码!!!">
@@ -163,7 +163,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python中的迭代与生成器" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-python中的迭代与生成器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -195,15 +195,15 @@
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="列表是一个可迭代对象-但它不是迭代器"><a href="#列表是一个可迭代对象-但它不是迭代器" class="headerlink" title="列表是一个可迭代对象, 但它不是迭代器"></a>列表是一个可迭代对象, 但它不是迭代器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Iterable, Iterator</span><br><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]    <span class="comment"># 列表是一个可迭代对象, 但不是迭代器</span></span><br><span class="line">print(isinstance(l, Iterable))  <span class="comment"># True</span></span><br><span class="line">print(isinstance(l, Iterator))  <span class="comment"># False</span></span><br></pre></td></tr></table></figure>
 <h3 id="可迭代对象转换成迭代器-使用iter-函数"><a href="#可迭代对象转换成迭代器-使用iter-函数" class="headerlink" title="可迭代对象转换成迭代器: 使用iter()函数"></a>可迭代对象转换成迭代器: 使用iter()函数</h3><p>格式: iter(object[, sentinel])  括号内的内容可有可无, sentinel是哨兵的意思</p>
 <h4 id="不带哨兵的使用"><a href="#不带哨兵的使用" class="headerlink" title="不带哨兵的使用:"></a>不带哨兵的使用:</h4><p>直接返回迭代器, 没啥好说的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list =  range(<span class="number">6</span>)</span><br><span class="line">It = iter(list)   <span class="comment"># It是一个Iterator迭代器</span></span><br><span class="line">print(isinstance(lt, Iterator))  <span class="comment"># True</span></span><br><span class="line">print(isinstance(It, Iterable))  <span class="comment"># True</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="带哨兵的使用"><a href="#带哨兵的使用" class="headerlink" title="带哨兵的使用:"></a>带哨兵的使用:</h4><p>参数object必须是一个可调用的对象(如函数), 此时, iter()返回迭代器后, 以后每次调用这个返回的迭代器的<strong>next</strong>方法时, 都会调用object, 直到迭代到元素sentinel.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue() <span class="comment"># 创建队列对象</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    q.put(i)</span><br><span class="line"><span class="keyword">else</span>:   <span class="comment"># for else, 为了装逼这样写的, 哈哈哈哈</span></span><br><span class="line">    q.put(<span class="string">'END'</span>)    <span class="comment"># 放入结束标志</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> q.get()  <span class="comment"># 取数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 迭代器不仅可以通过for取出来, 还可以通过next()函数取出</span></span><br><span class="line"><span class="comment"># 写法1:</span></span><br><span class="line"><span class="comment"># for item in iter(test, 'END'):</span></span><br><span class="line"><span class="comment">#     print(item) # END不会被打印出来</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写法2:</span></span><br><span class="line">i = iter(test, <span class="string">'END'</span>)   <span class="comment"># 进行迭代</span></span><br><span class="line"><span class="comment"># print(next(i))      # 返回值, 并标记下一个</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))  # 报错, 并不会出现End</span></span><br><span class="line"><span class="comment"># 优化</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 获得下一个值</span></span><br><span class="line">        x = next(i)</span><br><span class="line">        print(x)</span><br><span class="line">    <span class="keyword">except</span> StopIteration:</span><br><span class="line">        <span class="comment"># 遇到StopIteration就退出循环</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="带哨兵的使用"><a href="#带哨兵的使用" class="headerlink" title="带哨兵的使用:"></a>带哨兵的使用:</h4><p>参数object必须是一个可调用的对象(如函数), 此时, iter()返回迭代器后, 以后每次调用这个返回的迭代器的<strong>next</strong>方法时, 都会调用object, 直到迭代到元素sentinel.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> queue <span class="keyword">import</span> Queue</span><br><span class="line">q = Queue() <span class="comment"># 创建队列对象</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">    q.put(i)</span><br><span class="line"><span class="keyword">else</span>:   <span class="comment"># for else, 为了装逼这样写的, 哈哈哈哈</span></span><br><span class="line">    q.put(<span class="string">'END'</span>)    <span class="comment"># 放入结束标志</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> q.get()  <span class="comment"># 取数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 迭代器不仅可以通过for取出来, 还可以通过next()函数取出</span></span><br><span class="line"><span class="comment"># 写法1:</span></span><br><span class="line"><span class="comment"># for item in iter(test, 'END'):</span></span><br><span class="line"><span class="comment">#     print(item) # END不会被打印出来</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写法2:</span></span><br><span class="line">i = iter(test, <span class="string">'END'</span>)   <span class="comment"># 进行迭代</span></span><br><span class="line"><span class="comment"># print(next(i))      # 返回值, 并标记下一个</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))</span></span><br><span class="line"><span class="comment"># print(next(i))  # 报错, 并不会出现End</span></span><br><span class="line"><span class="comment"># 优化</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 获得下一个值</span></span><br><span class="line">        x = next(i)</span><br><span class="line">        print(x)</span><br><span class="line">    <span class="keyword">except</span> StopIteration:</span><br><span class="line">        <span class="comment"># 遇到StopIteration就退出循环</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure></p>
 <p>换种写法, 不用队列<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">counter</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, _start, _end)</span>:</span></span><br><span class="line">        self.start = _start</span><br><span class="line">        self.end = _end</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_next</span><span class="params">(self)</span>:</span></span><br><span class="line">        s = self.start</span><br><span class="line">        <span class="keyword">if</span>(self.start &lt; self.end):</span><br><span class="line">            self.start += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> StopIteration</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c = counter(<span class="number">1</span>, <span class="number">5</span>)   <span class="comment"># 左闭右开</span></span><br><span class="line">iterator = iter(c.get_next, <span class="number">4</span>)  <span class="comment"># sentinel不会取到, 跟右开还是闭没关系</span></span><br><span class="line">print(type(iterator))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> iterator:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure></p>
-<p>补充个知识点: 当对象的get_next()方法执行时, 会自动调用<strong>callable</strong>的魔法方法</p>
+<p>补充个知识点: 当对象的get<em>next()方法执行时, 会自动调用<em>_callable</em></em>的魔法方法</p>
 <h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>python使用生成器对延迟操作提供了支持, 所谓的延迟操作是指: 在需要的时候才生产结果, 而不是一味的立即产生结果集, 说白了就是: <strong>一边循环一边计算下一个元素的机制</strong>, 这是生成器的优点, 避免数据的一次性读取而占用巨大内存空间</p>
 <p>在python中, 有两种创建生成器的方式: 1.生成器表达式 2.生成器函数</p>
 <h3 id="生成器表达式"><a href="#生成器表达式" class="headerlink" title="生成器表达式:"></a>生成器表达式:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Generator</span><br><span class="line">L = [x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>)]   <span class="comment"># 放在中括号中的是列表生成器(列表推导式)</span></span><br><span class="line">g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">5</span>))   <span class="comment"># 放在小括号中的就是生成器</span></span><br><span class="line">print(type(L))  <span class="comment"># List</span></span><br><span class="line">print(isinstance(g, Generator)) <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
 <h3 id="生成器函数"><a href="#生成器函数" class="headerlink" title="生成器函数"></a>生成器函数</h3><p>类似常规函数的定义, 但是使用yield语句而不是return语句返回结果, 但每个结果中间, 挂起函数的状态, 以便下次从它离开的地方继续执行.</p>
 <p>用生成器返回自然数的平方, 函数的定义基本相同, 唯一的区别是返回值yield<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Generator</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gensquares</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        print(<span class="string">"i=&#123;&#125;"</span>.format(i))</span><br><span class="line">        <span class="keyword">yield</span> i ** <span class="number">2</span></span><br><span class="line"></span><br><span class="line">g = gensquares(<span class="number">5</span>)</span><br><span class="line">print(isinstance(g, Generator))     <span class="comment"># True</span></span><br><span class="line">print(<span class="string">"next(g)=&#123;&#125;"</span>.format(next(g)))</span><br><span class="line">print(<span class="string">"next(g)=&#123;&#125;"</span>.format(next(g)))</span><br><span class="line">print(<span class="string">"next(g)=&#123;&#125;"</span>.format(next(g)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可不用next()去取, 改用for进行遍历, 略过了啊</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/09/python中的迭代与生成器/markdown-img-paste-20190109222011900.png" alt=""></p>
+<p><img src="/2018/09/09/python中的迭代与生成器/markdown-img-paste-20190109222011900.png" alt></p>
 <p>特点: 现用现取!</p>
 <h3 id="生成器总结"><a href="#生成器总结" class="headerlink" title="生成器总结:"></a>生成器总结:</h3><p>1 语法和函数类似, 差异在于返回值<br>2 自动实现迭代器协议: 对于生成器, python会自动实现迭代器协议, 由于生成器是自动实现了迭代器协议, 它就可以调用next(), 并且在没有数值返回的时候, 生成器自动产生StopIteration异常<br>3 状态挂起:生成器使用yield语句返回, yield语句挂起该生成器的函数状态, 保留足够的信息, 以便从它离开的地方继续执行<br>4 生成器是只能遍历一次的<br>5 生成器是一类特殊的迭代器</p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>使用*即可对迭代器(map, zip, generator, iterator)解压缩, 也可对非迭代器的可迭代对象(列表, 集合, 字典等等, 字典只得到键)解包.</p>
@@ -472,15 +472,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +480,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,7 +488,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,11 +512,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,11 +540,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,7 +552,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,7 +560,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,11 +572,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,7 +620,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -807,8 +807,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

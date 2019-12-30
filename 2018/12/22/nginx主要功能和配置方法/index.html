@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211346675.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211418500.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222222018898.png">
-<meta property="og:updated_time" content="2019-06-23T12:00:58.239Z">
+<meta property="og:updated_time" content="2019-06-23T12:00:58.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx主要功能和配置方法">
 <meta name="twitter:description" content="本文主要介绍如何去配置nginx。">
@@ -182,7 +182,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-nginx主要功能和配置方法" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-nginx主要功能和配置方法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -234,7 +234,7 @@
 <h3 id="location配置段"><a href="#location配置段" class="headerlink" title="location配置段"></a>location配置段</h3><p>根据url中的路径信息进行匹配, 由哪个路径文件进行相应<br>配置原则:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location optional_modifier location_match &#123; ... &#125;   # optional_modifier是匹配条件，location_match是匹配的样式，&#123;&#125;是要执行的操作。</span><br><span class="line"># 匹配条件主要有两种:正则/前缀字符。</span><br><span class="line">location @name &#123; ... &#125;  # 重定向使用</span><br></pre></td></tr></table></figure>
 <p>正则匹配: 大小写是否敏感, ~为不敏感, ~*为敏感</p>
-<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222012424672.png" alt=""><br>多条, 同优先级匹配到, 使用最后一个</p>
+<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222012424672.png" alt><br>多条, 同优先级匹配到, 使用最后一个</p>
 <p>URL尾部有/的注意事项:</p>
 <ol>
 <li>location中的location_match字符有无”/“不受影响</li>
@@ -246,17 +246,17 @@
 <p><code>mkdir /var/www/html/nihao</code><br><code>echo &quot;&lt;h1&gt;nihao&lt;/h1&gt;&quot; &gt; /var/www/html/nihao/index.html</code></p>
 <p>临时跳转:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">      listen 192.168.188.134:99;</span><br><span class="line">      server_name www.nginx.com;</span><br><span class="line">      location / &#123;</span><br><span class="line"></span><br><span class="line">          root   /var/www/html/nihao;</span><br><span class="line">          index  index.html index.htm;</span><br><span class="line">          try_files $uri $uri/ =404;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>状态页面: status_test.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 192.168.188.134:99;</span><br><span class="line">    server_name www.nginx.com;</span><br><span class="line">    location /status &#123;</span><br><span class="line">        stub_status on; # 开启nginx的状态页面,默认关闭</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>测试,重载之后访问uri<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222015704473.png" alt=""></p>
+<p>测试,重载之后访问uri<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222015704473.png" alt></p>
 <p>访问控制: controller.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 192.168.188.134:99;</span><br><span class="line">    server_name www.nginx.com;</span><br><span class="line">    location /status &#123;</span><br><span class="line">        stub_status on; # 开启nginx的状态页面,默认关闭</span><br><span class="line">        allow 192.168.0.108 # 只允许此IP访问此页面</span><br><span class="line">        deny all; # 其它ip均禁止访问此页面</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>从此以后, 就只允许192.168.0.108访问了, 不允许其他访问</p>
 <h3 id="目录列表"><a href="#目录列表" class="headerlink" title="目录列表"></a>目录列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location /upload &#123;</span><br><span class="line">  alias /var/www/upload; # 指定查看文件列表路径(绝对路径)</span><br><span class="line">  autoindex on; # 开启目录自动索引</span><br><span class="line">  autoindex_exact_size off; # 默认on,显示文件确切大小(bytes)。off 表示显示文件的大概大小(kB/MB/...)</span><br><span class="line">  autoindex_localtime on; # 默认off，显示的文件时间为 GMT 时间。on表示显示文件的服务器时间</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：该 alias 指定的目录下，不允许出现 index 属性指定的文件。<br>在/var/www/upload/目录下建立文件,访问就可以显示<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222021330707.png" alt=""></p>
+<p>注意：该 alias 指定的目录下，不允许出现 index 属性指定的文件。<br>在/var/www/upload/目录下建立文件,访问就可以显示<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222021330707.png" alt></p>
 <p>alias和root区别: 找的路径不一样, alias相当于alias_path, root相当于找root_path+请求path.</p>
 <h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>把一些需求转移到另一台主机上, 这就是代理<br>正向代理: 代理客户端<br>反向代理: 代理服务端</p>
 <p>nginx代理模块: proxy_pass<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  proxy_pass http://localhost:8000; # 设定请求跳转后的地址，可以使用 hostname 或 IP:Port 形式</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>当请求是/的时候, 交给proxy_pass的<a href="http://localhost:8000去处理" target="_blank" rel="noopener">http://localhost:8000去处理</a></p>
 <p>实战:建立proxy.conf, 里面写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 192.168.188.134:99;</span><br><span class="line">    server_name www.nginx.com;</span><br><span class="line">    location / &#123;</span><br><span class="line">    	proxy_pass http://192.168.188.134:88/hello/;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server&#123;</span><br><span class="line">    listen 192.168.188.134:88;</span><br><span class="line">    location /hello/ &#123;</span><br><span class="line">        alias /var/www/html/hello/;</span><br><span class="line">		    try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后建html, <code>mkdir /var/www/html/hello/</code>,<code>echo &quot;&lt;h1&gt;proxy_backend&lt;/h1&gt;&quot; &gt; /var/www/html/hello/index.html</code><br>然后<code>nginx -t</code>, <code>nginx -s reload</code>, 访问99端口进行测试即可<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222163136127.png" alt=""></p>
+<p>然后建html, <code>mkdir /var/www/html/hello/</code>,<code>echo &quot;&lt;h1&gt;proxy_backend&lt;/h1&gt;&quot; &gt; /var/www/html/hello/index.html</code><br>然后<code>nginx -t</code>, <code>nginx -s reload</code>, 访问99端口进行测试即可<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222163136127.png" alt></p>
 <p>注意点:<br>location /html/ {<br>  proxy_pass <a href="http://proxy.com" target="_blank" rel="noopener">http://proxy.com</a>;<br>  proxy_pass <a href="http://proxy.com/" target="_blank" rel="noopener">http://proxy.com/</a>;<br>}<br>这个斜杠非常重要. 关系到是否会拼接/html/</p>
 <h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>upstream<br>nginx中的负载均衡主要有两种, 一个是四层负载(IP:PORT), 另一个是七层负载(<a href="http://xxx" target="_blank" rel="noopener">http://xxx</a>)</p>
 <p>OSI七层模型: 物理层, 数据链路层, 网络层, 传输层, 会话层, 表示层, 应用层<br>第四层是传输层,就是IP:PORT, 第七层是应用层,就是<a href="http://xxx" target="_blank" rel="noopener">http://xxx</a></p>
@@ -266,35 +266,35 @@
 <p>实战: 建立upstream.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">upstream backends &#123;</span><br><span class="line">	server 192.168.188.134:10086;</span><br><span class="line">	server 192.168.188.134:10087;</span><br><span class="line">	server 192.168.188.134:10088;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 192.168.188.134:99;</span><br><span class="line">    server_name www.nginx.com;</span><br><span class="line">    location / &#123;</span><br><span class="line">    	proxy_pass http://backends;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>建立backends.conf,里面写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 192.168.188.134:10086;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root /var/www/html/hello/;</span><br><span class="line">    try_files $uri $uri/ =404;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">  listen 192.168.188.134:10087;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root /var/www/html/nihao/;</span><br><span class="line">    try_files $uri $uri/ =404;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">  listen 192.168.188.134:10088;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root /var/www/html/huanying/;</span><br><span class="line">    try_files $uri $uri/ =404;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>然后建html,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /var/www/html/hello/</span><br><span class="line">echo &apos;&lt;h1&gt;backend_hello&lt;/h1&gt;&apos; &gt; /var/www/html/hello/index.html</span><br><span class="line">mkdir -p /var/www/html/nihao/</span><br><span class="line">echo &apos;&lt;h1&gt;backend_nihao&lt;/h1&gt;&apos; &gt; /var/www/html/nihao/index.html</span><br><span class="line">mkdir -p /var/www/html/huanying/</span><br><span class="line">echo &apos;&lt;h1&gt;backend_huanying&lt;/h1&gt;&apos; &gt; /var/www/html/huanying/index.html</span><br></pre></td></tr></table></figure></p>
-<p>然后<code>nginx -t</code>, <code>nginx -s reload</code>, 访问,刷新测试就好了<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222165847171.png" alt=""><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222165859691.png" alt=""></p>
+<p>然后<code>nginx -t</code>, <code>nginx -s reload</code>, 访问,刷新测试就好了<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222165847171.png" alt><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222165859691.png" alt></p>
 <h3 id="其它参数"><a href="#其它参数" class="headerlink" title="其它参数"></a>其它参数</h3><p>down: 让某台主机不处理响应<br>backup: 后备主机, 往后躲, 所有主机都在忙, 我才上<br>max_fails: 允许失败的最大次数, 默认为1, 与fail_timeout一起使用<br>fail_timeout: 经历max_fail失败次数后, 暂停fail_timeout时间, 我才上</p>
 <p>实战: 演示down, 编辑刚刚的upstream.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream backends &#123;</span><br><span class="line">        server 192.168.188.134:10086 down;</span><br><span class="line">        server 192.168.188.134:10087;</span><br><span class="line">        server 192.168.188.134:10088;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen 192.168.188.134:99;</span><br><span class="line">    server_name www.nginx.com;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://backends;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>测试,重启, 发现10086主机不使用了</p>
-<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222171546903.png" alt=""></p>
+<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222171546903.png" alt></p>
 <p>down和backup常用来后端主机的存活监测</p>
 <h3 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h3><p>curl 模拟访问:</p>
 <p>安装curl : <code>apt-get install curl -y</code></p>
 <p>访问: <code>curl 地址</code>  <code>curl 192.168.188.134:99</code></p>
 <p>如何访问1000次? for循环, 直接在终端里敲下面命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in &#123;1..100&#125;</span><br><span class="line">do</span><br><span class="line">curl 192.168.188.134:99</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222170828609.png" alt=""><br>回车<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222170848624.png" alt=""></p>
+<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222170828609.png" alt><br>回车<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222170848624.png" alt></p>
 <h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><p>默认策略, 轮询</p>
 <p>官方的调度算法:<br>雨露均沾型: 轮询(rr), 加权轮询(配置强的主机多分点,wrr), 哈希<br>定向服务型: ip_hash(第一次请求分配个主机,以后均分配至此主机,四层负载), least_conn(分配给当前连接数最少的), cookie, route, lean<br>商业类型: 基本没人用</p>
 <p>扩展策略:<br>自定义算法<br>第三方算法: url_hash(七层负载), fair(自动分析,根据响应时间来分配)</p>
 <p>实战: 加权轮询演示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream backends &#123;</span><br><span class="line">  server 192.168.188.34:10086 backup;</span><br><span class="line">  server 192.168.188.34:10087 weight=1;</span><br><span class="line">  server 192.168.188.34:10088 weight=2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>来3个请求, 给10087一个,给10088两个<br>测试, 重启, curl循环100次演示<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222172810135.png" alt=""></p>
+<p>来3个请求, 给10087一个,给10088两个<br>测试, 重启, curl循环100次演示<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222172810135.png" alt></p>
 <p>实战: ip_hash演示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream backends &#123;</span><br><span class="line">  ip_hash;</span><br><span class="line">  server 192.168.188.34:10086 backup;</span><br><span class="line">  server 192.168.188.34:10087 weight=1;</span><br><span class="line">  server 192.168.188.34:10088 weight=2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>测试, 重启, 使用curl演示100次<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222173033616.png" alt=""></p>
+<p>测试, 重启, 使用curl演示100次<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222173033616.png" alt></p>
 <h2 id="日志定制"><a href="#日志定制" class="headerlink" title="日志定制"></a>日志定制</h2><p>日志默认存放目录:/var/log/nginx/<br>设置日志的路径: /etc/nginx/nginx.conf, 里面有个logging settings, 默认给我们设置了access_log和error_log的存储路径<br>设置日志格式: 用log_format指定, 默认的官方没有写,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">log_format combined &apos;$remote_addr - $remote_user [$time_local] &apos;</span><br><span class="line">&apos;&quot;$request&quot; $status $body_bytes_sent &apos;</span><br><span class="line">&apos;&quot;$http_referer&quot; &quot;$http_user_agent&quot;&apos;;</span><br></pre></td></tr></table></figure></p>
 <p>重要参数: $remote_addr</p>
-<p>开了代理, 怎么找用户真实的ip地址:<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222175106811.png" alt=""></p>
-<p>获取用户真实ip方法:<br>方法1: 在代理1设置x-real-ip, 在服务主机使用\$http_x_real_ip<br>方法2: 在所有代理主机上设置x-forward-for, 在服务主机上使用\$http_x_forwarded_for</p>
+<p>开了代理, 怎么找用户真实的ip地址:<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222175106811.png" alt></p>
+<p>获取用户真实ip方法:<br>方法1: 在代理1设置x-real-ip, 在服务主机使用$http_x_real_ip<br>方法2: 在所有代理主机上设置x-forward-for, 在服务主机上使用$http_x_forwarded_for</p>
 <p>现在我们要定制日志, 把方法1和方法2加进去</p>
 <p>如何自定义日志: 1. 自定义日志格式    2. 如何使用地址的日志格式</p>
 <p>实战:<br>在nginx.conf中log settings部分加入自定义的proxy_format的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">log_format proxy_format &apos;$remote_addr - $remote_user [$time_local] &apos;</span><br><span class="line">  &apos;&quot;$request&quot; $status $body_bytes_sent &quot;$http_referer&quot;&apos;</span><br><span class="line">  &apos;&quot;$http_user_agent&quot; &quot;$http_x_real_ip&quot; &quot;$http_x_forwarded_for&quot;&apos;;</span><br></pre></td></tr></table></figure></p>
 <p>编写log.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">upstream backends &#123;</span><br><span class="line">  server 192.168.188.134:10086;</span><br><span class="line">  &#125;</span><br><span class="line">server &#123;</span><br><span class="line">  listen 192.168.188.134:88;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  location / &#123;</span><br><span class="line">    proxy_pass http://backends;</span><br><span class="line">    proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>编写backend.conf,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 192.168.188.134:10086;</span><br><span class="line">  root /var/www/html/app1/;</span><br><span class="line">  access_log /var/log/nginx/app1/access.log proxy_format; # access_log 日志保存路径 使用proxy_format日志格式;</span><br><span class="line">  real_ip_header X-Forwarded-For;</span><br><span class="line">  set_real_ip_from 192.168.0.0/16;  # 设置真实ip是从哪个ip段来的, 把内网不想关的ip给过滤掉</span><br><span class="line">  real_ip_recursive on;   # 递归, 不仅仅只看当前ip, 还会看之前代理的ip</span><br><span class="line">  location / &#123;</span><br><span class="line">    try_files $uri $uri/ =404;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>建立保存日志的目录/var/log/nginx/app1, 测试, 重启,访问192.168.188.134:88, 然后查看/var/log/nginx/app1/access_log<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222183630463.png" alt=""><br>查看/var/log/nginx/access_log<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222183706732.png" alt=""><br>我们自定义的多了两个ip, ok!!!</p>
+<p>建立保存日志的目录/var/log/nginx/app1, 测试, 重启,访问192.168.188.134:88, 然后查看/var/log/nginx/app1/access_log<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222183630463.png" alt><br>查看/var/log/nginx/access_log<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222183706732.png" alt><br>我们自定义的多了两个ip, ok!!!</p>
 <h3 id="nginx的内置变量"><a href="#nginx的内置变量" class="headerlink" title="nginx的内置变量"></a>nginx的内置变量</h3><p>$+变量: 这是获取nginx的内置变量<br>常用变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$remote_addr 前一台主机的 ip 地址，不一定是真实的客户端 IP</span><br><span class="line">$remote_user 用于记录远程客户端的用户名称（一般为“-”）</span><br><span class="line">$time_local 用于记录访问时间和时区</span><br><span class="line">$request 用于记录请求的 url 以及请求方法</span><br><span class="line">$status 响应状态码，例如：200 成功、404 页面找不到等。</span><br><span class="line">$body_bytes_sent 给客户端发送的文件主体内容字节数</span><br><span class="line">$http_referer 可以记录用户是从哪个链接访问过来的</span><br><span class="line">$http_user_agent 用户所使用的代理（一般为浏览器）</span><br><span class="line"></span><br><span class="line">$request_uri 包含请求参数的原始 URI，不包含主机名</span><br><span class="line">$uri 不带请求参数的当前 URI，不包含主机名</span><br><span class="line">$http_x_forwarded_for 可以记录客户端 IP，通过代理服务器来记录客户端的 ip 地址</span><br><span class="line">$http_x_real_ip 可以记录客户端 IP，通过代理服务器来记录客户端的 ip 地址</span><br><span class="line">$args 这个变量等于请求行中的参数，同$query_string</span><br><span class="line">$host 请求主机头字段，否则为服务器名称。</span><br><span class="line">$scheme HTTP 方法（如 http，https）</span><br><span class="line">$document_uri 与$uri 相同</span><br><span class="line">$document_root 当前请求文件配置文件中 html 的根目录即 root 值</span><br><span class="line">$request_filename 当前请求的文件路径，由 root 或 alias 指令与 URI 请求生成</span><br></pre></td></tr></table></figure></p>
 <h2 id="url重写"><a href="#url重写" class="headerlink" title="url重写"></a>url重写</h2><p>可以不让用户看到我们项目的目录结构: a.com/a/b/c/d/e/h.html  —-&gt; a.com/x/h.html</p>
 <p>rewrite语法:  rewrite regex replacement [flag]<br>解释:</p>
@@ -311,10 +311,10 @@
 </li>
 </ul>
 <p>简单示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  # 访问 /last.html 的时候，页面内容重写到 /index.html 中</span><br><span class="line">  rewrite /last.html /index.html last;</span><br><span class="line">  # 访问 /break.html 的时候，页面内容重写到 /index.html 中，并停止后续的匹配</span><br><span class="line">  rewrite /break.html /index.html break;</span><br><span class="line">  # 访问 /redirect.html 的时候，页面直接 302 定向到 /index.html 中</span><br><span class="line">  rewrite /redirect.html /index.html redirect;</span><br><span class="line">  # 访问 /permanent.html 的时候，页面直接 301 定向到 /index.html 中</span><br><span class="line">  rewrite /permanent.html /index.html permanent;</span><br><span class="line">  # 把 /html/*.html =&gt; /post/*.html ，301 定向</span><br><span class="line">  rewrite ^/html/(.+?).html$ /post/$1.html permanent;</span><br><span class="line">  # 把 /search/key =&gt; /search.html?keyword=key</span><br><span class="line">  rewrite ^/search\/([^\/]+?)(\/|$) /search.html?keyword=$1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>rewrite和location区别:<br>rewrite是在同一域名内更改获取资源的路径<br>location结合proxy_lass实现反向代理, 不会对请求的资源路径进行变动<br>location结合rewrite对某个具体的请求进行重写<br>优先级标准:<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222205010105.png" alt=""></p>
+<p>rewrite和location区别:<br>rewrite是在同一域名内更改获取资源的路径<br>location结合proxy_lass实现反向代理, 不会对请求的资源路径进行变动<br>location结合rewrite对某个具体的请求进行重写<br>优先级标准:<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222205010105.png" alt></p>
 <p>实战: 编写rewrite.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name rewrite.com;</span><br><span class="line">  rewrite ^/(.*) http://www.rew.com/$1;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name www.rew.com;</span><br><span class="line">  location / &#123;</span><br><span class="line">    root /var/www/html/rew/;</span><br><span class="line">    index index.html index.htm;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>建立html文件: <code>mkdir -p /var/www/html/rew/</code>  <code>echo &#39;&lt;h1&gt;Rewrite&lt;/h1&gt;&#39; &gt; /var/www/html/rew/index.html</code><br>编写/etc/hosts, 增加一行<code>192.168.188.134 rewrite.com www.rew.com</code><br>测试, 重启, 访问rewrite.com, 会发现重定向到了www.rew.com<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222210831633.png" alt=""><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222210849121.png" alt=""></p>
-<p>使用curl测试: <code>curl rewrite.com</code><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211346675.png" alt=""><br>查看信息:<code>curl -I rewrite.com</code><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211418500.png" alt=""></p>
+<p>建立html文件: <code>mkdir -p /var/www/html/rew/</code>  <code>echo &#39;&lt;h1&gt;Rewrite&lt;/h1&gt;&#39; &gt; /var/www/html/rew/index.html</code><br>编写/etc/hosts, 增加一行<code>192.168.188.134 rewrite.com www.rew.com</code><br>测试, 重启, 访问rewrite.com, 会发现重定向到了www.rew.com<br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222210831633.png" alt><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222210849121.png" alt></p>
+<p>使用curl测试: <code>curl rewrite.com</code><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211346675.png" alt><br>查看信息:<code>curl -I rewrite.com</code><br><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222211418500.png" alt></p>
 <p>实战2:编写rewrite.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  location / &#123;</span><br><span class="line">    rewrite /last/ /ok.html last;</span><br><span class="line">    rewrite /break/ /ok.html break;</span><br><span class="line">  &#125;</span><br><span class="line">  location = /ok.html &#123;</span><br><span class="line">    return 400;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>有问题!先pass</p>
 <h3 id="if指令"><a href="#if指令" class="headerlink" title="if指令"></a>if指令</h3><p>if语法: if (内置变量 操作符 值) {…}<br>如果if条件为真, 执行{…}内德rewrite指令<br>操作符主要有3类:</p>
@@ -334,7 +334,7 @@
 <p>如果host不是www.nihao.com, 则重定向到标准的www.nihao.com<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name nihao.com www.nihao.com;</span><br><span class="line">  if ( $host != &quot;www.nihao.com&quot; )&#123;</span><br><span class="line">    rewrite ^/(.*)$ http://www.nihao.com/$1 permanent;</span><br><span class="line">  &#125;</span><br><span class="line">location / &#123;</span><br><span class="line">  try_files $uri $uri/ =404;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="防盗链"><a href="#防盗链" class="headerlink" title="防盗链"></a>防盗链</h3><p>对于我们的图片服务器, 只允许特定的服务器才能进行访问, 其它任意网站访问的时候, 都返回403或者报错页面<br>实现方式: 针对$invalid_referer(允许访问的域名)内置变量的判断<br>实战: 编辑tupian.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  location ~* \.(gif|jpg|png|webp)$ &#123;</span><br><span class="line">    valid_referers none blocked domain.com *.domain.com server_names ~\.google\.  ~\.baidu\.;</span><br><span class="line">    if ($invalid_referer) &#123;</span><br><span class="line">      return 403;</span><br><span class="line">      #rewrite ^/ http://www.domain.com/403.jpg;</span><br><span class="line">    &#125;</span><br><span class="line">    root /var/www/html/image;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>使用curl测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -I localhost/a.jpg</span><br><span class="line">curl -I localhost/a.jpg -H &apos;Referer:http://www.qq.com&apos;</span><br><span class="line">curl -I localhost/a.jpg -H &apos;Referer:http://www.www.com&apos;</span><br><span class="line">curl -I localhost/a.jpg -H &apos;Referer:http://www.baidu.com&apos;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222222018898.png" alt=""></p>
+<p><img src="/2018/12/22/nginx主要功能和配置方法/markdown-img-paste-20181222222018898.png" alt></p>
 
       
 
@@ -602,15 +602,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,11 +610,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -630,7 +618,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,11 +642,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,11 +670,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,7 +682,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,7 +690,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -702,11 +702,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -750,7 +750,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -937,8 +937,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

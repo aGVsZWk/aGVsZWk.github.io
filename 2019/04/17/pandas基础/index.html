@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -170,7 +170,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pandas基础" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-pandas基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -193,26 +193,26 @@
         <p>本文主要记录pandas的一些基础入门知识，代码在jypyter notebook中运行。<br><a id="more"></a></p>
 <h2 id="pandas基础"><a href="#pandas基础" class="headerlink" title="pandas基础"></a>pandas基础</h2><h3 id="csv文件"><a href="#csv文件" class="headerlink" title="csv文件"></a>csv文件</h3><p>数据存储量有限，小公司常用<br>excel存储最大数据: 100万条</p>
 <h3 id="读取csv文件"><a href="#读取csv文件" class="headerlink" title="读取csv文件"></a>读取csv文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">f = pd.read_csv(<span class="string">'xxx.csv'</span>)  <span class="comment"># 读取csv文件</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417192247753.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417192247753.png" alt></p>
 <h3 id="写入csv文件"><a href="#写入csv文件" class="headerlink" title="写入csv文件"></a>写入csv文件</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.to_csv(<span class="string">'nba.csv'</span>)     <span class="comment"># 也可以传入路径</span></span><br></pre></td></tr></table></figure>
 <h3 id="行、列、内容"><a href="#行、列、内容" class="headerlink" title="行、列、内容"></a>行、列、内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f.index     <span class="comment"># 获取行索引</span></span><br><span class="line">f.columns   <span class="comment"># 获取列索引</span></span><br><span class="line">f.values    <span class="comment"># 获取值，二维数组形式</span></span><br></pre></td></tr></table></figure>
 <p>修改行列索引: 不能通过对其单个赋值改，只能对其赋值列表修改<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f.index[<span class="number">3</span>] = <span class="string">'77'</span>   <span class="comment"># 错误的修改方式</span></span><br><span class="line"></span><br><span class="line">my_index = [<span class="string">"行"</span>+str(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">249737</span>)]</span><br><span class="line">f.index = my_index      <span class="comment"># 正确的修改方式</span></span><br></pre></td></tr></table></figure></p>
 <p>行索引变成一列: reset_index<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.reset_index()</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417194613862.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417194613862.png" alt></p>
 <p>将某一列变成行索引<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f.set_index(<span class="string">'pid'</span>)  <span class="comment"># 将某一列变成行索引</span></span><br><span class="line">f.set_index(<span class="string">'pid'</span>).reset_index()  <span class="comment"># 再让它回去</span></span><br><span class="line">f.reset_index_index(<span class="string">''</span>)</span><br></pre></td></tr></table></figure></p>
 <p>取一列:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = f[<span class="string">'time_stamp'</span>]</span><br><span class="line">l</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417200211178.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417200211178.png" alt></p>
 <p>将某列变成DataFrame<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(l)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417200342155.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417200342155.png" alt></p>
 <p>创建某列:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = pd.Series(&#123;<span class="string">'month'</span>: [<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>]&#125;)</span><br><span class="line">e.values</span><br></pre></td></tr></table></figure></p>
 <h3 id="转置（行列对调）"><a href="#转置（行列对调）" class="headerlink" title="转置（行列对调）"></a>转置（行列对调）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.T</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417192514986.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417192514986.png" alt></p>
 <h3 id="显示前n条和后n条"><a href="#显示前n条和后n条" class="headerlink" title="显示前n条和后n条"></a>显示前n条和后n条</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.head(<span class="number">5</span>)   <span class="comment"># 显示前5条</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.tail(<span class="number">5</span>)   <span class="comment"># 显示后5条</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame(&#123;<span class="string">'month'</span>:[<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">10</span>],</span><br><span class="line">             <span class="string">'year'</span>:[<span class="number">2012</span>, <span class="number">2014</span>, <span class="number">2013</span>, <span class="number">2014</span>],</span><br><span class="line">              <span class="string">'sale'</span>:[<span class="number">55</span>, <span class="number">40</span>, <span class="number">84</span>, <span class="number">31</span>]</span><br><span class="line">             &#125;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]], index=range(<span class="number">2</span>), columns=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417202939562.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417202939562.png" alt></p>
 <h3 id="Series和DataFrame关系"><a href="#Series和DataFrame关系" class="headerlink" title="Series和DataFrame关系"></a>Series和DataFrame关系</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type(nba[<span class="string">'Age'</span>])    <span class="comment"># Series</span></span><br><span class="line">type(nba[[<span class="string">'Age'</span>]])  <span class="comment"># DataFrame</span></span><br></pre></td></tr></table></figure>
 <h3 id="hdf文件"><a href="#hdf文件" class="headerlink" title="hdf文件"></a>hdf文件</h3><p>hdf文件以.h5结尾<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a = pd.read_hdf(<span class="string">'day_close.h5'</span>)     <span class="comment"># 此处key可传可不传，区别文件用的</span></span><br><span class="line">a = pd.to_hdf(<span class="string">'day_save.h5'</span>, key=<span class="string">'test_key'</span>)    <span class="comment"># 必须要传key</span></span><br><span class="line">···</span><br><span class="line"></span><br><span class="line">需求: 存储两份文件到hd5中</span><br><span class="line">```python</span><br><span class="line"><span class="comment"># 开启io流</span></span><br><span class="line">h = pd.HDFStore(<span class="string">'day_save2.h5'</span>)     <span class="comment"># 可传入complevel=9(压缩级别), complib：压缩类型  可用help查看</span></span><br><span class="line">h[<span class="string">'test_key1'</span>] = a  <span class="comment"># a为hdf文件</span></span><br><span class="line">h[<span class="string">'test_key2'</span>] = b</span><br><span class="line">h.close()</span><br><span class="line"></span><br><span class="line">pd.read_hdf(<span class="string">'day_save2.h5'</span>, key=<span class="string">'test_key2'</span>)    <span class="comment"># 必须要传key</span></span><br></pre></td></tr></table></figure></p>
 <p>一个文件存储多个数据<br>1.先开启HDFStore的io流<br>2.写入key-value键值对<br>3.关闭流<br>读取文件必须要传入key</p>
@@ -224,7 +224,7 @@
 <h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = pd.read_csv(<span class="string">'ad_feature.csv'</span>)</span><br><span class="line">a.iloc[:, <span class="number">3</span>:<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 <p>iloc先传入行，在传入列，切片获取</p>
 <h3 id="空值的处理"><a href="#空值的处理" class="headerlink" title="空值的处理"></a>空值的处理</h3><p>判断是否是空值:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = pd.read_csv(<span class="string">'nan_deal.csv'</span>)</span><br><span class="line">pd.notnull(f)</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417225921210.png" alt=""></p>
+<p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417225921210.png" alt></p>
 <ol>
 <li>留</li>
 <li>不留，可按行删除，也可按列删除</li>
@@ -233,8 +233,8 @@
 <ol>
 <li>改: 将控制改为需求设定的值， 选择当前列的平均值， 补0</li>
 </ol>
-<h3 id="不是空值，有默认标记的"><a href="#不是空值，有默认标记的" class="headerlink" title="不是空值，有默认标记的"></a>不是空值，有默认标记的</h3><p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417230215231.png" alt=""><br>先替换，在删除<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wis = pd.read_csv(<span class="string">"https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data"</span>,names=[<span class="string">"Sample code number"</span>,<span class="string">"Clump Thickness"</span>,<span class="string">"Uniformity of Cell Size"</span>,<span class="string">"Uniformity of Cell Shape"</span>,<span class="string">"Marginal Adhesion"</span>,<span class="string">"Single Epithelial Cell Size"</span>,<span class="string">"Bare Nuclei"</span>,<span class="string">"Bland Chromatin"</span>,<span class="string">"Normal Nucleoli"</span>,<span class="string">"Mitoses"</span>,<span class="string">"Class"</span>])       <span class="comment"># 读取在线的文件，里面有?</span></span><br><span class="line"></span><br><span class="line">wis.replace(<span class="string">'?'</span>,np.nan)     <span class="comment"># 将替换？替换为Nan</span></span><br><span class="line">wis.dropna()</span><br></pre></td></tr></table></figure></p>
-<p>将某一列Nan替换为0.0001<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wis[<span class="string">"Bare Nuclei"</span>].fillna(<span class="number">0.0001</span>, inplace=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="不是空值，有默认标记的"><a href="#不是空值，有默认标记的" class="headerlink" title="不是空值，有默认标记的"></a>不是空值，有默认标记的</h3><p><img src="/2019/04/17/pandas基础/markdown-img-paste-20190417230215231.png" alt><br>先替换，在删除<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">wis = pd.read_csv(<span class="string">"https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data"</span>,names=[<span class="string">"Sample code number"</span>,<span class="string">"Clump Thickness"</span>,<span class="string">"Uniformity of Cell Size"</span>,<span class="string">"Uniformity of Cell Shape"</span>,<span class="string">"Marginal Adhesion"</span>,<span class="string">"Single Epithelial Cell Size"</span>,<span class="string">"Bare Nuclei"</span>,<span class="string">"Bland Chromatin"</span>,<span class="string">"Normal Nucleoli"</span>,<span class="string">"Mitoses"</span>,<span class="string">"Class"</span>])       <span class="comment"># 读取在线的文件，里面有?</span></span><br><span class="line"></span><br><span class="line">wis.replace(<span class="string">'?'</span>,np.nan)     <span class="comment"># 将替换？替换为Nan</span></span><br><span class="line">wis.dropna()</span><br></pre></td></tr></table></figure></p>
+<p>将某一列Nan替换为0.0001<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wis[<span class="string">"Bare Nuclei"</span>].fillna(<span class="number">0.0001</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></p>
 <p>isnull: 判断是否存在缺失值，None</p>
 <p>替换空值为平均值:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wis[<span class="string">"Bare Nuclei"</span>].fillna(wis[<span class="string">"Bare Nuclei"</span>].mean())    <span class="comment"># 没有avg，mean为平均值, min取最小, max取最大</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.unique(movie[<span class="string">'Directior'</span>])</span><br></pre></td></tr></table></figure>
@@ -492,15 +492,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,11 +500,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,7 +508,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +532,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,11 +560,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,7 +572,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,7 +580,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,11 +592,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,7 +640,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -827,8 +827,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

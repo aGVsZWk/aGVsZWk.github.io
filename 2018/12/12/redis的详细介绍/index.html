@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700104719.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/12/redis的详细介绍/markdown-img-paste-20181217001231955.png">
 <meta property="og:image" content="https://agvszwk.github.io/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700203751.png">
-<meta property="og:updated_time" content="2019-04-14T16:04:06.664Z">
+<meta property="og:updated_time" content="2019-04-14T16:04:06.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的详细介绍">
 <meta name="twitter:description" content="本文介绍常用的redis安装, 配置, 启动, 主从和集群, 持久化的知识。不涉及redis的数据类型使用知识。待补充: redis的持久化, 哨兵模式。">
@@ -180,7 +180,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-redis的详细介绍" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-redis的详细介绍" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -201,7 +201,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本文介绍常用的redis安装, 配置, 启动, 主从和集群, 持久化的知识。<br>不涉及redis的数据类型使用知识。<br>待补充: redis的持久化, 哨兵模式。<br><a id="more"></a><br>系统环境: ubuntu16.04<br>知识储备: redis是直接存储在内存中的, redis是用c语言编写的<br>持久化: 将redis存储在内存中的数据存储备份到硬盘(磁盘)中<br>redis模式:CS模式(服务端-客户端)<br>redis默认有16个数据库(0-15号)<br>操作redis服务端的时候,尽可能切换到root</p>
-<h2 id="redis安装"><a href="#redis安装" class="headerlink" title="redis安装:"></a>redis安装:</h2><p>1 下载 <code>http://download.redis.io/releases/redis-4.0.9.tar.gz</code><br>2 解压 <code>tar xzf redis-4.0.9.tar.gz</code><br>3 移动,放到usr/local⽬录下 <code>sudo mv ./redis-4.0.9 /usr/local/redis/</code><br>4 进⼊redis⽬录 <code>cd /usr/local/redis/</code><br>5 生成 <code>sudo make</code>  因为redis是c语言编写的, 需要编译<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216211755317.png" alt=""><br>6 测试 <code>sudo make test</code> 出来笑脸(反斜杠o斜杠)表示完成<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216211849844.png" alt=""><br>7 安装 <code>sudo make install</code> 执行完这句代码之后,redis就安装好了,可执行文件在/usr/local/bin/目录下. 我们平常敲得<code>redis-server</code>,<code>redis-cli</code>都是运行的这里面的<br>8 安装完成后，我们进入目录/usr/local/bin中查看<code>cd /usr/local/bin</code> <code>ls -all</code><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216212244554.png" alt=""><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216212330542.png" alt=""></p>
+<h2 id="redis安装"><a href="#redis安装" class="headerlink" title="redis安装:"></a>redis安装:</h2><p>1 下载 <code>http://download.redis.io/releases/redis-4.0.9.tar.gz</code><br>2 解压 <code>tar xzf redis-4.0.9.tar.gz</code><br>3 移动,放到usr/local⽬录下 <code>sudo mv ./redis-4.0.9 /usr/local/redis/</code><br>4 进⼊redis⽬录 <code>cd /usr/local/redis/</code><br>5 生成 <code>sudo make</code>  因为redis是c语言编写的, 需要编译<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216211755317.png" alt><br>6 测试 <code>sudo make test</code> 出来笑脸(反斜杠o斜杠)表示完成<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216211849844.png" alt><br>7 安装 <code>sudo make install</code> 执行完这句代码之后,redis就安装好了,可执行文件在/usr/local/bin/目录下. 我们平常敲得<code>redis-server</code>,<code>redis-cli</code>都是运行的这里面的<br>8 安装完成后，我们进入目录/usr/local/bin中查看<code>cd /usr/local/bin</code> <code>ls -all</code><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216212244554.png" alt><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216212330542.png" alt></p>
 <ul>
 <li>redis-server redis服务器</li>
 <li>redis-cli redis命令行客户端</li>
@@ -232,7 +232,7 @@
 <p>常用指令:<br>ps aux | grep redis 查看redis服务器进程<br>sudo kill -9 pid 杀死redis服务器<br>sudo redis-server /etc/redis/redis.conf 指定加载的配置文件<br>service redis stop 停止redis服务端, 注意, 要用root, 不是redis-server, 只有停止, 启动和重启都不用此方式, 启动按上面的方式进行</p>
 <p>redis<strong>客户端</strong>登录:<br><code>redis-cli</code><br>通过客户端关闭服务端:<br><code>redis-cli shutdown</code></p>
 <p>可能遇到的问题: 服务端ctrl+c退出的时候, 提示权限不允许啥的<br>解决方法: 1.是用root用户启动的吗? 2.启动时候指定配置文件了吗?</p>
-<h2 id="与python交互"><a href="#与python交互" class="headerlink" title="与python交互"></a>与python交互</h2><p>需要安装包<code>redis</code><br>不多说,直接上代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="comment"># 默认读出来的数据默认byte类型, 可设置decode_response进行自动解码</span></span><br><span class="line"><span class="comment"># redis_store = redis.StrictRedis(host="192.168.188.133",port=6379)</span></span><br><span class="line">redis_store = redis.StrictRedis(host=<span class="string">"192.168.188.133"</span>,port=<span class="number">6379</span>,decode_responses=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">redis_store.set(<span class="string">"name"</span>,<span class="string">"lisi"</span>)</span><br><span class="line">redis_store.set(<span class="string">"myname"</span>,<span class="string">"laowang"</span>)</span><br><span class="line">value = redis_store.get(<span class="string">"name"</span>)</span><br><span class="line">print(value)</span><br></pre></td></tr></table></figure></p>
+<h2 id="与python交互"><a href="#与python交互" class="headerlink" title="与python交互"></a>与python交互</h2><p>需要安装包<code>redis</code><br>不多说,直接上代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis</span><br><span class="line"><span class="comment"># 默认读出来的数据默认byte类型, 可设置decode_response进行自动解码</span></span><br><span class="line"><span class="comment"># redis_store = redis.StrictRedis(host="192.168.188.133",port=6379)</span></span><br><span class="line">redis_store = redis.StrictRedis(host=<span class="string">"192.168.188.133"</span>,port=<span class="number">6379</span>,decode_responses=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">redis_store.set(<span class="string">"name"</span>,<span class="string">"lisi"</span>)</span><br><span class="line">redis_store.set(<span class="string">"myname"</span>,<span class="string">"laowang"</span>)</span><br><span class="line">value = redis_store.get(<span class="string">"name"</span>)</span><br><span class="line">print(value)</span><br></pre></td></tr></table></figure></p>
 <p>常见:</p>
 <h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><ul>
 <li>set</li>
@@ -276,7 +276,7 @@
 <ul>
 <li>⼀个master可以拥有多个slave，⼀个slave⼜可以拥有多个slave，如此下去，形成了强⼤的多级服务器集群架构</li>
 <li>master用来写数据，slave用来读数据，经统计：网站的读写比率是10:1</li>
-<li>通过主从配置可以实现读写分离<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216221247345.png" alt=""></li>
+<li>通过主从配置可以实现读写分离<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216221247345.png" alt></li>
 <li>master和slave都是一个redis实例(redis服务)</li>
 </ul>
 <h3 id="配置主"><a href="#配置主" class="headerlink" title="配置主:"></a>配置主:</h3><ul>
@@ -288,10 +288,10 @@
 <li>修改redis/slave.conf文件<br><code>sudo vi slave.conf</code></li>
 <li>编辑内容<br><code>bind 192.168.26.128</code><br><code>slaveof 192.168.26.128 6379</code><br><code>port 6378</code></li>
 <li>redis服务<br><code>sudo redis-server slave.conf</code></li>
-<li>查看主从关系<br><code>redis-cli -h 192.168.26.128 info Replication</code><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216223810291.png" alt=""></li>
+<li>查看主从关系<br><code>redis-cli -h 192.168.26.128 info Replication</code><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216223810291.png" alt></li>
 </ul>
 <p>如果master和slave是在不同的服务器(ip不一样)上,则slave端会自动同步master端数据<br>配置好了之后,slave端只能读,不能写, master端可以写</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>例:配置的实例:一台服务器开个master端和slave1端,另一台服务器开个slave2端<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224111555.png" alt=""><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224336538.png" alt=""><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224354807.png" alt=""><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224413186.png" alt=""></p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>例:配置的实例:一台服务器开个master端和slave1端,另一台服务器开个slave2端<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224111555.png" alt><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224336538.png" alt><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224354807.png" alt><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216224413186.png" alt></p>
 <p>master端<br>服务器:ubuntu16<br>配置文件:redis.conf<br>配置的内容:<br><code>bind 192.168.188.134</code><br><code>prot 6379</code></p>
 <p>slave1端<br>服务器:ubuntu16<br><code>bind 192.168.188.134</code><br><code>slaveof 192.168.188.134 6379</code><br><code>port 6378</code></p>
 <p>slave2端<br>服务器:myubuntu16<br>配置文件:slave.conf<br>配置的内容:<br><code>bind 192.168.188.133</code><br><code>slaveof 192.168.188.134 6379</code><br><code>port 6379</code></p>
@@ -303,9 +303,9 @@
 <li>大公司都会有很多的服务器(华东地区、华南地区、华中地区、华北地区、西北地区、西南地区、东北地区、台港澳地区机房), 不可能同时挂掉, 不可能同时发生自然灾害<br>-<br>这样做好处: 1.可以应对高并发访问 2.应对自然灾害</li>
 </ul>
 <p>集群的概念:<br>集群是一组相互独立的、通过高速网络互联的计算机，它们构成了一个组，并以单一系统的模式加以管理。一个客户与集群相互作用时，集群像是一个独立的服务器。集群配置是用于提高可用性和可缩放性。</p>
-<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231222799.png" alt=""></p>
+<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231222799.png" alt></p>
 <p>当请求到来首先由<strong>负载均衡</strong>服务器处理，把请求转发到另外的一台服务器上<br>负载均衡: 均等的,请求转发机率是一样的(也可以是不一样,自行设置,有些服务器的配置NB,就可以让他多承担写请求)</p>
-<p>集群的分类:<br>1 软件层面<br>2 硬件层面<br>软件层面：只有一台电脑，在这一台电脑上启动了多个redis服务。<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231257805.png" alt=""><br>硬件层面：存在多台实体的电脑，每台电脑上都启动了一个redis或者多个redis服务。(公司一般都这么玩)<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231308777.png" alt=""></p>
+<p>集群的分类:<br>1 软件层面<br>2 硬件层面<br>软件层面：只有一台电脑，在这一台电脑上启动了多个redis服务。<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231257805.png" alt><br>硬件层面：存在多台实体的电脑，每台电脑上都启动了一个redis或者多个redis服务。(公司一般都这么玩)<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216231308777.png" alt></p>
 <p>两张图中,一个redis的service挂掉了, 其它的可继续提供服务</p>
 <h3 id="集群的搭建"><a href="#集群的搭建" class="headerlink" title="集群的搭建"></a>集群的搭建</h3><p>用到的部分配置参数的解释:</p>
 <p>进程文件:会自动帮我们生成个配置文件,名字叫做7000.pid<br><code>pidfile 7000.pid</code></p>
@@ -322,13 +322,13 @@
 <p>复制粘贴7004.conf, 编辑内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">port 7004</span><br><span class="line">bind 192.168.188.134</span><br><span class="line">daemonize yes</span><br><span class="line">pidfile 7004.pid</span><br><span class="line">cluster-enabled yes</span><br><span class="line">cluster-config-file 7004_node.conf</span><br><span class="line">cluster-node-timeout 15000</span><br><span class="line">appendonly yes</span><br></pre></td></tr></table></figure></p>
 <p>复制粘贴7005.conf, 编辑内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">port 7005</span><br><span class="line">bind 192.168.188.134</span><br><span class="line">daemonize yes</span><br><span class="line">pidfile 7005.pid</span><br><span class="line">cluster-enabled yes</span><br><span class="line">cluster-config-file 7005_node.conf</span><br><span class="line">cluster-node-timeout 15000</span><br><span class="line">appendonly yes</span><br></pre></td></tr></table></figure></p>
 <p>右键打开终端,把这6个文件全都启动起来</p>
-<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216233806334.png" alt=""><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216233856449.png" alt=""></p>
+<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216233806334.png" alt><br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181216233856449.png" alt></p>
 <p>配置myubuntu16: 过程跟配置ubuntu16一样,我懒得写了,自己来吧!</p>
 <p>完成之后,进行接下来的操作:创建集群<br>redis安装包中包含redis-trib.rb, 这个工具是用来创建集群的,看看自己的/usr/local/bin里面有没有,如果没有的话,/usr/bin看看,/bin下看看,可能还没有,那就找redis的安装包吧(/usr/local/redis/src)<br>把它拷贝到/usr/local/bin里面, 这样就可以在终端中执行了<br><code>cd /usr/local/redis/src</code><br><code>cp redis-trib.rb /usr/local/bin</code><br>ruby写的,可以执行特别强</p>
 <p>运行如下命令创建集群:<br><code>redis-trib.rb create --replicas 1 192.168.188.134:7000 192.168.188.134:7001 192.168.188.134:7002 192.168.188.134:7003 192.168.188.134:7004 192.168.188.134:7005</code></p>
-<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700104719.png" alt=""><br>创建过程中会问你是否接受这种配置:输入yes</p>
-<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181217001231955.png" alt=""><br>创建成功,里面有个slots,它的意思是槽,卡槽<br>一共有16384(0-16383)个槽,数据就存在这些槽里面. (哈希槽?)<br>它的特点是去计算,计算你的内容,是算出来应该存在哪个槽里面, 算法是CRC16</p>
-<p>然后我们登录客户端, 加入到集群里面, 进行写数据测试<br><code>redis-cli -h 192.168.188.134 -p 7002 -c</code> -c表示加入到集群<br><code>set name laowang</code><br>会给我们进行重定向, 然后把数据写入到槽里面<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700203751.png" alt=""></p>
+<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700104719.png" alt><br>创建过程中会问你是否接受这种配置:输入yes</p>
+<p><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-20181217001231955.png" alt><br>创建成功,里面有个slots,它的意思是槽,卡槽<br>一共有16384(0-16383)个槽,数据就存在这些槽里面. (哈希槽?)<br>它的特点是去计算,计算你的内容,是算出来应该存在哪个槽里面, 算法是CRC16</p>
+<p>然后我们登录客户端, 加入到集群里面, 进行写数据测试<br><code>redis-cli -h 192.168.188.134 -p 7002 -c</code> -c表示加入到集群<br><code>set name laowang</code><br>会给我们进行重定向, 然后把数据写入到槽里面<br><img src="/2018/12/12/redis的详细介绍/markdown-img-paste-2018121700203751.png" alt></p>
 <h3 id="crc算法"><a href="#crc算法" class="headerlink" title="crc算法"></a>crc算法</h3><ul>
 <li>在哪个服务器上写数据：CRC16<br>redis cluster在设计的时候，就考虑到了去中⼼化，去中间件，也就是说，集群中的每个节点都是平等的关系，都是对等的，每个节点都保存各⾃的数据和整个集 群的状态。每个节点都和其他所有节点连接，⽽且这些连接保持活跃，这样就保 证了我们只需要连接集群中的任意⼀个节点，就可以获取到其他节点的数据</li>
 </ul>
@@ -598,15 +598,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,11 +606,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,7 +614,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +638,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,11 +666,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,7 +678,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -686,7 +686,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,11 +698,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,7 +746,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -933,8 +933,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

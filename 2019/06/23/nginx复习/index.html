@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/23/nginx复习/markdown-img-paste-20190621132050909.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/23/nginx复习/markdown-img-paste-20190621133713118.png">
 <meta property="og:image" content="https://agvszwk.github.io/2019/06/23/nginx复习/markdown-img-paste-20190621145227504.png">
-<meta property="og:updated_time" content="2019-06-23T12:12:32.934Z">
+<meta property="og:updated_time" content="2019-06-23T12:12:32.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx复习">
 <meta name="twitter:description" content="回顾httpd及nginx的一些知识.">
@@ -178,7 +178,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-nginx复习" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-nginx复习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -204,27 +204,27 @@
 <li>worker: 线程模型, 三级结构, 主进程master负责生成子进程, 每个子进程负责生成多个线程, 每个线程响应一个请求</li>
 <li>event: 线程模型, 三级结构, 主进程master负责生成子进程, 每个子进程响应多个请求</li>
 </ol>
-<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="io的基本介绍"><a href="#io的基本介绍" class="headerlink" title="io的基本介绍"></a>io的基本介绍</h2><p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621114532372.png" alt=""></p>
-<p>访问一个网站的流程<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621114807986.png" alt=""></p>
-<p>同步阻塞过程:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621115721517.png" alt=""><br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621115735639.png" alt=""></p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="io的基本介绍"><a href="#io的基本介绍" class="headerlink" title="io的基本介绍"></a>io的基本介绍</h2><p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621114532372.png" alt></p>
+<p>访问一个网站的流程<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621114807986.png" alt></p>
+<p>同步阻塞过程:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621115721517.png" alt><br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621115735639.png" alt></p>
 <p>应尽可能让应用程序少干, 让内核多干</p>
-<p>同步非阻塞过程<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621120133787.png" alt=""></p>
-<p>IO多路复用<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621130455612.png" alt=""></p>
+<p>同步非阻塞过程<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621120133787.png" alt></p>
+<p>IO多路复用<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621130455612.png" alt></p>
 <p>一个select可并发处理多个请求, 不直接和内核打交道</p>
-<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621130733943.png" alt=""></p>
-<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131004462.png" alt=""></p>
-<p>信号驱动模型<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131117243.png" alt=""></p>
-<p>异步io模型<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131246875.png" alt=""></p>
-<p>总结:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131515557.png" alt=""></p>
-<p>I/O模型具体实现:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131646794.png" alt=""></p>
-<p>select, poll, epoll实现<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131851150.png" alt=""></p>
-<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621132050909.png" alt=""></p>
+<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621130733943.png" alt></p>
+<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131004462.png" alt></p>
+<p>信号驱动模型<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131117243.png" alt></p>
+<p>异步io模型<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131246875.png" alt></p>
+<p>总结:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131515557.png" alt></p>
+<p>I/O模型具体实现:<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131646794.png" alt></p>
+<p>select, poll, epoll实现<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621131851150.png" alt></p>
+<p><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621132050909.png" alt></p>
 <p>epoll特性: 支持内存映射(内存与磁盘之间的映射)</p>
 <h2 id="nginx与httpd区别"><a href="#nginx与httpd区别" class="headerlink" title="nginx与httpd区别"></a>nginx与httpd区别</h2><p>nginx用的epoll, httpd用的select</p>
 <h2 id="nginx介绍"><a href="#nginx介绍" class="headerlink" title="nginx介绍"></a>nginx介绍</h2><p>模块化设计, 热升级, 低内存消耗, 支持event-driven, aio, mmap, sendfile</p>
-<p>nginx的架构<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621133713118.png" alt=""></p>
+<p>nginx的架构<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621133713118.png" alt></p>
 <p>LVS与nginx做代理区别:<br>nginx替你发起访问<br>LVS帮你转发</p>
-<p>location示例<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621145227504.png" alt=""></p>
+<p>location示例<br><img src="/2019/06/23/nginx复习/markdown-img-paste-20190621145227504.png" alt></p>
 <h2 id="存放目录"><a href="#存放目录" class="headerlink" title="存放目录"></a>存放目录</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>多个网站的配置文件:<br>在conf文件夹里新建vhosts文件夹<br>在里面写a.com.conf(对应a.com), b.com.conf(对应b.com)<br>然后在nginx.conf里面添加 <code>include vhosts/*.conf</code></p>
 <h3 id="root网站路径"><a href="#root网站路径" class="headerlink" title="root网站路径"></a>root网站路径</h3><p><code>/data/siteat</code><br><code>/data/siteb</code><br>配置server配置段的root</p>
 <p>.</p>
@@ -495,15 +495,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,11 +503,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,7 +511,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +535,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mac</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color4">mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,11 +563,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color2">pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,7 +575,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,7 +583,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -595,11 +595,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,7 +643,7 @@ MathJax.Hub.Queue(function() {
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
@@ -830,8 +830,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

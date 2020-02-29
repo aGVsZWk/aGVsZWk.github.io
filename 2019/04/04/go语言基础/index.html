@@ -17,7 +17,7 @@
 <meta property="og:description" content="本文介绍go语言的一些基础知识。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://agvszwk.github.io/2019/04/04/go语言基础/markdown-img-paste-20190405225415295.png">
-<meta property="og:updated_time" content="2020-01-15T01:19:41.619Z">
+<meta property="og:updated_time" content="2020-02-05T03:40:02.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言基础">
 <meta name="twitter:description" content="本文介绍go语言的一些基础知识。">
@@ -284,8 +284,6 @@
 <p>使用map的函数作为值:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xs = <span class="keyword">map</span>[<span class="keyword">int</span>] <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span>&#123;</span><br><span class="line">    <span class="number">1</span>: <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;<span class="keyword">return</span> <span class="number">10</span>&#125;,</span><br><span class="line">    <span class="number">2</span>: <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;<span class="keyword">return</span> <span class="number">20</span>&#125;,</span><br><span class="line">    <span class="number">3</span>: <span class="function"><span class="keyword">func</span><span class="params">()</span> <span class="title">int</span></span> &#123;<span class="keyword">return</span> <span class="number">30</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h2><p>将函数传递到其它函数里，作为回调。<br>首先定义被传递的函数:<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">printit</span><span class="params">(x <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"%v\n"</span>, x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>创建新的函数，使用printix作为回调<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">callback</span><span class="params">(y <span class="keyword">int</span>, f <span class="keyword">func</span>(<span class="keyword">int</span>)</span>)</span> &#123;     <span class="comment">//使用时，给f传printit</span></span><br><span class="line">    f(y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="恐慌和恢复"><a href="#恐慌和恢复" class="headerlink" title="恐慌和恢复"></a>恐慌和恢复</h2><p>恐慌: 恐慌可以直接调用panic产生，也可以由运行时错误产生。<br>恢复：可让进入恐慌流程中的goroutine恢复过来，仅在延迟函数中有效。</p>
-<p>有点难，pass</p>
 
       
 
@@ -407,7 +405,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量、类型和关键字"><span class="toc-number">1.</span> <span class="toc-text">变量、类型和关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多个var声明可以成组"><span class="toc-number">1.1.</span> <span class="toc-text">多个var声明可以成组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有相同类型的多个变量可在一行内完成声明"><span class="toc-number">1.2.</span> <span class="toc-text">有相同类型的多个变量可在一行内完成声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量"><span class="toc-number">1.3.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iota生成枚举值"><span class="toc-number">1.4.</span> <span class="toc-text">iota生成枚举值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串string"><span class="toc-number">1.5.</span> <span class="toc-text">字符串string</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#控制结构"><span class="toc-number">2.</span> <span class="toc-text">控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else"><span class="toc-number">2.1.</span> <span class="toc-text">if-else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goto"><span class="toc-number">2.2.</span> <span class="toc-text">goto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for"><span class="toc-number">2.3.</span> <span class="toc-text">for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#range"><span class="toc-number">2.4.</span> <span class="toc-text">range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">2.5.</span> <span class="toc-text">switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内建函数"><span class="toc-number">2.6.</span> <span class="toc-text">内建函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#array、slice和map"><span class="toc-number">2.7.</span> <span class="toc-text">array、slice和map</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#defer延迟代码"><span class="toc-number">3.1.</span> <span class="toc-text">defer延迟代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变参"><span class="toc-number">3.2.</span> <span class="toc-text">变参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数"><span class="toc-number">3.3.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回调"><span class="toc-number">3.4.</span> <span class="toc-text">回调</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#恐慌和恢复"><span class="toc-number">3.5.</span> <span class="toc-text">恐慌和恢复</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量、类型和关键字"><span class="toc-number">1.</span> <span class="toc-text">变量、类型和关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多个var声明可以成组"><span class="toc-number">1.1.</span> <span class="toc-text">多个var声明可以成组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有相同类型的多个变量可在一行内完成声明"><span class="toc-number">1.2.</span> <span class="toc-text">有相同类型的多个变量可在一行内完成声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常量"><span class="toc-number">1.3.</span> <span class="toc-text">常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iota生成枚举值"><span class="toc-number">1.4.</span> <span class="toc-text">iota生成枚举值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串string"><span class="toc-number">1.5.</span> <span class="toc-text">字符串string</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#控制结构"><span class="toc-number">2.</span> <span class="toc-text">控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else"><span class="toc-number">2.1.</span> <span class="toc-text">if-else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goto"><span class="toc-number">2.2.</span> <span class="toc-text">goto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for"><span class="toc-number">2.3.</span> <span class="toc-text">for</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#range"><span class="toc-number">2.4.</span> <span class="toc-text">range</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">2.5.</span> <span class="toc-text">switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内建函数"><span class="toc-number">2.6.</span> <span class="toc-text">内建函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#array、slice和map"><span class="toc-number">2.7.</span> <span class="toc-text">array、slice和map</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#defer延迟代码"><span class="toc-number">3.1.</span> <span class="toc-text">defer延迟代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变参"><span class="toc-number">3.2.</span> <span class="toc-text">变参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名函数"><span class="toc-number">3.3.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回调"><span class="toc-number">3.4.</span> <span class="toc-text">回调</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -557,10 +555,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -573,11 +567,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,19 +603,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -621,15 +623,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">postman</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,6 +647,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
@@ -649,11 +659,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">reduce</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">next</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -661,7 +679,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,19 +699,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,15 +723,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">celery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>
@@ -862,5 +880,20 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

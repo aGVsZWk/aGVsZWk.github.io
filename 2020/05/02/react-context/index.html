@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
-  <title>Tag: pipenv | Luke的个人博客</title>
+  <title>react-context | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="人生苦短，我用python">
-<meta name="keywords" content="python,django,drf,jwt,fastdfs,开发者,程序员,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Luke的个人博客">
-<meta property="og:url" content="https://agvszwk.github.io/tags/pipenv/index.html">
+  <meta name="description" content="介绍 context，在看 umi 的 antd-design-pro 登录组件时发现了这个玩意。">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-context">
+<meta property="og:url" content="https://agvszwk.github.io/2020/05/02/react-context/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="人生苦短，我用python">
+<meta property="og:description" content="介绍 context，在看 umi 的 antd-design-pro 登录组件时发现了这个玩意。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-02T09:05:27.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Luke的个人博客">
-<meta name="twitter:description" content="人生苦短，我用python">
+<meta name="twitter:title" content="react-context">
+<meta name="twitter:description" content="介绍 context，在看 umi 的 antd-design-pro 登录组件时发现了这个玩意。">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -164,60 +165,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-react-context" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/05/pipenv的使用/" class="archive-article-date">
-  	<time datetime="2019-09-05T13:31:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/05/pipenv的使用/">pipenv的使用</a>
+    <h1 class="article-title" itemprop="name">
+      react-context
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/02/react-context/" class="archive-article-date">
+  	<time datetime="2020-05-02T08:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>介绍 context，在看 umi 的 antd-design-pro 登录组件时发现了这个玩意。<br><a id="more"></a></p>
+<h1 id="context-的作用"><a href="#context-的作用" class="headerlink" title="context 的作用"></a>context 的作用</h1><p>react 组件之间存在嵌套关系(父子，爷-父-孙子)，如果需要进行数据的传递，则需要使用 props 进行传递，如果层级嵌套过深，传递起来很麻烦，解决方式：</p>
+<ol>
+<li>redux (重量级)</li>
+<li>context (轻量级的实现的跨组件传递)</li>
+</ol>
+<!--more-->
+<h1 id="context-的介绍"><a href="#context-的介绍" class="headerlink" title="context 的介绍"></a>context 的介绍</h1><p>context 引入生产者-消费者模式。</p>
+<p>context 提供两个API：</p>
+<ol>
+<li>Provider 生产者 (提供需要跨组件通信的数据)</li>
+<li>Consumer 消费者 (消费 Provider 提供的数据)</li>
+</ol>
+<h1 id="不使用-context-的-demo"><a href="#不使用-context-的-demo" class="headerlink" title="不使用 context 的 demo"></a>不使用 context 的 demo</h1><p>将 message 从 state 传入 内部组件</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="keyword">this</span>.props.msg);</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;h2&gt;MessageList组件&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">				&lt;hr/</span>&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">this</span>.props.msg.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> (</span><br><span class="line">							&lt;li&gt;</span><br><span class="line">								&lt;MessageItem key=&#123;index&#125; item=&#123;item&#125;&gt;&lt;<span class="regexp">/MessageItem&gt;</span></span><br><span class="line"><span class="regexp">							&lt;/</span>li&gt;</span><br><span class="line">						))</span><br><span class="line">					&#125;</span><br><span class="line">				&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">			&lt;/</span>div&gt;</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageItem</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;this.props.item&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Login</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">		<span class="keyword">super</span>(props);</span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			message: [<span class="string">'Lorem ipsum dolor.'</span>, <span class="string">'Lorem ipsum dolor sit.'</span>, <span class="string">'Lorem ipsum dolor.'</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Login组件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">			<span class="tag">&lt;<span class="name">MessageList</span> <span class="attr">msg</span>=<span class="string">&#123;this.state.message&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">MessageList</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Login;</span><br></pre></td></tr></table></figure>
+<h1 id="使用-context"><a href="#使用-context" class="headerlink" title="使用 context"></a>使用 context</h1><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;createContext, Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> &#123;</span><br><span class="line">	Provider,</span><br><span class="line">	Consumer</span><br><span class="line">&#125; = createContext() <span class="comment">// 返回两个信息，Provider 和 Customer，这两个都是组件</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageList</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="comment">// 这里加 Consumer，代表这个组件需要使用 共享的数据，组件包裹的部分必须是一个函数，代表的 Provider 提供的数据</span></span><br><span class="line">		<span class="comment">// 传过来接收的形参，就是 Provider 提供的 value</span></span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;Consumer&gt;</span><br><span class="line">				&#123;</span><br><span class="line">					(ctx) =&gt; &#123;</span><br><span class="line">						<span class="built_in">console</span>.log(<span class="string">'MessageList'</span>, ctx);</span><br><span class="line">						<span class="keyword">return</span> (<span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line">							&lt;ul&gt;</span><br><span class="line">								&lt;MessageItem&gt;&lt;/MessageItem&gt;</span><br><span class="line"><span class="xml">							<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml">						<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&lt;<span class="regexp">/Consumer&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class MessageItem extends Component &#123;</span></span><br><span class="line"><span class="regexp">	render() &#123;</span></span><br><span class="line"><span class="regexp">		/</span><span class="regexp">/ 内部组件都可以消费</span></span><br><span class="line"><span class="regexp">		return (</span></span><br><span class="line"><span class="regexp">			&lt;Consumer&gt;</span></span><br><span class="line"><span class="regexp">				&#123;</span></span><br><span class="line"><span class="regexp">					(ctx) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">						console.log('MessageItem', ctx);</span></span><br><span class="line"><span class="regexp">						return (</span></span><br><span class="line"><span class="regexp">							&lt;div&gt;MessageItem组件&lt;/</span>div&gt;</span><br><span class="line">						)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&lt;<span class="regexp">/Consumer&gt;</span></span><br><span class="line"><span class="regexp">		);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Login extends Component &#123;</span></span><br><span class="line"><span class="regexp">	constructor(props) &#123;</span></span><br><span class="line"><span class="regexp">		super(props);</span></span><br><span class="line"><span class="regexp">		this.state = &#123;</span></span><br><span class="line"><span class="regexp">			message: ['Lorem ipsum dolor.', 'Lorem ipsum dolor sit.', 'Lorem ipsum dolor.']</span></span><br><span class="line"><span class="regexp">		&#125;</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">	render() &#123;</span></span><br><span class="line"><span class="regexp">		return (</span></span><br><span class="line"><span class="regexp">			&lt;Provider value=&#123;this.state.message&#125;&gt;</span></span><br><span class="line"><span class="regexp">				&lt;div&gt;</span></span><br><span class="line"><span class="regexp">					&lt;h1&gt;Login组件&lt;/</span>h1&gt;</span><br><span class="line">					&lt;MessageList&gt;&lt;<span class="regexp">/MessageList&gt;</span></span><br><span class="line"><span class="regexp">				&lt;/</span>div&gt;</span><br><span class="line">			&lt;<span class="regexp">/Provider&gt;</span></span><br><span class="line"><span class="regexp">		);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Login;</span></span><br></pre></td></tr></table></figure>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>官方已经明确指出，不建议用这玩意，所以还是老老实实上 redux 吧。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pipenv</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2020/05/02/react-context/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/05/02/react-hooks/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react-hooks</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -241,9 +344,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,

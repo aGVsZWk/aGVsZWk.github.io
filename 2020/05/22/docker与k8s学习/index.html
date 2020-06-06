@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-2020052414195332.png">
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142114286.png">
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142329169.png">
-<meta property="og:updated_time" content="2020-06-06T14:41:21.260Z">
+<meta property="og:updated_time" content="2020-06-06T15:27:02.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker与k8s学习">
 <meta name="twitter:description" content="为了工作中项目上 stke，复习一下 docker，顺便了解下 k8s。">
@@ -74,7 +74,7 @@
 		  <h1 class="header-author"><a href="/">Luke</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">我很弱, 但是我要坚强!</p>
+		<p class="header-subtitle">我很弱, 但是我要坚强!!!</p>
 		
 
 		<nav class="header-menu">
@@ -82,7 +82,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">壁纸</a></li>
+				<li><a href="/girlfriend">对象</a></li>
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
@@ -136,7 +136,7 @@
 			  <h1 class="header-author js-header-author">Luke</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>我很弱, 但是我要坚强!<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>我很弱, 但是我要坚强!!!<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -168,7 +168,7 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/photos">壁纸</a></li>
+					<li style="width: 33.333333333333336%"><a href="/girlfriend">对象</a></li>
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
 		        
@@ -207,7 +207,8 @@
       
         <p>为了工作中项目上 stke，复习一下 docker，顺便了解下 k8s。</p>
 <a id="more"></a>
-<h1 id="工作中上-k8s-的流程：先随便找台机器，写-Dockerfile，制作镜像，运行容器进行测试，ok-后将镜像上传至镜像仓库（xxxhub），然后在-k8s-上选择该仓库下上传的镜像部署到指定资源上。"><a href="#工作中上-k8s-的流程：先随便找台机器，写-Dockerfile，制作镜像，运行容器进行测试，ok-后将镜像上传至镜像仓库（xxxhub），然后在-k8s-上选择该仓库下上传的镜像部署到指定资源上。" class="headerlink" title="工作中上 k8s 的流程：先随便找台机器，写 Dockerfile，制作镜像，运行容器进行测试，ok 后将镜像上传至镜像仓库（xxxhub），然后在 k8s 上选择该仓库下上传的镜像部署到指定资源上。"></a>工作中上 k8s 的流程：先随便找台机器，写 Dockerfile，制作镜像，运行容器进行测试，ok 后将镜像上传至镜像仓库（xxxhub），然后在 k8s 上选择该仓库下上传的镜像部署到指定资源上。</h1><h1 id="docker-生命周期记录"><a href="#docker-生命周期记录" class="headerlink" title="docker 生命周期记录"></a>docker 生命周期记录</h1><p><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200522103731926.png" alt></p>
+<p>工作中上 k8s 的流程：先随便找台机器，写 Dockerfile，制作镜像，运行容器进行测试，ok 后将镜像上传至镜像仓库（xxxhub），然后在 k8s 上选择该仓库下上传的镜像部署到指定资源上。</p>
+<h1 id="docker-生命周期记录"><a href="#docker-生命周期记录" class="headerlink" title="docker 生命周期记录"></a>docker 生命周期记录</h1><p><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200522103731926.png" alt></p>
 <p><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200522104630718.png" alt></p>
 <h1 id="创建一个容器"><a href="#创建一个容器" class="headerlink" title="创建一个容器"></a>创建一个容器</h1><p><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200523165927586.png" alt></p>
 <p><code>docker create --name hanmeil httpd</code></p>
@@ -307,57 +308,6 @@
       
 
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://agvszwk.github.io/2020/05/22/docker与k8s学习/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
       <div class="clearfix"></div>
     </div>
   </div>
@@ -387,15 +337,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
         <div class="toc-container tooltip-left">
             <i class="icon-font icon-category"></i>
@@ -404,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#工作中上-k8s-的流程：先随便找台机器，写-Dockerfile，制作镜像，运行容器进行测试，ok-后将镜像上传至镜像仓库（xxxhub），然后在-k8s-上选择该仓库下上传的镜像部署到指定资源上。"><span class="toc-number">1.</span> <span class="toc-text">工作中上 k8s 的流程：先随便找台机器，写 Dockerfile，制作镜像，运行容器进行测试，ok 后将镜像上传至镜像仓库（xxxhub），然后在 k8s 上选择该仓库下上传的镜像部署到指定资源上。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-生命周期记录"><span class="toc-number">2.</span> <span class="toc-text">docker 生命周期记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建一个容器"><span class="toc-number">3.</span> <span class="toc-text">创建一个容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行容器"><span class="toc-number">4.</span> <span class="toc-text">运行容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进入容器"><span class="toc-number">5.</span> <span class="toc-text">进入容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-镜像结构"><span class="toc-number">6.</span> <span class="toc-text">docker 镜像结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#kernel-和-rootfs"><span class="toc-number">6.1.</span> <span class="toc-text">kernel 和 rootfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-镜像"><span class="toc-number">6.2.</span> <span class="toc-text">base 镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copy-on-write-特性"><span class="toc-number">6.3.</span> <span class="toc-text">copy-on-write 特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-number">6.4.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-commit-命令"><span class="toc-number">6.5.</span> <span class="toc-text">docker commit 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dockerfile"><span class="toc-number">7.</span> <span class="toc-text">Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile-常用指令"><span class="toc-number">7.1.</span> <span class="toc-text">Dockerfile 常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-build"><span class="toc-number">7.2.</span> <span class="toc-text">docker build</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建私有镜像仓库"><span class="toc-number">8.</span> <span class="toc-text">构建私有镜像仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入与导出"><span class="toc-number">9.</span> <span class="toc-text">导入与导出</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-生命周期记录"><span class="toc-number">1.</span> <span class="toc-text">docker 生命周期记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建一个容器"><span class="toc-number">2.</span> <span class="toc-text">创建一个容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行容器"><span class="toc-number">3.</span> <span class="toc-text">运行容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进入容器"><span class="toc-number">4.</span> <span class="toc-text">进入容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-镜像结构"><span class="toc-number">5.</span> <span class="toc-text">docker 镜像结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#kernel-和-rootfs"><span class="toc-number">5.1.</span> <span class="toc-text">kernel 和 rootfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-镜像"><span class="toc-number">5.2.</span> <span class="toc-text">base 镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copy-on-write-特性"><span class="toc-number">5.3.</span> <span class="toc-text">copy-on-write 特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-number">5.4.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-commit-命令"><span class="toc-number">5.5.</span> <span class="toc-text">docker commit 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dockerfile"><span class="toc-number">6.</span> <span class="toc-text">Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile-常用指令"><span class="toc-number">6.1.</span> <span class="toc-text">Dockerfile 常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-build"><span class="toc-number">6.2.</span> <span class="toc-text">docker build</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建私有镜像仓库"><span class="toc-number">7.</span> <span class="toc-text">构建私有镜像仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入与导出"><span class="toc-number">8.</span> <span class="toc-text">导入与导出</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -538,19 +479,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">atom</a>
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,7 +503,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,15 +519,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,11 +543,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,19 +575,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,6 +592,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,10 +619,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">postman</a>
               </li>
              
@@ -686,11 +631,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -698,7 +643,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,7 +663,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,15 +671,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,6 +684,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vimium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,10 +708,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -865,7 +806,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">半路出家, 自学成才&lt;br&gt;年少无为, 卖马而生</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">胆小认生, 不易相处&lt;br&gt;年少无为, 卖马而生</div>
   	  	
     	</section>
     
@@ -954,5 +895,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":210,"hOffset":-10,"vOffset":55},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

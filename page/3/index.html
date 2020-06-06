@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Luke</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">我很弱, 但是我要坚强!</p>
+		<p class="header-subtitle">我很弱, 但是我要坚强!!!</p>
 		
 
 		<nav class="header-menu">
@@ -61,7 +61,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/photos">壁纸</a></li>
+				<li><a href="/girlfriend">对象</a></li>
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
@@ -115,7 +115,7 @@
 			  <h1 class="header-author js-header-author">Luke</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>我很弱, 但是我要坚强!<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>我很弱, 但是我要坚强!!!<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -147,7 +147,7 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/photos">壁纸</a></li>
+					<li style="width: 33.333333333333336%"><a href="/girlfriend">对象</a></li>
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
 		        
@@ -227,15 +227,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
     </div>
 </aside>
@@ -300,15 +291,6 @@
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
         
         
     </div>
@@ -383,15 +365,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
     </div>
 </aside>
@@ -423,65 +396,8 @@
         <p>总结:</p>
 <ol>
 <li>通过/etc/profile.d去修改PATH路径</li>
-<li>通过/etc/init.d控制service<!--mroe-->
-<h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1></li>
-</ol>
-<p>service是调用/sbin/service脚本</p>
-<p>这个脚本里调用了/etc/init.d目录的脚本，所以我们自定义的可以放到这下面，通常是xxxd</p>
-<p>service mysqld</p>
-<p>service fdfs_storaged</p>
-<p>service fdfs_trackerd</p>
-<p>以及我们自定义的nginx</p>
-<p>这个脚本还会重定向到/bin/systemctl里面的命令。</p>
-<p>service firewalld</p>
-<p>service redis</p>
-<p>/etc/profile为环境变量</p>
-<p>/etc/profile.d为脚本去控制环境变量</p>
-<p>我们自定义安装的软件，都在这里去控制</p>
-<p>比如python</p>
-<p>vim /etc/profile.d/python.sh</p>
-<p>PATH=/usr/local/python3/bin/:$PATH</p>
-<p>比如redis</p>
-<p>PATH=/usr/local/redis/bin/:$PATH</p>
-<p>总结:</p>
-<ol>
-<li>通过/etc/profile.d去修改PATH路径</li>
-<li>通过/etc/init.d控制service</li>
-</ol>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="安装lsof测试yum"><a href="#安装lsof测试yum" class="headerlink" title="安装lsof测试yum:"></a>安装lsof测试yum:</h2><p><code>yum install -y lsof</code></p>
-<h2 id="安装python3-6"><a href="#安装python3-6" class="headerlink" title="安装python3.6:"></a>安装python3.6:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release -y</span><br><span class="line">yum install https://centos7.iuscommunity.org/ius-release.rpm -y</span><br><span class="line">yum install python36u -y</span><br><span class="line">ln -s /bin/python3.6 /bin/python3</span><br><span class="line">yum install python36u-pip -y</span><br><span class="line">ln -s /bin/pip3.6 /bin/pip3</span><br><span class="line">yum install python36u-devel</span><br><span class="line">yum install mariadb-devel</span><br></pre></td></tr></table></figure>
-<h2 id="安装虚拟机增强工具"><a href="#安装虚拟机增强工具" class="headerlink" title="安装虚拟机增强工具:"></a>安装虚拟机增强工具:</h2><p>先安装内核:</p>
-<p><code>yum install perl gcc kernel-devel -y</code></p>
-<p>更新内核:</p>
-<p><code>yum upgrade kernel kernel-devel -y</code></p>
-<p>查看是否版本一致:</p>
-<p><code>uname -r</code></p>
-<p><code>rpm -q kernel-devel</code></p>
-<p>如果不一致，重启，在查看，再次执行更新。</p>
-<p>安装依赖环境:<br><code>yum install perl gcc kernel-devel</code></p>
-<p>接下来挂载虚拟机增强工具:</p>
-<p><code>mkdir /dvd</code></p>
-<p><code>mount /dev/cdrom /dvd</code></p>
-<p><code>cd /dvd/</code></p>
-<p><code>./vmware-install.pl</code></p>
-<p>然后一路回车</p>
-<p>在补一下环境: 上步如果出错，执行这里</p>
-<p><code>yum install open-vm-tools *headers perl gcc make kernel-devel -y</code></p>
-<h2 id="设置共享文件夹，之后进入虚拟机进行挂载"><a href="#设置共享文件夹，之后进入虚拟机进行挂载" class="headerlink" title="设置共享文件夹，之后进入虚拟机进行挂载"></a>设置共享文件夹，之后进入虚拟机进行挂载</h2><p>先查看待挂载的共享文件夹名字</p>
-<p><code>vmware-hgfsclient</code></p>
-<p>然后进行挂载</p>
-<p><code>mount -t vmhgfs .host:/共享文件夹名字 /mnt/hgfs</code></p>
-<p>还是下面条挂载命令，区分不清了(就是下面这条)</p>
-<p><code>vmhgfs-fuse .host:/共享文件夹名字 /mnt/hgfs</code></p>
-<p>之后就可以在/mnt/hgfs里查看到了</p>
-<h2 id="换用xshell链接"><a href="#换用xshell链接" class="headerlink" title="换用xshell链接"></a>换用xshell链接</h2><p>关闭防火墙:</p>
-<p><code>service firewalld.service stop</code></p>
-<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql:"></a>安装mysql:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">sudo yum install mysql-server</span><br><span class="line">service mysql restart</span><br><span class="line">mysql -uroot</span><br><span class="line">use mysql</span><br><span class="line">update user set password=password(&apos;123456&apos;) where user=&apos;root&apos;;</span><br><span class="line">Grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;123456&apos; with grant option;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
-<h2 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl:"></a>安装openssl:</h2><p><code>yum install openssl</code></p>
-<h2 id="安装fdfs"><a href="#安装fdfs" class="headerlink" title="安装fdfs:"></a>安装fdfs:</h2><p>见参考文件</p>
-<p>改动: 安装nginx依赖环境:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++</span><br><span class="line">yum install -y pcre pcre-devel</span><br><span class="line">yum install -y zlib zlib-devel</span><br><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure></p>
-<p>安装redis：<br><code>yum install redis</code></p>
-
+<li>通过/etc/init.d控制service</li></ol>
+        
       
 
       
@@ -528,15 +444,6 @@
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
         
         
     </div>
@@ -602,15 +509,6 @@
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
         
         
     </div>
@@ -680,15 +578,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
     </div>
 </aside>
@@ -757,15 +646,6 @@
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
         
         
     </div>
@@ -840,15 +720,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
     </div>
 </aside>
@@ -918,15 +789,6 @@
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
         
     </div>
 </aside>
@@ -991,15 +853,6 @@
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
         
         
     </div>
@@ -1128,19 +981,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">atom</a>
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1152,7 +1005,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color5">atom</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hydrogen</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1164,15 +1021,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,11 +1045,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">go</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1216,19 +1077,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1241,6 +1094,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,10 +1121,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">postman</a>
               </li>
              
@@ -1276,11 +1133,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编码</a>
+                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">rabbitmq</a>
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1288,7 +1145,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1308,7 +1165,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1316,15 +1173,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ssl</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1337,6 +1186,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">vimium</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1353,10 +1210,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1455,7 +1308,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">半路出家, 自学成才&lt;br&gt;年少无为, 卖马而生</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">胆小认生, 不易相处&lt;br&gt;年少无为, 卖马而生</div>
   	  	
     	</section>
     
@@ -1544,5 +1397,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":100,"height":210,"hOffset":-10,"vOffset":55},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-2020052414195332.png">
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142114286.png">
 <meta property="og:image" content="https://agvszwk.github.io/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142329169.png">
-<meta property="og:updated_time" content="2020-05-24T06:24:02.850Z">
+<meta property="og:updated_time" content="2020-06-06T14:41:21.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker与k8s学习">
 <meta name="twitter:description" content="为了工作中项目上 stke，复习一下 docker，顺便了解下 k8s。">
@@ -274,9 +274,9 @@
 <p>先构建一个本地的镜像仓库出来<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524140625101.png" alt></p>
 <p>对镜像进行重命名，使其符合 registry 的格式要求<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524140823430.png" alt></p>
 <p>推进仓库容器即可<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524141608958.png" alt></p>
-<h1 id="导入与导出"><a href="#导入与导出" class="headerlink" title="导入与导出"></a>导入与导出</h1><p>将指定镜像保存成 tar 文件<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524141823389.png" alt></p>
-<p>导入 tar 包到镜像<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-2020052414195332.png" alt></p>
-<p>导出容器<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142114286.png" alt></p>
+<h1 id="导入与导出"><a href="#导入与导出" class="headerlink" title="导入与导出"></a>导入与导出</h1><p>将指定镜像保存成 tar 文件:<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524141823389.png" alt></p>
+<p>导入 tar 包到镜像:<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-2020052414195332.png" alt></p>
+<p>导出容器:<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142114286.png" alt></p>
 <p>通过容器导入镜像：<br><img src="/2020/05/22/docker与k8s学习/markdown-img-paste-20200524142329169.png" alt></p>
 <p>通过容器导入的镜像将不会再有分层</p>
 
@@ -366,6 +366,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/05/23/nodejs安装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          nodejs安装
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/05/02/react-context/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">react-context</div>
@@ -387,6 +396,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#工作中上-k8s-的流程：先随便找台机器，写-Dockerfile，制作镜像，运行容器进行测试，ok-后将镜像上传至镜像仓库（xxxhub），然后在-k8s-上选择该仓库下上传的镜像部署到指定资源上。"><span class="toc-number">1.</span> <span class="toc-text">工作中上 k8s 的流程：先随便找台机器，写 Dockerfile，制作镜像，运行容器进行测试，ok 后将镜像上传至镜像仓库（xxxhub），然后在 k8s 上选择该仓库下上传的镜像部署到指定资源上。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-生命周期记录"><span class="toc-number">2.</span> <span class="toc-text">docker 生命周期记录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建一个容器"><span class="toc-number">3.</span> <span class="toc-text">创建一个容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#运行容器"><span class="toc-number">4.</span> <span class="toc-text">运行容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进入容器"><span class="toc-number">5.</span> <span class="toc-text">进入容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-镜像结构"><span class="toc-number">6.</span> <span class="toc-text">docker 镜像结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#kernel-和-rootfs"><span class="toc-number">6.1.</span> <span class="toc-text">kernel 和 rootfs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#base-镜像"><span class="toc-number">6.2.</span> <span class="toc-text">base 镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#copy-on-write-特性"><span class="toc-number">6.3.</span> <span class="toc-text">copy-on-write 特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-number">6.4.</span> <span class="toc-text">基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-commit-命令"><span class="toc-number">6.5.</span> <span class="toc-text">docker commit 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Dockerfile"><span class="toc-number">7.</span> <span class="toc-text">Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile-常用指令"><span class="toc-number">7.1.</span> <span class="toc-text">Dockerfile 常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-build"><span class="toc-number">7.2.</span> <span class="toc-text">docker build</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建私有镜像仓库"><span class="toc-number">8.</span> <span class="toc-text">构建私有镜像仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导入与导出"><span class="toc-number">9.</span> <span class="toc-text">导入与导出</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -516,11 +538,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,6 +554,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">arch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -540,11 +570,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,7 +582,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,11 +602,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搭建环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">环境</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +626,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,19 +650,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,7 +658,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,7 +698,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -668,11 +718,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -684,11 +730,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -708,23 +754,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">进程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">celery</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -737,6 +779,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xpath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">celery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>
@@ -786,14 +852,6 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
         <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://blog.csdn.net/weixin_42844490" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/52d098408b21" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的简书</a>
-            </li>
           
             <li class="search-li">
               <a href="https://www.cnblogs.com/steven-yang/tag/%E5%8D%9A%E5%BC%88%E8%AE%BA/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博弈论</a>
@@ -895,6 +953,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://agvszwk.github.io">
   <title>manjaro日记 | Luke的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
-<meta name="keywords" content="manjaro,linux">
+  <meta name="description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。 在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
+<meta name="keywords" content="linux,manjaro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="manjaro日记">
 <meta property="og:url" content="https://agvszwk.github.io/2019/06/17/manjaro日记/index.html">
 <meta property="og:site_name" content="Luke的个人博客">
-<meta property="og:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
+<meta property="og:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。 在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-14T12:46:36.072Z">
+<meta property="og:updated_time" content="2020-06-06T13:55:15.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="manjaro日记">
-<meta name="twitter:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
+<meta name="twitter:description" content="目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。 在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。">
   
     <link rel="alternative" href="/atom.xml" title="Luke的个人博客" type="application/atom+xml">
   
@@ -185,7 +185,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。<br>在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。<br><a id="more"></a></p>
+        <p>目前安装的是社区里找的manjaro-deepin，嗯，直接装物理机里了，机子配置很渣，感觉还是有点小卡。</p>
+<p>在B站上看到一个大神装的manjaro+i3wm，感觉好像更帅些。本帖记录B站大佬的一些配置。<br><a id="more"></a></p>
 <h1 id="之前自己的安装"><a href="#之前自己的安装" class="headerlink" title="之前自己的安装"></a>之前自己的安装</h1><p>网上都说manjaro-deepin好，我就从社区找到了，准备尝尝鲜，附上地址。</p>
 <p>下载界面:</p>
 <blockquote>
@@ -200,12 +201,36 @@
 <p><a href="https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">https://wiki.archlinux.org/index.php/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87</a>)</p>
 </blockquote>
 <p>换源:  <code>vim /etc/pacman.conf</code><br>在最后添加内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure></p>
-<p>更新镜像排名: <code>sudo pacman-mirrors -i -c China -m rank</code><br>更新数据源: <code>sudo pacman -Syy</code></p>
-<p>安装qq: <code>pacman -S deepin.com.qq.im</code><br>安装网易云: <code>sudo pacman -S netease-cloud-music</code></p>
+<p>更新镜像排名: <code>sudo pacman-mirrors -i -c China -m rank</code></p>
+<p>更新数据源: <code>sudo pacman -Syy</code></p>
+<p>安装qq: <code>pacman -S deepin.com.qq.im</code></p>
+<p>安装网易云: <code>sudo pacman -S netease-cloud-music</code></p>
 <h1 id="大佬的安装"><a href="#大佬的安装" class="headerlink" title="大佬的安装"></a>大佬的安装</h1><p>后来自己不用manjaro-deepin了， 换了i3wm。</p>
 <h2 id="polybar"><a href="#polybar" class="headerlink" title="polybar"></a>polybar</h2><p>屏幕上面的一个状态栏，显示各种内容</p>
-<h2 id="ranger"><a href="#ranger" class="headerlink" title="ranger"></a>ranger</h2><p>文件管理软件，异常NB<br>安装: <code>sudo pacman -S ranger</code><br>启动: <code>ranger</code><br>移动: <code>hjkl</code><br>退出: <code>q</code><br>创建文件夹:<code>F7</code><br>创建文件: 以vim新建，自定义shift+v<br>重命名: <code>cw</code><br>在前面插入: <code>i</code><br>在后缀的前面加入: <code>a</code><br>在后缀的后面加入: <code>shift+a</code><br>剪切文件: <code>dd</code><br>删除文件: <code>dD</code><br>复制文件: <code>yy</code><br>粘贴文件: <code>pp</code><br>多选: <code>空格</code><br>选中全部: <code>v</code><br>批量更名，中间加空格: 选中文件，打<code>:bulkrename</code>，会在vim下打开，然后在vim下用<code>ctrl+v</code>选中一列，插入空格，保存退出即可。<br>排序: <code>o</code><br>搜索: <code>/</code><br>显示文件大小: <code>du</code><br>显示隐藏文件:  <code>zh</code></p>
-<p>配置: <code>ranger --copy-config=rc</code><br>然后编辑文件: <code>vim ~/.config/ranger/rc.conf</code></p>
+<h2 id="ranger"><a href="#ranger" class="headerlink" title="ranger"></a>ranger</h2><p>文件管理软件，异常NB</p>
+<p>安装: <code>sudo pacman -S ranger</code></p>
+<p>启动: <code>ranger</code></p>
+<p>移动: <code>hjkl</code></p>
+<p>退出: <code>q</code></p>
+<p>创建文件夹:<code>F7</code></p>
+<p>创建文件: 以vim新建，自定义shift+v</p>
+<p>重命名: <code>cw</code></p>
+<p>在前面插入: <code>i</code></p>
+<p>在后缀的前面加入: <code>a</code></p>
+<p>在后缀的后面加入: <code>shift+a</code></p>
+<p>剪切文件: <code>dd</code></p>
+<p>删除文件: <code>dD</code></p>
+<p>复制文件: <code>yy</code></p>
+<p>粘贴文件: <code>pp</code></p>
+<p>多选: <code>空格</code></p>
+<p>选中全部: <code>v</code></p>
+<p>批量更名，中间加空格: 选中文件，打<code>:bulkrename</code>，会在vim下打开，然后在vim下用<code>ctrl+v</code>选中一列，插入空格，保存退出即可。</p>
+<p>排序: <code>o</code></p>
+<p>搜索: <code>/</code></p>
+<p>显示文件大小: <code>du</code></p>
+<p>显示隐藏文件:  <code>zh</code></p>
+<p>配置: <code>ranger --copy-config=rc</code></p>
+<p>然后编辑文件: <code>vim ~/.config/ranger/rc.conf</code></p>
 <p>设置自定义快捷键:<br><code>map V console shell vim%space</code>  (需要先屏蔽掉以前的V，然后按shift+v就会出控制台，里面写shell vim ，然后你补充文件名，就是新建)</p>
 <h2 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a>pacman</h2><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>主要分三类指令:</p>
 <ol>
@@ -220,8 +245,11 @@
 </li>
 <li><p>强行更新用的软件库<br><code>sudo pacman -Syy</code></p>
 </li>
-<li><p>更新你的软件<br><code>sudo pacman -Su</code><br>它会提示你有多少个软件可以更新，是否要更新<br>可以先更新软件源在更新软件:<code>sudo pacman -Syu</code>, <code>sudo pacman -Syyu</code></p>
+<li><p>更新你的软件<br><code>sudo pacman -Su</code><br>它会提示你有多少个软件可以更新，是否要更新</p>
 </li>
+</ul>
+<p>可以先更新软件源在更新软件:<code>sudo pacman -Syu</code>, <code>sudo pacman -Syyu</code></p>
+<ul>
 <li><p>查询软件<br><code>sudo pacman -Ss vim</code><br>支持正则 <code>sudo pacman Ss ^vim</code></p>
 </li>
 <li><p>删除软件包的缓存<br><code>sudo pacman -Sc</code></p>
@@ -232,9 +260,10 @@
 </li>
 <li><p>删除软件及其依赖的包<br><code>sudo pacman -Rs vim</code></p>
 </li>
-<li><p>删除软件依赖及全局配置文件(不会删个人配置文件)<br><code>sudo pacman -Rns</code><br>这个是删除软件的最好方式</p>
+<li><p>删除软件依赖及全局配置文件(不会删个人配置文件)<br><code>sudo pacman -Rns</code></p>
 </li>
 </ul>
+<p>这个是删除软件的最好方式</p>
 <h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><ul>
 <li><p>查询本地所有安装软件<br><code>sudo pacman -Q</code></p>
 </li>
@@ -252,10 +281,17 @@
 <h4 id="灵活使用"><a href="#灵活使用" class="headerlink" title="灵活使用"></a>灵活使用</h4><ul>
 <li>删掉不在需要的被依赖的软件<br><code>sudo pacman -R $(pac -Qdtq)</code></li>
 </ul>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置文件在/etc/pacman.conf<br>下面是配置参数：</p>
-<h4 id="options配置段"><a href="#options配置段" class="headerlink" title="options配置段"></a>options配置段</h4><p>这里面有你所有的选项<br>Color: 是否打开颜色<br>CheckSpace: 空间，没空间时会提示<br>ILoveCandy: 改变进度条</p>
-<h3 id="archlinuxcn配置段"><a href="#archlinuxcn配置段" class="headerlink" title="archlinuxcn配置段"></a>archlinuxcn配置段</h3><p>可在这里面配置源，防止国外被墙情况<br>增加下面这行<br><code>Include = /etc/paman.d/archlinuxcn</code><br>将所有源全都写入你配置的文件<br><code>Server= xxxx</code></p>
-<p>.</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置文件在/etc/pacman.conf</p>
+<p>下面是配置参数：</p>
+<h4 id="options配置段"><a href="#options配置段" class="headerlink" title="options配置段"></a>options配置段</h4><p>这里面有你所有的选项</p>
+<p>Color: 是否打开颜色</p>
+<p>CheckSpace: 空间，没空间时会提示</p>
+<p>ILoveCandy: 改变进度条</p>
+<h3 id="archlinuxcn配置段"><a href="#archlinuxcn配置段" class="headerlink" title="archlinuxcn配置段"></a>archlinuxcn配置段</h3><p>可在这里面配置源，防止国外被墙情况</p>
+<p>增加下面这行</p>
+<p><code>Include = /etc/paman.d/archlinuxcn</code></p>
+<p>将所有源全都写入你配置的文件</p>
+<p><code>Server= xxxx</code></p>
 
       
 
@@ -269,11 +305,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">manjaro</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">manjaro</a>
         		</li>
       		
 		</ul>
@@ -515,11 +551,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
+                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ansible</a>
+                <a href="javascript:void(0)" class="js-tag color4">about_me</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,6 +567,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">arch</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
@@ -539,11 +583,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +595,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">k8s</a>
+                <a href="javascript:void(0)" class="js-tag color1">django-debug-toolbar</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,11 +615,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">go</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jupyter_notebook</a>
+                <a href="javascript:void(0)" class="js-tag color3">部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搭建环境</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">环境</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -583,11 +639,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
+                <a href="javascript:void(0)" class="js-tag color3">网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">manjaro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,19 +663,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,7 +671,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pipenv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">postgresql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">httpd</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,7 +711,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">os</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -667,11 +731,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">os</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,11 +743,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssl</a>
+                <a href="javascript:void(0)" class="js-tag color1">supervisor</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,23 +767,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">进程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color3">线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">celery</a>
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,6 +792,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">xpath</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">celery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">问题记录</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Memcached</a>
               </li>
             
             <div class="clearfix"></div>
@@ -785,14 +865,6 @@ MathJax.Hub.Queue(function() {
     	<section class="tools-section tools-section-friends" q-show="friends">
   		
         <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://blog.csdn.net/weixin_42844490" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的CSDN</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.jianshu.com/u/52d098408b21" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的简书</a>
-            </li>
           
             <li class="search-li">
               <a href="https://www.cnblogs.com/steven-yang/tag/%E5%8D%9A%E5%BC%88%E8%AE%BA/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博弈论</a>
@@ -894,6 +966,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script></body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":180,"hOffset":-10,"vOffset":40},"mobile":{"show":true}});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>
